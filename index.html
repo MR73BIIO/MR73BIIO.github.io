@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pl" data-lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcin Ruszczak — MR73BIIO</title>
+<meta name="description" content="Dane, automatyzacja, niemiecki. Python, Power Query, Linux. PL / DE / EN / RU.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#1C1C1A;
+  --ink:#EDEBE4;
+  --muted:#8A8880;
+  --dim:#5F5E5A;
+  --accent:#5DCAA5;
+  --accent-deep:#1D9E75;
+  --rule:#33332F;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{
+  background:var(--ground);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+[data-lang="pl"] .t:not(.pl),
+[data-lang="de"] .t:not(.de),
+[data-lang="en"] .t:not(.en){display:none}
+
+/* language switch */
+.langbar{display:flex;justify-content:flex-end;gap:4px;padding:20px 0 0}
+.langbar button{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+  background:none;border:1px solid var(--rule);color:var(--dim);
+  padding:5px 11px;cursor:pointer;border-radius:3px;
+  transition:color .15s,border-color .15s;
+}
+.langbar button:hover{color:var(--ink);border-color:var(--muted)}
+.langbar button[aria-current="true"]{color:var(--ground);background:var(--accent);border-color:var(--accent)}
+.langbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding:64px 0 56px;border-bottom:1px solid var(--rule)}
+.handle{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--dim);margin-bottom:18px}
+h1{font-size:clamp(2.1rem,7vw,3.1rem);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.tagline{font-size:clamp(1.1rem,3.5vw,1.4rem);color:var(--accent);margin-top:12px;font-weight:400}
+.lede{margin-top:28px;color:var(--ink);max-width:60ch}
+.lede em{color:var(--accent);font-style:normal}
+
+/* sections */
+section{padding:52px 0;border-bottom:1px solid var(--rule)}
+h2{
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  letter-spacing:.2em;color:var(--dim);margin-bottom:32px;
+}
+.item{margin-bottom:40px}
+.item:last-child{margin-bottom:0}
+h3{font-size:1.06rem;font-weight:600;margin-bottom:8px}
+h3 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent-deep)}
+h3 a:hover{color:var(--accent)}
+h3 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* the join — signature device */
+.join{
+  font-family:var(--mono);font-size:12.5px;color:var(--dim);
+  margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+}
+.join b{font-weight:400;color:var(--muted)}
+.join i{font-style:normal;color:var(--accent-deep)}
+.join b:last-child{color:var(--accent)}
+.item p{color:var(--muted);max-width:62ch}
+
+/* stack */
+.rows{display:grid;gap:14px}
+.row{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:baseline}
+.row dt{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--dim);padding-top:3px}
+.row dd{color:var(--ink)}
+.row dd small{color:var(--dim);font-size:.85em}
+@media(max-width:560px){.row{grid-template-columns:1fr;gap:2px}}
+
+/* contact */
+.mail{
+  font-family:var(--mono);font-size:1.05rem;color:var(--accent);
+  text-decoration:none;border-bottom:1px solid var(--accent-deep);
+}
+.mail:hover{color:var(--ink)}
+.mail:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.links{margin-top:20px;display:flex;flex-wrap:wrap;gap:20px}
+.links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.06em}
+.links a:hover{color:var(--accent)}
+footer{padding:36px 0 56px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langbar" aria-label="Język / Sprache / Language">
+    <button data-set="pl" aria-current="true">PL</button>
+    <button data-set="de" aria-current="false">DE</button>
+    <button data-set="en" aria-current="false">EN</button>
+  </nav>
+
+  <header class="hero">
+    <div class="handle">MR73BIIO</div>
+    <h1>Marcin Ruszczak</h1>
+    <p class="tagline">
+      <span class="t pl">Dane, automatyzacja, niemiecki</span>
+      <span class="t de">Daten, Automatisierung, Deutsch</span>
+      <span class="t en">Data, automation, German</span>
+    </p>
+    <p class="lede">
+      <span class="t pl">Łączę rzeczy, które nie chcą się połączyć: faktury kurierskie z zamówieniami, SKU z czterech marketplace'ów w jeden wiersz, niemiecką dokumentację techniczną z polskim wykonawcą. Python, Linux, Power Query — i <em>niemiecki, którego nauczyłem się na budowie, nie na kursie</em>.</span>
+      <span class="t de">Ich verbinde, was sich nicht verbinden lassen will: Speditionsrechnungen mit Bestellungen, SKUs aus vier Marktplätzen in einer Zeile, deutsche technische Dokumentation mit dem polnischen Ausführenden. Python, Linux, Power Query — und <em>Deutsch, das ich auf dem Bau gelernt habe, nicht im Kurs</em>.</span>
+      <span class="t en">I join things that resist being joined: courier invoices to orders, SKUs from four marketplaces into a single row, German technical documentation to the Polish contractor. Python, Linux, Power Query — and <em>German learned on a building site, not in a classroom</em>.</span>
+    </p>
+  </header>
+
+  <section>
+    <h2>
+      <span class="t pl">PROJEKTY</span>
+      <span class="t de">PROJEKTE</span>
+      <span class="t en">WORK</span>
+    </h2>
+
+    <div class="item">
+      <h3><a href="https://github.com/MR73BIIO">baza-drzew</a></h3>
+      <p class="join">
+        <b><span class="t pl">pomiary terenowe</span><span class="t de">Felddaten</span><span class="t en">field measurements</span></b>
+        <i>→</i>
+        <b><span class="t pl">weryfikacja</span><span class="t de">Prüfung</span><span class="t en">validation</span></b>
+        <i>→</i>
+        <b><span class="t pl">inwentaryzacja</span><span class="t de">Baumkataster</span><span class="t en">tree inventory</span></b>
+      </p>
+      <p>
+        <span class="t pl">Narzędzie w Pythonie do inwentaryzacji drzew i weryfikacji danych dendrologicznych. Kod publiczny na GitHubie, projekt rozwijany na bieżąco.</span>
+        <span class="t de">Python-Werkzeug für Baumkataster und die Prüfung dendrologischer Daten. Quellcode öffentlich auf GitHub, laufend weiterentwickelt.</span>
+        <span class="t en">A Python tool for tree inventory and validation of dendrological data. Source public on GitHub, in active development.</span>
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>
+        <span class="t pl">System przetwarzania danych w trybie ciągłym</span>
+        <span class="t de">Datenverarbeitung im Dauerbetrieb</span>
+        <span class="t en">Continuous data processing system</span>
+      </h3>
+      <p class="join">
+        <b><span class="t pl">strumień danych</span><span class="t de">Datenstrom</span><span class="t en">data stream</span></b>
+        <i>→</i>
+        <b><span class="t pl">rekonsyliacja</span><span class="t de">Abgleich</span><span class="t en">reconciliation</span></b>
+        <i>→</i>
+        <b><span class="t pl">decyzja</span><span class="t de">Entscheidung</span><span class="t en">decision</span></b>
+      </p>
+      <p>
+        <span class="t pl">Aplikacja w Pythonie przetwarzająca strumienie danych finansowych w czasie rzeczywistym: parsowanie, uzgadnianie pozycji i opłat, reakcja bez udziału człowieka. Praca 24/7 na własnym serwerze Linux — usługa systemd, automatyczny restart po awarii, monitoring, kopie zapasowe. Tu awaria kosztuje realne pieniądze, więc niezawodność nie jest deklaracją.</span>
+        <span class="t de">Python-Anwendung, die Finanzdatenströme in Echtzeit verarbeitet: Parsing, Abgleich von Positionen und Gebühren, Reaktion ohne menschliches Zutun. 24/7-Betrieb auf eigenem Linux-Server — systemd-Dienst, automatischer Neustart nach Ausfall, Monitoring, Backups. Ein Ausfall kostet hier echtes Geld, Zuverlässigkeit ist also keine Behauptung.</span>
+        <span class="t en">A Python application processing financial data streams in real time: parsing, reconciling positions and fees, acting without human input. Running 24/7 on my own Linux server — systemd service, automatic restart after failure, monitoring, backups. Downtime here costs real money, so reliability isn't a claim.</span>
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>
+        <span class="t pl">Tłumaczenie techniczne PL → DE</span>
+        <span class="t de">Fachübersetzung PL → DE</span>
+        <span class="t en">Technical translation PL → DE</span>
+      </h3>
+      <p class="join">
+        <b><span class="t pl">polski opis techniczny</span><span class="t de">polnische Fachbeschreibung</span><span class="t en">Polish technical text</span></b>
+        <i>→</i>
+        <b><span class="t pl">niemiecki, który przejdzie u inwestora</span><span class="t de">Deutsch, das beim Bauherrn besteht</span><span class="t en">German that holds up with the client</span></b>
+      </p>
+      <p>
+        <span class="t pl">Fragment dokumentacji z branży budowlanej, tłumaczony z polskiego na niemiecki. Układ dwukolumnowy: źródło i tłumaczenie obok siebie. Terminologia, rejestr, spójność. Specjalizacja: budownictwo i przemysł, dokumentacja techniczna, umowy, korespondencja z urzędami i firmami w DACH.</span>
+        <span class="t de">Auszug aus einer Bau-Dokumentation, aus dem Polnischen ins Deutsche übersetzt. Zweispaltig: Quelle und Übersetzung nebeneinander. Terminologie, Register, Konsistenz. Schwerpunkt: Bau und Industrie, technische Dokumentation, Verträge, Behörden- und Firmenkorrespondenz im DACH-Raum.</span>
+        <span class="t en">An extract of construction-industry documentation, translated Polish to German. Two columns: source and translation side by side. Terminology, register, consistency. Focus: construction and industry, technical documentation, contracts, correspondence with authorities and firms across the DACH region.</span>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>
+      <span class="t pl">WARSZTAT</span>
+      <span class="t de">WERKZEUG</span>
+      <span class="t en">TOOLING</span>
+    </h2>
+    <dl class="rows">
+      <div class="row">
+        <dt>PYTHON</dt>
+        <dd>REST API, <span class="t pl">automatyzacja procesów, przetwarzanie i porządkowanie danych</span><span class="t de">Prozessautomatisierung, Datenaufbereitung</span><span class="t en">process automation, data wrangling</span> <small>— CS50P (Harvard / edX)</small></dd>
+      </div>
+      <div class="row">
+        <dt>LINUX</dt>
+        <dd>Ubuntu, VPS, systemd, <span class="t pl">wdrożenia i utrzymanie</span><span class="t de">Deployment und Betrieb</span><span class="t en">deployment and operations</span> <small>— CS50 Cybersecurity <span class="t pl">(w trakcie)</span><span class="t de">(laufend)</span><span class="t en">(in progress)</span></small></dd>
+      </div>
+      <div class="row">
+        <dt>DANE</dt>
+        <dd>Power Query, Power BI, SQL, ETL</dd>
+      </div>
+      <div class="row">
+        <dt>JĘZYKI</dt>
+        <dd>
+          <span class="t pl">Polski natywnie · niemiecki zawodowo · angielski i rosyjski w stopniu roboczym</span>
+          <span class="t de">Polnisch muttersprachlich · Deutsch verhandlungssicher · Englisch und Russisch arbeitsfähig</span>
+          <span class="t en">Polish native · German professional · English and Russian working</span>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>
+      <span class="t pl">KONTAKT</span>
+      <span class="t de">KONTAKT</span>
+      <span class="t en">CONTACT</span>
+    </h2>
+    <p><a class="mail" href="mailto:TWOJ@ADRES.EMAIL">TWOJ@ADRES.EMAIL</a></p>
+    <p style="margin-top:18px;color:var(--muted);max-width:60ch">
+      <span class="t pl">Pracuję zdalnie i konkretnie. Odpowiadam w ciągu doby, terminów dotrzymuję.</span>
+      <span class="t de">Ich arbeite aus der Ferne und auf den Punkt. Antwort binnen 24 Stunden, Termine werden gehalten.</span>
+      <span class="t en">I work remotely and to the point. Reply within 24 hours, deadlines kept.</span>
+    </p>
+    <p class="links">
+      <a href="https://github.com/MR73BIIO">GITHUB</a>
+      <a href="#">LINKEDIN</a>
+      <a href="#">USEME</a>
+    </p>
+  </section>
+
+  <footer>MR73BIIO · <span class="t pl">Regensdorf / Łochowo</span><span class="t de">Regensdorf / Łochowo</span><span class="t en">Regensdorf / Łochowo</span></footer>
+
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var btns=document.querySelectorAll('.langbar button');
+  function set(l){
+    root.setAttribute('data-lang',l);
+    root.setAttribute('lang',l);
+    btns.forEach(function(b){b.setAttribute('aria-current',b.dataset.set===l?'true':'false');});
+    try{localStorage.setItem('lang',l);}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set);});});
+  var saved=null;
+  try{saved=localStorage.getItem('lang');}catch(e){}
+  var guess=saved||(navigator.language||'pl').slice(0,2).toLowerCase();
+  set(['pl','de','en'].indexOf(guess)>-1?guess:'pl');
+})();
+</script>
+</body>
+</html>
