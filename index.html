@@ -49,9 +49,15 @@ body{
 header.hero{padding:64px 0 56px;border-bottom:1px solid var(--rule)}
 .handle{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--dim);margin-bottom:18px}
 h1{font-size:clamp(2.1rem,7vw,3.1rem);font-weight:600;letter-spacing:-.02em;line-height:1.1}
-.tagline{font-size:clamp(1.1rem,3.5vw,1.4rem);color:var(--accent);margin-top:12px;font-weight:400}
+.tagline{font-size:clamp(1.15rem,3.6vw,1.5rem);color:var(--accent);margin-top:10px;font-weight:400;letter-spacing:.01em}
+.craft{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--dim);margin-top:14px}
 .lede{margin-top:28px;color:var(--ink);max-width:60ch}
+.lede+.lede{margin-top:18px;color:var(--muted)}
 .lede em{color:var(--accent);font-style:normal}
+.sig{border-top:1px solid var(--rule);padding-top:28px;margin-top:8px}
+.sig p{max-width:56ch;color:var(--muted);font-size:.95rem}
+.sig .motto{color:var(--ink);font-size:1.08rem;line-height:1.65;margin-bottom:14px;max-width:52ch}
+.sig .motto b{font-weight:500;color:var(--accent);display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;margin-bottom:10px}
 
 /* sections */
 section{padding:52px 0;border-bottom:1px solid var(--rule)}
@@ -75,6 +81,11 @@ h3 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .join i{font-style:normal;color:var(--accent-deep)}
 .join b:last-child{color:var(--accent)}
 .item p{color:var(--muted);max-width:62ch}
+.meta{margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px}
+.meta a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-deep)}
+.meta a:hover{color:var(--ink)}
+.meta a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.meta span.sep{color:var(--rule)}
 
 /* stack */
 .rows{display:grid;gap:14px}
@@ -109,15 +120,21 @@ footer{padding:36px 0 56px;font-family:var(--mono);font-size:11.5px;letter-spaci
   <header class="hero">
     <div class="handle">MR73BIIO</div>
     <h1>Marcin Ruszczak</h1>
-    <p class="tagline">
-      <span class="t pl">Dane, automatyzacja, niemiecki</span>
-      <span class="t de">Daten, Automatisierung, Deutsch</span>
-      <span class="t en">Data, automation, German</span>
+    <p class="tagline">Pulsus Cordis Tui</p>
+    <p class="craft">
+      <span class="t pl">DANE &middot; AUTOMATYZACJA &middot; CZTERY J&#280;ZYKI</span>
+      <span class="t de">DATEN &middot; AUTOMATISIERUNG &middot; VIER SPRACHEN</span>
+      <span class="t en">DATA &middot; AUTOMATION &middot; FOUR LANGUAGES</span>
     </p>
     <p class="lede">
-      <span class="t pl">Łączę rzeczy, które nie chcą się połączyć: faktury kurierskie z zamówieniami, SKU z czterech marketplace'ów w jeden wiersz, niemiecką dokumentację techniczną z polskim wykonawcą. Python, Linux, Power Query — i <em>niemiecki, którego nauczyłem się na budowie, nie na kursie</em>.</span>
-      <span class="t de">Ich verbinde, was sich nicht verbinden lassen will: Speditionsrechnungen mit Bestellungen, SKUs aus vier Marktplätzen in einer Zeile, deutsche technische Dokumentation mit dem polnischen Ausführenden. Python, Linux, Power Query — und <em>Deutsch, das ich auf dem Bau gelernt habe, nicht im Kurs</em>.</span>
-      <span class="t en">I join things that resist being joined: courier invoices to orders, SKUs from four marketplaces into a single row, German technical documentation to the Polish contractor. Python, Linux, Power Query — and <em>German learned on a building site, not in a classroom</em>.</span>
+      <span class="t pl">Pasjonat nowych technologii i rozwoju osobistego. Buduj&#281; rzeczy, kt&#243;re &#322;&#261;cz&#261; to, czego nikt nie chce &#322;&#261;czy&#263;: SKU z czterech marketplace&rsquo;&oacute;w w jeden wiersz, pomiar w terenie z decyzj&#261;, dokumentacj&#281; z wykonawc&#261;. Python, Linux, Power Query &mdash; i cztery j&#281;zyki, bo dane rzadko przychodz&#261; w jednym.</span>
+      <span class="t de">Begeistert von neuen Technologien und von der eigenen Weiterentwicklung. Ich baue Dinge, die verbinden, was niemand verbinden will: SKUs aus vier Marktpl&auml;tzen in einer Zeile, eine Feldmessung mit einer Entscheidung, eine Dokumentation mit dem Ausf&uuml;hrenden. Python, Linux, Power Query &mdash; und vier Sprachen, denn Daten kommen selten in nur einer.</span>
+      <span class="t en">Passionate about new technology and about developing myself. I build things that join what nobody wants to join: SKUs from four marketplaces into a single row, a field measurement to a decision, documentation to the person doing the work. Python, Linux, Power Query &mdash; and four languages, because data rarely arrives in only one.</span>
+    </p>
+    <p class="lede">
+      <span class="t pl">Wcze&#347;niej lata na rusztowaniach w niemieckoj&#281;zycznej Szwajcarii. <em>Rusztowanie to konstrukcja tymczasowa, kt&#243;ra musi trzyma&#263; jak co&#347; sta&#322;ego</em> &mdash; po to, &#380;eby kto&#347; inny m&#243;g&#322; postawi&#263; co&#347; trwa&#322;ego. Niemiecki mam stamt&#261;d, nie z kursu. I stamt&#261;d mam te&#380; jedno: <em>ka&#380;dego dnia buduj&#281; siebie od nowa</em>. Rusztowanie te&#380; stawia si&#281; co rano &mdash; nie raz na zawsze.</span>
+      <span class="t de">Davor Jahre auf Ger&uuml;sten in der deutschsprachigen Schweiz. <em>Ein Ger&uuml;st ist ein Provisorium, das halten muss wie etwas Festes</em> &mdash; damit jemand anders etwas Dauerhaftes bauen kann. Mein Deutsch kommt von dort, nicht aus einem Kurs. Und von dort kommt noch etwas: <em>jeden Tag baue ich mich neu auf</em>. Auch ein Ger&uuml;st wird jeden Morgen gestellt &mdash; nicht ein f&uuml;r alle Mal.</span>
+      <span class="t en">Before that, years on scaffolding in German-speaking Switzerland. <em>Scaffolding is a temporary structure that has to hold like a permanent one</em> &mdash; so that someone else can build something that lasts. My German comes from there, not from a classroom. And so does this: <em>every day I build myself again</em>. Scaffolding, too, goes up every morning &mdash; not once and for all.</span>
     </p>
   </header>
 
@@ -129,18 +146,25 @@ footer{padding:36px 0 56px;font-family:var(--mono);font-size:11.5px;letter-spaci
     </h2>
 
     <div class="item">
-      <h3><a href="https://github.com/MR73BIIO">baza-drzew</a></h3>
+      <h3><a href="https://github.com/MR73BIIO/baza-drzew">baza-drzew</a></h3>
       <p class="join">
-        <b><span class="t pl">pomiary terenowe</span><span class="t de">Felddaten</span><span class="t en">field measurements</span></b>
-        <i>→</i>
-        <b><span class="t pl">weryfikacja</span><span class="t de">Prüfung</span><span class="t en">validation</span></b>
-        <i>→</i>
-        <b><span class="t pl">inwentaryzacja</span><span class="t de">Baumkataster</span><span class="t en">tree inventory</span></b>
+        <b><span class="t pl">pomiar w terenie</span><span class="t de">Feldaufnahme</span><span class="t en">field survey</span></b>
+        <i>&rarr;</i>
+        <b><span class="t pl">weryfikacja</span><span class="t de">Pr&uuml;fung</span><span class="t en">validation</span></b>
+        <i>&rarr;</i>
+        <b><span class="t pl">drzewa do przegl&#261;du</span><span class="t de">B&auml;ume mit Pr&uuml;fbedarf</span><span class="t en">trees flagged for inspection</span></b>
       </p>
       <p>
-        <span class="t pl">Narzędzie w Pythonie do inwentaryzacji drzew i weryfikacji danych dendrologicznych. Kod publiczny na GitHubie, projekt rozwijany na bieżąco.</span>
-        <span class="t de">Python-Werkzeug für Baumkataster und die Prüfung dendrologischer Daten. Quellcode öffentlich auf GitHub, laufend weiterentwickelt.</span>
-        <span class="t en">A Python tool for tree inventory and validation of dendrological data. Source public on GitHub, in active development.</span>
+        <span class="t pl">Narz&#281;dzie w Pythonie do inwentaryzacji drzew: gatunek, stan, wsp&#243;&#322;rz&#281;dne GPS. Wyszukiwanie, filtrowanie po stanie, oznaczanie drzew wymagaj&#261;cych przegl&#261;du bezpiecze&#324;stwa, odleg&#322;o&#347;&#263; mi&#281;dzy drzewami, zapis i wczytanie CSV. Powsta&#322;o z realnej pracy przy drzewach, nie z kursu. Kod publiczny, testy w pytest &mdash; po jednym na ka&#380;d&#261; funkcj&#281; plus przypadki brzegowe.</span>
+        <span class="t de">Python-Werkzeug f&uuml;r Baumkataster: Art, Zustand, GPS-Koordinaten. Suche, Filter nach Zustand, Kennzeichnung von B&auml;umen mit Pr&uuml;fbedarf, Entfernungsberechnung, CSV-Export und -Import. Entstanden aus echter Arbeit am Baum, nicht aus einem Kurs. Quellcode &ouml;ffentlich, Tests mit pytest &mdash; einer je Kernfunktion plus Randf&auml;lle.</span>
+        <span class="t en">A Python tool for tree inventory: species, condition, GPS coordinates. Search, filter by condition, flag trees needing a safety inspection, measure distance between trees, save and load CSV. It grew out of real work with trees, not a course. Source public, pytest suite &mdash; one test per core function plus edge cases.</span>
+      </p>
+      <p class="meta">
+        <a href="https://youtu.be/wu61kIDfXBk"><span class="t pl">DEMO WIDEO</span><span class="t de">VIDEO-DEMO</span><span class="t en">VIDEO DEMO</span></a>
+        <span class="sep">/</span>
+        <a href="https://github.com/MR73BIIO/baza-drzew"><span class="t pl">KOD</span><span class="t de">QUELLCODE</span><span class="t en">SOURCE</span></a>
+        <span class="sep">/</span>
+        <span>PYTHON &middot; PYTEST &middot; MIT</span>
       </p>
     </div>
 
@@ -219,7 +243,7 @@ footer{padding:36px 0 56px;font-family:var(--mono);font-size:11.5px;letter-spaci
       <span class="t de">KONTAKT</span>
       <span class="t en">CONTACT</span>
     </h2>
-    <p><a class="mail" href="mailto:TWOJ@ADRES.EMAIL">TWOJ@ADRES.EMAIL</a></p>
+    <p><a class="mail" href="mailto:ruszczak11@gmail.com">ruszczak11@gmail.com</a></p>
     <p style="margin-top:18px;color:var(--muted);max-width:60ch">
       <span class="t pl">Pracuję zdalnie i konkretnie. Odpowiadam w ciągu doby, terminów dotrzymuję.</span>
       <span class="t de">Ich arbeite aus der Ferne und auf den Punkt. Antwort binnen 24 Stunden, Termine werden gehalten.</span>
@@ -227,12 +251,24 @@ footer{padding:36px 0 56px;font-family:var(--mono);font-size:11.5px;letter-spaci
     </p>
     <p class="links">
       <a href="https://github.com/MR73BIIO">GITHUB</a>
-      <a href="#">LINKEDIN</a>
-      <a href="#">USEME</a>
+      <a href="https://www.linkedin.com/in/marcin-ruszczak-27b37b19b">LINKEDIN</a>
+      <a href="https://useme.com/pl/roles/contractor/marcin-ruszczak,671244/">USEME</a>
     </p>
   </section>
 
-  <footer>MR73BIIO · <span class="t pl">Regensdorf / Łochowo</span><span class="t de">Regensdorf / Łochowo</span><span class="t en">Regensdorf / Łochowo</span></footer>
+  <section class="sig">
+    <p class="motto">
+      <b>OD 1998</b>
+      &bdquo;Ka&#380;da idea, kt&#243;ra rodzi si&#281; uczciwie w biciu serca, mo&#380;e przekroczy&#263; ka&#380;d&#261; granic&#281;, a jej czas ma wi&#281;ksz&#261; wag&#281; ni&#380; ka&#380;da waluta.&rdquo;
+    </p>
+    <p>
+      <span class="t pl">Bicie serca jest jedyn&#261; naprawd&#281; rzadk&#261; walut&#261; &mdash; czasu si&#281; nie odzyskuje. Dlatego nie sprzedaj&#281; godzin, tylko rozwi&#261;zane problemy, i m&#243;wi&#281; wprost, gdy czego&#347; nie umiem.</span>
+      <span class="t de">Der Herzschlag ist die einzige wirklich knappe W&auml;hrung &mdash; Zeit bekommt man nicht zur&uuml;ck. Deshalb verkaufe ich keine Stunden, sondern gel&ouml;ste Probleme, und sage offen, wenn ich etwas nicht kann.</span>
+      <span class="t en">The heartbeat is the only truly scarce currency &mdash; time is never returned. So I don&rsquo;t sell hours, I sell problems solved, and I say plainly when something is beyond me.</span>
+    </p>
+  </section>
+
+  <footer>MR73BIIO &middot; Regensdorf / &#321;ochowo &middot; PL</footer>
 
 </div>
 
