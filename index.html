@@ -1,296 +1,481 @@
 <!DOCTYPE html>
-<html lang="pl" data-lang="pl">
+<html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marcin Ruszczak — MR73BIIO</title>
-<meta name="description" content="Dane, automatyzacja, niemiecki. Python, Power Query, Linux. PL / DE / EN / RU.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR73BIIO — Marcin Ruszczak · automatyzacja danych i doradztwo DACH</title>
+<meta name="description" content="Automatyzacja procesów i danych + transgraniczne doradztwo PL↔DE. Stałe zakresy, jawne ceny.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ground:#1C1C1A;
-  --ink:#EDEBE4;
-  --muted:#8A8880;
-  --dim:#5F5E5A;
-  --accent:#5DCAA5;
-  --accent-deep:#1D9E75;
-  --rule:#33332F;
-  --sans:"IBM Plex Sans",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body{
-  background:var(--ground);color:var(--ink);
-  font-family:var(--sans);font-size:16px;line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:720px;margin:0 auto;padding:0 24px}
-[data-lang="pl"] .t:not(.pl),
-[data-lang="de"] .t:not(.de),
-[data-lang="en"] .t:not(.en){display:none}
+  :root{
+    --bg:#0D1117; --panel:#161B22; --panel-2:#11161d; --border:#21262D;
+    --ink:#E6EDF3; --muted:#8B949E;
+    --blue:#58A6FF; --green:#3FB950; --gold:#D29922; --gold-bright:#F2C94C;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.6; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(1200px 600px at 78% -8%, rgba(88,166,255,.06), transparent 60%),
+                     radial-gradient(900px 500px at 8% 4%, rgba(63,185,80,.05), transparent 60%);}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
 
-/* language switch */
-.langbar{display:flex;justify-content:flex-end;gap:4px;padding:20px 0 0}
-.langbar button{
-  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
-  background:none;border:1px solid var(--rule);color:var(--dim);
-  padding:5px 11px;cursor:pointer;border-radius:3px;
-  transition:color .15s,border-color .15s;
-}
-.langbar button:hover{color:var(--ink);border-color:var(--muted)}
-.langbar button[aria-current="true"]{color:var(--ground);background:var(--accent);border-color:var(--accent)}
-.langbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  header.bar{position:sticky; top:0; z-index:20; backdrop-filter:blur(10px); background:rgba(13,17,23,.72); border-bottom:1px solid var(--border)}
+  .bar-in{display:flex; align-items:center; justify-content:space-between; height:60px}
+  .brand{font-family:var(--mono); font-weight:800; letter-spacing:.12em; font-size:15px}
+  .brand b{color:var(--gold-bright)}
+  .langs{display:flex; gap:2px; font-family:var(--mono); font-size:12px}
+  .lang-btn{background:none; border:1px solid transparent; color:var(--muted); padding:5px 9px; border-radius:7px; cursor:pointer; font-family:inherit; letter-spacing:.08em; transition:.15s}
+  .lang-btn:hover{color:var(--ink)}
+  .lang-btn.active{color:var(--bg); background:var(--gold-bright); font-weight:700}
 
-/* hero */
-header.hero{padding:64px 0 56px;border-bottom:1px solid var(--rule)}
-.handle{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--dim);margin-bottom:18px}
-h1{font-size:clamp(2.1rem,7vw,3.1rem);font-weight:600;letter-spacing:-.02em;line-height:1.1}
-.tagline{font-size:clamp(1.15rem,3.6vw,1.5rem);color:var(--accent);margin-top:10px;font-weight:400;letter-spacing:.01em}
-.craft{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--dim);margin-top:14px}
-.lede{margin-top:28px;color:var(--ink);max-width:60ch}
-.lede+.lede{margin-top:18px;color:var(--muted)}
-.lede em{color:var(--accent);font-style:normal}
-.sig{border-top:1px solid var(--rule);padding-top:28px;margin-top:8px}
-.sig p{max-width:56ch;color:var(--muted);font-size:.95rem}
-.sig .motto{color:var(--ink);font-size:1.08rem;line-height:1.65;margin-bottom:14px;max-width:52ch}
-.sig .motto b{font-weight:500;color:var(--accent);display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;margin-bottom:10px}
-.sig .orig{display:block;margin-top:10px;font-size:.82rem;line-height:1.55;color:var(--dim);font-style:italic}
+  .hero{padding:70px 0 34px}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center}
+  .eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin:0 0 18px}
+  h1.head{font-family:var(--mono); font-weight:800; font-size:clamp(30px,4.6vw,52px); line-height:1.08; margin:0 0 20px; letter-spacing:-.01em}
+  h1.head .accent{background:linear-gradient(90deg,var(--gold-bright),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; white-space:nowrap}
+  .subhead{font-size:17px; color:#c9d3de; max-width:46ch; margin:0 0 30px}
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap}
+  .btn{font-family:var(--mono); font-size:14px; letter-spacing:.03em; text-decoration:none; padding:12px 20px; border-radius:10px; border:1px solid var(--border); transition:.18s; display:inline-block}
+  .btn.primary{background:var(--gold-bright); color:#1b1200; border-color:var(--gold-bright); font-weight:700}
+  .btn.primary:hover{filter:brightness(1.06); transform:translateY(-1px)}
+  .btn.ghost{color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--gold); color:var(--gold-bright)}
 
-/* sections */
-section{padding:52px 0;border-bottom:1px solid var(--rule)}
-h2{
-  font-family:var(--mono);font-size:12px;font-weight:500;
-  letter-spacing:.2em;color:var(--dim);margin-bottom:32px;
-}
-.item{margin-bottom:40px}
-.item:last-child{margin-bottom:0}
-h3{font-size:1.06rem;font-weight:600;margin-bottom:8px}
-h3 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent-deep)}
-h3 a:hover{color:var(--accent)}
-h3 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .coin-wrap{display:flex; flex-direction:column; align-items:center; gap:16px}
+  .coin-wrap svg{width:min(330px,72vw); height:auto; display:block; filter:drop-shadow(0 24px 60px rgba(0,0,0,.55))}
+  .triad{display:flex; gap:18px; font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; color:var(--muted); text-transform:uppercase}
+  .triad span{display:inline-flex; align-items:center; gap:6px}
+  .dot{width:8px; height:8px; border-radius:50%}
+  .pulse-base{stroke:#2f9c47}
+  .pulse-sweep{stroke:#8affa6; stroke-dasharray:16 84; stroke-dashoffset:0; animation:sweep 2.4s linear infinite}
+  @keyframes sweep{to{stroke-dashoffset:-100}}
+  .voro-bite{animation:bite 3s ease-in-out infinite}
+  @keyframes bite{0%,58%,100%{transform:translate(0,0)}64%{transform:translate(20px,2px)}70%{transform:translate(7px,0)}76%{transform:translate(17px,2px)}82%{transform:translate(0,0)}}
+  .beats{animation:rise 3s ease-in-out infinite}
+  @keyframes rise{0%,58%{opacity:0;transform:translate(0,0)}66%{opacity:.9;transform:translate(2px,-6px)}100%{opacity:0;transform:translate(22px,-84px)}}
+  .pct-beat{white-space:nowrap}
+  .pct-beat .l{display:inline-block; animation:pctbeat 2.6s ease-out infinite; animation-delay:calc(var(--i) * 0.045s); will-change:transform}
+  @keyframes pctbeat{0%{transform:translateY(0) scale(1)}6%{transform:translateY(-3px) scale(1.2); color:var(--gold-bright)}14%{transform:translateY(0) scale(1)}22%{transform:translateY(-1.5px) scale(1.08)}30%,100%{transform:translateY(0) scale(1)}}
+  .antenna{transform-box:fill-box; transform-origin:0% 100%}
+  .a1{animation:sway1 3.4s ease-in-out infinite}
+  .a2{animation:sway2 3.9s ease-in-out infinite}
+  @keyframes sway1{0%,100%{transform:rotate(0deg)}30%{transform:rotate(-4.5deg)}62%{transform:rotate(3deg)}}
+  @keyframes sway2{0%,100%{transform:rotate(0deg)}42%{transform:rotate(4deg)}72%{transform:rotate(-3.5deg)}}
 
-/* the join — signature device */
-.join{
-  font-family:var(--mono);font-size:12.5px;color:var(--dim);
-  margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;
-}
-.join b{font-weight:400;color:var(--muted)}
-.join i{font-style:normal;color:var(--accent-deep)}
-.join b:last-child{color:var(--accent)}
-.item p{color:var(--muted);max-width:62ch}
-.meta{margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px}
-.meta a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-deep)}
-.meta a:hover{color:var(--ink)}
-.meta a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.meta span.sep{color:var(--rule)}
+  /* proof bar */
+  .proofbar{display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--border); border-radius:14px; background:var(--panel-2); overflow:hidden}
+  .stat{flex:1 1 160px; padding:20px 22px; border-right:1px solid var(--border)}
+  .stat:last-child{border-right:none}
+  .stat .v{font-family:var(--mono); font-weight:800; font-size:26px; color:var(--gold-bright); line-height:1}
+  .stat .l{font-size:12.5px; color:var(--muted); margin-top:7px}
 
-/* stack */
-.rows{display:grid;gap:14px}
-.row{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:baseline}
-.row dt{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--dim);padding-top:3px}
-.row dd{color:var(--ink)}
-.row dd small{color:var(--dim);font-size:.85em}
-@media(max-width:560px){.row{grid-template-columns:1fr;gap:2px}}
+  .section{padding:60px 0; border-top:1px solid var(--border)}
+  .kicker{font-family:var(--mono); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin:0 0 8px}
+  h2.title{font-family:var(--mono); font-weight:700; font-size:clamp(22px,3vw,30px); margin:0 0 28px; letter-spacing:-.01em}
 
-/* contact */
-.mail{
-  font-family:var(--mono);font-size:1.05rem;color:var(--accent);
-  text-decoration:none;border-bottom:1px solid var(--accent-deep);
-}
-.mail:hover{color:var(--ink)}
-.mail:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.links{margin-top:20px;display:flex;flex-wrap:wrap;gap:20px}
-.links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.06em}
-.links a:hover{color:var(--accent)}
-footer{padding:36px 0 56px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--dim)}
+  .lanes{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  .lane{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:22px 22px 22px 26px; position:relative; transition:.18s; display:flex; flex-direction:column}
+  .lane:hover{border-color:#30363d; transform:translateY(-2px)}
+  .lane .ltag{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--lane-c,var(--gold)); display:block; margin-bottom:9px}
+  .lane h3{font-family:var(--mono); font-weight:700; font-size:18px; margin:0 0 8px}
+  .lane p{margin:0 0 16px; color:var(--muted); font-size:14.5px; flex:1}
+  .lane .price{font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); border-top:1px solid var(--border); padding-top:12px}
+  .lane::before{content:""; position:absolute; left:0; top:22px; bottom:22px; width:3px; border-radius:3px; background:var(--lane-c,var(--gold))}
+  .disclaimer{font-size:13px; color:var(--muted); margin-top:16px}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .step{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:24px}
+  .step .n{font-family:var(--mono); font-weight:800; font-size:15px; color:var(--bg); background:var(--gold-bright); width:32px; height:32px; border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:16px}
+  .step h3{font-family:var(--mono); font-weight:700; font-size:16px; margin:0 0 8px}
+  .step p{margin:0; color:var(--muted); font-size:14px}
+
+  .manifest{background:var(--panel-2); border:1px solid var(--border); border-radius:16px; padding:36px 40px}
+  .manifest p{font-size:18px; line-height:1.7; color:#d5dee8; margin:0; max-width:62ch}
+  .manifest .lead{font-family:var(--mono); color:var(--gold-bright); font-weight:500}
+
+  .projects{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .proj{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:22px; transition:.18s; display:flex; flex-direction:column}
+  .proj:hover{border-color:#30363d; transform:translateY(-2px)}
+  .proj .pnum{font-family:var(--mono); font-size:12px; color:var(--green); letter-spacing:.1em}
+  .proj h3{font-family:var(--mono); font-weight:700; font-size:15.5px; margin:12px 0 8px; line-height:1.3}
+  .proj p{margin:0 0 16px; color:var(--muted); font-size:14px; flex:1}
+  .proj a.link{font-family:var(--mono); font-size:13px; color:var(--blue); text-decoration:none}
+  .proj a.link:hover{text-decoration:underline}
+
+  .tags{display:flex; flex-wrap:wrap; gap:9px}
+  .tag{font-family:var(--mono); font-size:13px; color:#c9d3de; background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:7px 12px}
+
+  .contact-grid{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px}
+  .contact-grid a{font-family:var(--mono); font-size:14px; text-decoration:none; color:var(--ink); background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:12px 18px; transition:.18s}
+  .contact-grid a:hover{border-color:var(--gold); color:var(--gold-bright)}
+
+  footer{border-top:1px solid var(--border); padding:44px 0 60px; text-align:center}
+  .motto{font-family:var(--mono); font-size:14.5px; color:#c9d3de; max-width:60ch; margin:0 auto 16px; line-height:1.75}
+  .seal{font-family:var(--mono); font-size:12px; letter-spacing:.18em; color:var(--muted); text-transform:uppercase}
+  .seal b{color:var(--gold)}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1; transform:none}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr; gap:32px}
+    .coin-wrap{order:-1}
+    .lanes,.projects,.steps{grid-template-columns:1fr}
+    .manifest{padding:28px 22px}
+    .stat{border-right:none; border-bottom:1px solid var(--border)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .pulse-sweep{animation:none; opacity:0}
+    .voro-bite,.beats{animation:none}
+    .pct-beat .l{animation:none}
+    .antenna{animation:none}
+    .reveal{transition:none}
+    html{scroll-behavior:auto}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <nav class="langbar" aria-label="Język / Sprache / Language">
-    <button data-set="pl" aria-current="true">PL</button>
-    <button data-set="de" aria-current="false">DE</button>
-    <button data-set="en" aria-current="false">EN</button>
-  </nav>
-
-  <header class="hero">
-    <div class="handle">MR73BIIO</div>
-    <h1>Marcin Ruszczak</h1>
-    <p class="tagline">Pulsus Cordis Tui</p>
-    <p class="craft">
-      <span class="t pl">DANE &middot; AUTOMATYZACJA &middot; CZTERY J&#280;ZYKI</span>
-      <span class="t de">DATEN &middot; AUTOMATISIERUNG &middot; VIER SPRACHEN</span>
-      <span class="t en">DATA &middot; AUTOMATION &middot; FOUR LANGUAGES</span>
-    </p>
-    <p class="lede">
-      <span class="t pl">Pasjonat nowych technologii i rozwoju osobistego. Buduj&#281; rzeczy, kt&#243;re &#322;&#261;cz&#261; to, czego nikt nie chce &#322;&#261;czy&#263;: SKU z czterech marketplace&rsquo;&oacute;w w jeden wiersz, pomiar w terenie z decyzj&#261;, dokumentacj&#281; z wykonawc&#261;. Python, Linux, Power Query &mdash; i cztery j&#281;zyki, bo dane rzadko przychodz&#261; w jednym.</span>
-      <span class="t de">Begeistert von neuen Technologien und von der eigenen Weiterentwicklung. Ich baue Dinge, die verbinden, was niemand verbinden will: SKUs aus vier Marktpl&auml;tzen in einer Zeile, eine Feldmessung mit einer Entscheidung, eine Dokumentation mit dem Ausf&uuml;hrenden. Python, Linux, Power Query &mdash; und vier Sprachen, denn Daten kommen selten in nur einer.</span>
-      <span class="t en">Passionate about new technology and about developing myself. I build things that join what nobody wants to join: SKUs from four marketplaces into a single row, a field measurement to a decision, documentation to the person doing the work. Python, Linux, Power Query &mdash; and four languages, because data rarely arrives in only one.</span>
-    </p>
-    <p class="lede">
-      <span class="t pl">Wcze&#347;niej lata na rusztowaniach w niemieckoj&#281;zycznej Szwajcarii. <em>Rusztowanie to konstrukcja tymczasowa, kt&#243;ra musi trzyma&#263; jak co&#347; sta&#322;ego</em> &mdash; po to, &#380;eby kto&#347; inny m&#243;g&#322; postawi&#263; co&#347; trwa&#322;ego. Niemiecki mam stamt&#261;d, nie z kursu. I stamt&#261;d mam te&#380; jedno: <em>ka&#380;dego dnia buduj&#281; siebie od nowa</em>. Rusztowanie te&#380; stawia si&#281; co rano &mdash; nie raz na zawsze.</span>
-      <span class="t de">Davor Jahre auf Ger&uuml;sten in der deutschsprachigen Schweiz. <em>Ein Ger&uuml;st ist ein Provisorium, das halten muss wie etwas Festes</em> &mdash; damit jemand anders etwas Dauerhaftes bauen kann. Mein Deutsch kommt von dort, nicht aus einem Kurs. Und von dort kommt noch etwas: <em>jeden Tag baue ich mich neu auf</em>. Auch ein Ger&uuml;st wird jeden Morgen gestellt &mdash; nicht ein f&uuml;r alle Mal.</span>
-      <span class="t en">Before that, years on scaffolding in German-speaking Switzerland. <em>Scaffolding is a temporary structure that has to hold like a permanent one</em> &mdash; so that someone else can build something that lasts. My German comes from there, not from a classroom. And so does this: <em>every day I build myself again</em>. Scaffolding, too, goes up every morning &mdash; not once and for all.</span>
-    </p>
-  </header>
-
-  <section>
-    <h2>
-      <span class="t pl">PROJEKTY</span>
-      <span class="t de">PROJEKTE</span>
-      <span class="t en">WORK</span>
-    </h2>
-
-    <div class="item">
-      <h3><a href="https://github.com/MR73BIIO/baza-drzew">baza-drzew</a></h3>
-      <p class="join">
-        <b><span class="t pl">pomiar w terenie</span><span class="t de">Feldaufnahme</span><span class="t en">field survey</span></b>
-        <i>&rarr;</i>
-        <b><span class="t pl">weryfikacja</span><span class="t de">Pr&uuml;fung</span><span class="t en">validation</span></b>
-        <i>&rarr;</i>
-        <b><span class="t pl">drzewa do przegl&#261;du</span><span class="t de">B&auml;ume mit Pr&uuml;fbedarf</span><span class="t en">trees flagged for inspection</span></b>
-      </p>
-      <p>
-        <span class="t pl">Narz&#281;dzie w Pythonie do inwentaryzacji drzew: gatunek, stan, wsp&#243;&#322;rz&#281;dne GPS. Wyszukiwanie, filtrowanie po stanie, oznaczanie drzew wymagaj&#261;cych przegl&#261;du bezpiecze&#324;stwa, odleg&#322;o&#347;&#263; mi&#281;dzy drzewami, zapis i wczytanie CSV. Powsta&#322;o z realnej pracy przy drzewach, nie z kursu. Kod publiczny, testy w pytest &mdash; po jednym na ka&#380;d&#261; funkcj&#281; plus przypadki brzegowe.</span>
-        <span class="t de">Python-Werkzeug f&uuml;r Baumkataster: Art, Zustand, GPS-Koordinaten. Suche, Filter nach Zustand, Kennzeichnung von B&auml;umen mit Pr&uuml;fbedarf, Entfernungsberechnung, CSV-Export und -Import. Entstanden aus echter Arbeit am Baum, nicht aus einem Kurs. Quellcode &ouml;ffentlich, Tests mit pytest &mdash; einer je Kernfunktion plus Randf&auml;lle.</span>
-        <span class="t en">A Python tool for tree inventory: species, condition, GPS coordinates. Search, filter by condition, flag trees needing a safety inspection, measure distance between trees, save and load CSV. It grew out of real work with trees, not a course. Source public, pytest suite &mdash; one test per core function plus edge cases.</span>
-      </p>
-      <p class="meta">
-        <a href="https://youtu.be/wu61kIDfXBk"><span class="t pl">DEMO WIDEO</span><span class="t de">VIDEO-DEMO</span><span class="t en">VIDEO DEMO</span></a>
-        <span class="sep">/</span>
-        <a href="https://github.com/MR73BIIO/baza-drzew"><span class="t pl">KOD</span><span class="t de">QUELLCODE</span><span class="t en">SOURCE</span></a>
-        <span class="sep">/</span>
-        <span>PYTHON &middot; PYTEST &middot; MIT</span>
-      </p>
+<header class="bar">
+  <div class="wrap bar-in">
+    <div class="brand"><b>MR73BIIO</b></div>
+    <div class="langs" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="pl">PL</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+      <button class="lang-btn" data-lang="en">EN</button>
     </div>
+  </div>
+</header>
 
-    <div class="item">
-      <h3>
-        <span class="t pl">System przetwarzania danych w trybie ciągłym</span>
-        <span class="t de">Datenverarbeitung im Dauerbetrieb</span>
-        <span class="t en">Continuous data processing system</span>
-      </h3>
-      <p class="join">
-        <b><span class="t pl">strumień danych</span><span class="t de">Datenstrom</span><span class="t en">data stream</span></b>
-        <i>→</i>
-        <b><span class="t pl">rekonsyliacja</span><span class="t de">Abgleich</span><span class="t en">reconciliation</span></b>
-        <i>→</i>
-        <b><span class="t pl">decyzja</span><span class="t de">Entscheidung</span><span class="t en">decision</span></b>
-      </p>
-      <p>
-        <span class="t pl">Aplikacja w Pythonie przetwarzająca strumienie danych finansowych w czasie rzeczywistym: parsowanie, uzgadnianie pozycji i opłat, reakcja bez udziału człowieka. Praca 24/7 na własnym serwerze Linux — usługa systemd, automatyczny restart po awarii, monitoring, kopie zapasowe. Tu awaria kosztuje realne pieniądze, więc niezawodność nie jest deklaracją.</span>
-        <span class="t de">Python-Anwendung, die Finanzdatenströme in Echtzeit verarbeitet: Parsing, Abgleich von Positionen und Gebühren, Reaktion ohne menschliches Zutun. 24/7-Betrieb auf eigenem Linux-Server — systemd-Dienst, automatischer Neustart nach Ausfall, Monitoring, Backups. Ein Ausfall kostet hier echtes Geld, Zuverlässigkeit ist also keine Behauptung.</span>
-        <span class="t en">A Python application processing financial data streams in real time: parsing, reconciling positions and fees, acting without human input. Running 24/7 on my own Linux server — systemd service, automatic restart after failure, monitoring, backups. Downtime here costs real money, so reliability isn't a claim.</span>
-      </p>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow"><span class="pct-beat" aria-label="Pulsus Cordis Tui"><span class="l" style="--i:0">P</span><span class="l" style="--i:1">u</span><span class="l" style="--i:2">l</span><span class="l" style="--i:3">s</span><span class="l" style="--i:4">u</span><span class="l" style="--i:5">s</span> <span class="l" style="--i:6">C</span><span class="l" style="--i:7">o</span><span class="l" style="--i:8">r</span><span class="l" style="--i:9">d</span><span class="l" style="--i:10">i</span><span class="l" style="--i:11">s</span> <span class="l" style="--i:12">T</span><span class="l" style="--i:13">u</span><span class="l" style="--i:14">i</span></span> <span data-i18n="eyebrow_tail">· moneta czasu</span></p>
+        <h1 class="head"><span data-i18n="h1a">Oddaję Ci najdroższą walutę —</span> <span class="accent" data-i18n="h1b">czas.</span></h1>
+        <p class="subhead" data-i18n="subhead">Automatyzacja procesów i danych oraz transgraniczne doradztwo PL↔DE. 22 lata doświadczenia operacyjnego — dziś w kodzie.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#kontakt" data-i18n="cta1">Umów bezpłatną diagnozę</a>
+          <a class="btn ghost" href="#uslugi" data-i18n="cta2">Cennik i zakres</a>
+        </div>
+      </div>
+      <div class="coin-wrap">
+        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Voro">
+          <defs>
+            <radialGradient id="bg" cx="48%" cy="40%" r="72%"><stop offset="0%" stop-color="#19232f"/><stop offset="68%" stop-color="#0f151d"/><stop offset="100%" stop-color="#0D1117"/></radialGradient>
+            <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#58A6FF"/><stop offset="50%" stop-color="#3FB950"/><stop offset="100%" stop-color="#D29922"/></linearGradient>
+            <linearGradient id="body" x1="0.1" y1="0" x2="0.6" y2="1"><stop offset="0%" stop-color="#F2C94C"/><stop offset="55%" stop-color="#D29922"/><stop offset="100%" stop-color="#A9760F"/></linearGradient>
+            <linearGradient id="head" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#E7B948"/><stop offset="100%" stop-color="#9E6A0C"/></linearGradient>
+            <radialGradient id="coin" cx="42%" cy="38%" r="75%"><stop offset="0%" stop-color="#1c2530"/><stop offset="100%" stop-color="#10161d"/></radialGradient>
+            <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F2C94C"/><stop offset="100%" stop-color="#B4790F"/></linearGradient>
+          </defs>
+          <circle cx="500" cy="500" r="500" fill="url(#bg)"/>
+          <circle cx="500" cy="500" r="486" fill="none" stroke="url(#ring)" stroke-width="8" opacity="0.55"/>
+          <ellipse cx="430" cy="700" rx="240" ry="34" fill="#000" opacity="0.28"/>
+          <g>
+            <circle cx="742" cy="500" r="122" fill="url(#rim)"/>
+            <circle cx="742" cy="500" r="107" fill="url(#coin)"/>
+            <circle cx="742" cy="500" r="99" fill="none" stroke="#D29922" stroke-width="2" opacity="0.35"/>
+            <path class="pulse-base" d="M672 500 H700 L712 470 L726 540 L742 452 L758 548 L772 500 H812" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="pulse-sweep" pathLength="100" d="M672 500 H700 L712 470 L726 540 L742 452 L758 548 L772 500 H812" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="707" y="421.4" transform="rotate(-24 707 421.4)" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono',monospace" font-weight="800" font-size="46" fill="#F2C94C">V</text>
+            <text x="730" y="414.8" transform="rotate(-8 730 414.8)" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono',monospace" font-weight="800" font-size="46" fill="#F2C94C">O</text>
+            <text x="754" y="414.8" transform="rotate(8 754 414.8)" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono',monospace" font-weight="800" font-size="46" fill="#F2C94C">R</text>
+            <text x="777" y="421.4" transform="rotate(24 777 421.4)" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono',monospace" font-weight="800" font-size="46" fill="#F2C94C">O</text>
+            <text x="742" y="572" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono',monospace" font-weight="500" font-size="17" letter-spacing="2" fill="#C99A2E">MONETA · TEMPORIS</text>
+            <circle cx="628" cy="500" r="56" fill="url(#bg)"/><circle cx="650" cy="454" r="24" fill="url(#bg)"/><circle cx="650" cy="546" r="24" fill="url(#bg)"/>
+            <circle cx="706" cy="500" r="9" fill="#58A6FF" opacity="0.9"/><circle cx="730" cy="470" r="6" fill="#58A6FF" opacity="0.7"/><circle cx="730" cy="530" r="6" fill="#58A6FF" opacity="0.7"/>
+          </g>
+          <g class="beats"><circle cx="856" cy="392" r="8" fill="#D29922" opacity="0.8"/><circle cx="884" cy="352" r="5" fill="#D29922" opacity="0.6"/><circle cx="838" cy="356" r="4" fill="#58A6FF" opacity="0.6"/></g>
+          <g class="voro-bite">
+            <g stroke="#8a5f10" stroke-width="16" stroke-linecap="round" opacity="0.5"><path d="M312 566 L276 652"/><path d="M400 574 L384 662"/><path d="M478 568 L480 656"/></g>
+            <ellipse cx="312" cy="524" rx="150" ry="112" fill="url(#body)"/>
+            <g stroke="#96660c" stroke-width="6" opacity="0.4" fill="none" stroke-linecap="round"><path d="M244 456 Q230 524 252 592"/><path d="M322 446 Q312 524 330 602"/><path d="M400 456 Q394 524 408 592"/></g>
+            <ellipse cx="474" cy="512" rx="92" ry="84" fill="url(#body)"/>
+            <g stroke="#a9760f" stroke-width="20" stroke-linecap="round"><path d="M340 582 L312 690"/><path d="M436 594 L430 700"/><path d="M520 584 L544 688"/></g>
+            <circle cx="556" cy="500" r="76" fill="url(#head)"/>
+            <g fill="#75500a"><path d="M620 470 Q694 468 712 500 Q668 492 624 502 Z"/><path d="M620 530 Q694 532 712 500 Q668 508 624 498 Z"/></g>
+            <g class="antenna a1" stroke="#c98f1c" stroke-width="9" fill="none" stroke-linecap="round"><path d="M534 452 Q550 392 600 368"/><circle cx="600" cy="368" r="10" fill="#e7b948" stroke="none"/></g>
+            <g class="antenna a2" stroke="#c98f1c" stroke-width="9" fill="none" stroke-linecap="round"><path d="M550 440 Q584 404 634 406"/><circle cx="634" cy="406" r="9" fill="#e7b948" stroke="none"/></g>
+            <circle cx="570" cy="484" r="20" fill="#fff"/><circle cx="577" cy="486" r="10" fill="#1b1200"/><circle cx="566" cy="478" r="4" fill="#fff"/>
+          </g>
+        </svg>
+        <div class="triad">
+          <span><i class="dot" style="background:var(--blue)"></i>Python</span>
+          <span><i class="dot" style="background:var(--green)"></i>ETL</span>
+          <span><i class="dot" style="background:var(--gold)"></i>Automation</span>
+        </div>
+      </div>
     </div>
-
-    <div class="item">
-      <h3>
-        <span class="t pl">Tłumaczenie techniczne PL → DE</span>
-        <span class="t de">Fachübersetzung PL → DE</span>
-        <span class="t en">Technical translation PL → DE</span>
-      </h3>
-      <p class="join">
-        <b><span class="t pl">polski opis techniczny</span><span class="t de">polnische Fachbeschreibung</span><span class="t en">Polish technical text</span></b>
-        <i>→</i>
-        <b><span class="t pl">niemiecki, który przejdzie u inwestora</span><span class="t de">Deutsch, das beim Bauherrn besteht</span><span class="t en">German that holds up with the client</span></b>
-      </p>
-      <p>
-        <span class="t pl">Fragment dokumentacji z branży budowlanej, tłumaczony z polskiego na niemiecki. Układ dwukolumnowy: źródło i tłumaczenie obok siebie. Terminologia, rejestr, spójność. Specjalizacja: budownictwo i przemysł, dokumentacja techniczna, umowy, korespondencja z urzędami i firmami w DACH.</span>
-        <span class="t de">Auszug aus einer Bau-Dokumentation, aus dem Polnischen ins Deutsche übersetzt. Zweispaltig: Quelle und Übersetzung nebeneinander. Terminologie, Register, Konsistenz. Schwerpunkt: Bau und Industrie, technische Dokumentation, Verträge, Behörden- und Firmenkorrespondenz im DACH-Raum.</span>
-        <span class="t en">An extract of construction-industry documentation, translated Polish to German. Two columns: source and translation side by side. Terminology, register, consistency. Focus: construction and industry, technical documentation, contracts, correspondence with authorities and firms across the DACH region.</span>
-      </p>
+    <div class="wrap" style="margin-top:30px">
+      <div class="proofbar reveal">
+        <div class="stat"><div class="v">22</div><div class="l" data-i18n="st1">lata operacji międzynarodowych</div></div>
+        <div class="stat"><div class="v">31</div><div class="l" data-i18n="st2">lat kariery zawodowej</div></div>
+        <div class="stat"><div class="v">CS50P</div><div class="l" data-i18n="st3">certyfikat Harvard</div></div>
+        <div class="stat"><div class="v">4</div><div class="l" data-i18n="st4">języki: PL · DE · EN · RU</div></div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>
-      <span class="t pl">WARSZTAT</span>
-      <span class="t de">WERKZEUG</span>
-      <span class="t en">TOOLING</span>
-    </h2>
-    <dl class="rows">
-      <div class="row">
-        <dt>PYTHON</dt>
-        <dd>REST API, <span class="t pl">automatyzacja procesów, przetwarzanie i porządkowanie danych</span><span class="t de">Prozessautomatisierung, Datenaufbereitung</span><span class="t en">process automation, data wrangling</span> <small>— CS50P (Harvard / edX)</small></dd>
+  <!-- SERVICES + PRICING -->
+  <section class="section" id="uslugi">
+    <div class="wrap reveal">
+      <p class="kicker" data-i18n="k_lanes">Stałe zakresy, jawne ceny</p>
+      <h2 class="title" data-i18n="t_lanes">Usługi i ceny</h2>
+      <div class="lanes">
+        <div class="lane" style="--lane-c:var(--blue)">
+          <span class="ltag" data-i18n="l1t">Diagnoza</span>
+          <h3 data-i18n="l1h">Diagnoza czasu</h3>
+          <p data-i18n="l1p">Audyt: gdzie wyciekają Twoje godziny — ręczne procesy, chaos w danych, tarcie PL↔DE.</p>
+          <div class="price" data-i18n="l1price">150–300 EUR</div>
+        </div>
+        <div class="lane" style="--lane-c:var(--green)">
+          <span class="ltag" data-i18n="l2t">Budowa</span>
+          <h3 data-i18n="l2h">Rusztowanie (ETL / automatyzacja)</h3>
+          <p data-i18n="l2p">Pipeline’y, dashboardy, automaty, VPS. Tymczasowa struktura, która zostaje Twoja.</p>
+          <div class="price" data-i18n="l2price">od 500 EUR</div>
+        </div>
+        <div class="lane" style="--lane-c:var(--gold)">
+          <span class="ltag" data-i18n="l3t">Doradztwo</span>
+          <h3 data-i18n="l3h">Most DACH</h3>
+          <p data-i18n="l3p">Transgraniczne doradztwo i tłumaczenia: 22 lata operacji i języki po obu stronach granicy.</p>
+          <div class="price" data-i18n="l3price">80–120 EUR/h</div>
+        </div>
+        <div class="lane" style="--lane-c:var(--muted)">
+          <span class="ltag" data-i18n="l4t">Opieka</span>
+          <h3 data-i18n="l4h">Opieka</h3>
+          <p data-i18n="l4p">Lekki, stały nadzór — żeby to dalej działało bez Ciebie.</p>
+          <div class="price" data-i18n="l4price">200–400 EUR/mies.</div>
+        </div>
       </div>
-      <div class="row">
-        <dt>LINUX</dt>
-        <dd>Ubuntu, VPS, systemd, <span class="t pl">wdrożenia i utrzymanie</span><span class="t de">Deployment und Betrieb</span><span class="t en">deployment and operations</span> <small>— CS50 Cybersecurity <span class="t pl">(w trakcie)</span><span class="t de">(laufend)</span><span class="t en">(in progress)</span></small></dd>
-      </div>
-      <div class="row">
-        <dt>DANE</dt>
-        <dd>Power Query, Power BI, SQL, ETL</dd>
-      </div>
-      <div class="row">
-        <dt>JĘZYKI</dt>
-        <dd>
-          <span class="t pl">Polski natywnie · niemiecki zawodowo · angielski i rosyjski w stopniu roboczym</span>
-          <span class="t de">Polnisch muttersprachlich · Deutsch verhandlungssicher · Englisch und Russisch arbeitsfähig</span>
-          <span class="t en">Polish native · German professional · English and Russian working</span>
-        </dd>
-      </div>
-    </dl>
+      <p class="disclaimer" data-i18n="disc">Ceny orientacyjne (netto). Dokładna wycena po bezpłatnej diagnozie.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>
-      <span class="t pl">KONTAKT</span>
-      <span class="t de">KONTAKT</span>
-      <span class="t en">CONTACT</span>
-    </h2>
-    <p><a class="mail" href="mailto:ruszczak11@gmail.com">ruszczak11@gmail.com</a></p>
-    <p style="margin-top:18px;color:var(--muted);max-width:60ch">
-      <span class="t pl">Pracuję zdalnie i konkretnie. Odpowiadam w ciągu doby, terminów dotrzymuję.</span>
-      <span class="t de">Ich arbeite aus der Ferne und auf den Punkt. Antwort binnen 24 Stunden, Termine werden gehalten.</span>
-      <span class="t en">I work remotely and to the point. Reply within 24 hours, deadlines kept.</span>
-    </p>
-    <p class="links">
-      <a href="https://github.com/MR73BIIO">GITHUB</a>
-      <a href="https://www.linkedin.com/in/marcin-ruszczak-27b37b19b">LINKEDIN</a>
-      <a href="https://useme.com/pl/roles/contractor/marcin-ruszczak,671244/">USEME</a>
-    </p>
+  <!-- HOW IT WORKS -->
+  <section class="section" id="jak-dziala">
+    <div class="wrap reveal">
+      <p class="kicker" data-i18n="k_how">Prosto i bez niespodzianek</p>
+      <h2 class="title" data-i18n="t_how">Jak to działa</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3 data-i18n="s1h">Diagnoza</h3>
+          <p data-i18n="s1p">15 minut, bezpłatnie. Ustalamy problem — i czy w ogóle mogę pomóc.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3 data-i18n="s2h">Wycena</h3>
+          <p data-i18n="s2p">Stała cena za zakres, nie godzinówka. Wiesz z góry, ile i za co.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3 data-i18n="s3h">Dostawa</h3>
+          <p data-i18n="s3p">Działa, z dokumentacją i wsparciem. Zostaje Twoje.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="sig">
-    <p class="motto">
-      <b>OD 1998</b>
-      <span class="t pl">&bdquo;Ka&#380;da idea, kt&#243;ra rodzi si&#281; uczciwie w biciu serca, mo&#380;e przekroczy&#263; ka&#380;d&#261; granic&#281;, a jej czas ma wi&#281;ksz&#261; wag&#281; ni&#380; ka&#380;da waluta.&rdquo;</span>
-      <span class="t de">&bdquo;Jede Idee, die ehrlich im Herzschlag entsteht, kann jede Grenze &uuml;berschreiten &mdash; und ihre Zeit wiegt schwerer als jede W&auml;hrung.&ldquo;<span class="orig">Ka&#380;da idea, kt&#243;ra rodzi si&#281; uczciwie w biciu serca, mo&#380;e przekroczy&#263; ka&#380;d&#261; granic&#281;, a jej czas ma wi&#281;ksz&#261; wag&#281; ni&#380; ka&#380;da waluta. &mdash; polnisches Original</span></span>
-      <span class="t en">&ldquo;Every idea born honestly in a heartbeat can cross any border &mdash; and its time weighs more than any currency.&rdquo;<span class="orig">Ka&#380;da idea, kt&#243;ra rodzi si&#281; uczciwie w biciu serca, mo&#380;e przekroczy&#263; ka&#380;d&#261; granic&#281;, a jej czas ma wi&#281;ksz&#261; wag&#281; ni&#380; ka&#380;da waluta. &mdash; Polish original</span></span>
-    </p>
-    <p>
-      <span class="t pl">Bicie serca jest jedyn&#261; naprawd&#281; rzadk&#261; walut&#261; &mdash; czasu si&#281; nie odzyskuje. Dlatego nie sprzedaj&#281; godzin, tylko rozwi&#261;zane problemy, i m&#243;wi&#281; wprost, gdy czego&#347; nie umiem.</span>
-      <span class="t de">Der Herzschlag ist die einzige wirklich knappe W&auml;hrung &mdash; Zeit bekommt man nicht zur&uuml;ck. Deshalb verkaufe ich keine Stunden, sondern gel&ouml;ste Probleme, und sage offen, wenn ich etwas nicht kann.</span>
-      <span class="t en">The heartbeat is the only truly scarce currency &mdash; time is never returned. So I don&rsquo;t sell hours, I sell problems solved, and I say plainly when something is beyond me.</span>
-    </p>
+  <!-- PROJECTS -->
+  <section class="section" id="projekty">
+    <div class="wrap reveal">
+      <p class="kicker" data-i18n="k_proj">Dowód, nie deklaracja</p>
+      <h2 class="title" data-i18n="t_proj">Zbudowane</h2>
+      <div class="projects">
+        <div class="proj">
+          <span class="pnum" data-i18n="p1tag">Dane · GIS</span>
+          <h3>Drone Survey → GIS-Ready Cadastre</h3>
+          <p data-i18n="p1p">Inwentaryzacja drzew z drona w Pythonie + QGIS — od surowych detekcji do gotowego katastru.</p>
+          <a class="link" href="https://github.com/MR73BIIO/baza-drzew" target="_blank" rel="noopener" data-i18n="p1link">Repo + demo ↗</a>
+        </div>
+        <div class="proj">
+          <span class="pnum" data-i18n="p2tag">Automatyzacja</span>
+          <h3>Market-Data ETL → Gap-Free Archive</h3>
+          <p data-i18n="p2p">Automatyczny pipeline ETL: pobiera dane z API, deduplikuje, wypełnia luki, waliduje 100% pokrycia.</p>
+          <a class="link" href="https://www.upwork.com/freelancers/~0181c636507bece80f" target="_blank" rel="noopener" data-i18n="p_ask">Szczegóły na Upworku ↗</a>
+        </div>
+        <div class="proj">
+          <span class="pnum" data-i18n="p3tag">Języki · dane</span>
+          <h3>German PDF → Clean, Structured Data</h3>
+          <p data-i18n="p3p">Ekstrakcja z niemieckich dokumentów PDF do czystego, ustrukturyzowanego CSV/Excel.</p>
+          <a class="link" href="https://www.upwork.com/freelancers/~0181c636507bece80f" target="_blank" rel="noopener" data-i18n="p_ask2">Szczegóły na Upworku ↗</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>MR73BIIO &middot; Regensdorf / &#321;ochowo &middot; PL</footer>
+  <!--
+  ============================================================
+  TESTIMONIAL — do wypełnienia prawdziwą opinią (min. 1 zdanie).
+  Odkomentuj ten blok, gdy będziesz mieć realny cytat i autora.
+  ============================================================
+  <section class="section">
+    <div class="wrap reveal">
+      <p class="kicker">Referencje</p>
+      <h2 class="title">Co mówią</h2>
+      <div class="manifest">
+        <p><span class="lead">„Prawdziwy cytat od klienta lub współpracownika."</span> — Imię, firma/rola</p>
+      </div>
+    </div>
+  </section>
+  -->
 
-</div>
+  <!-- MANIFEST (signature layer) -->
+  <section class="section">
+    <div class="wrap reveal">
+      <p class="kicker" data-i18n="k_man">Obsequium</p>
+      <h2 class="title" data-i18n="t_man">Stawiam rusztowanie, nie zależność</h2>
+      <div class="manifest">
+        <p><span class="lead" data-i18n="m_lead">Buduję strukturę, która pozwala Twojej pracy stać się trwałą — a potem schodzę.</span> <span data-i18n="m_body">To jest obsequium: służba, która oddaje sprawczość, zamiast uzależniać. Każdego dnia buduję siebie od nowa — tą samą ręką, którą buduję Twoje.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLKIT -->
+  <section class="section">
+    <div class="wrap reveal">
+      <p class="kicker" data-i18n="k_tool">Czym pracuję</p>
+      <h2 class="title" data-i18n="t_tool">Warsztat</h2>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span>
+        <span class="tag">ETL</span><span class="tag" data-i18n="tag_auto">Automatyzacja</span><span class="tag">Linux · VPS</span>
+        <span class="tag">QGIS</span><span class="tag">Git</span><span class="tag">PL · DE · EN · RU</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="kontakt">
+    <div class="wrap reveal">
+      <p class="kicker" data-i18n="k_con">Zacznijmy od bezpłatnej diagnozy</p>
+      <h2 class="title" data-i18n="t_con">Kontakt</h2>
+      <div class="contact-grid">
+        <a href="mailto:ruszczak11@gmail.com">✉ ruszczak11@gmail.com</a>
+        <a href="https://github.com/MR73BIIO" target="_blank" rel="noopener">GitHub · MR73BIIO ↗</a>
+        <a href="https://www.upwork.com/freelancers/~0181c636507bece80f" target="_blank" rel="noopener">Upwork ↗</a>
+        <a href="https://www.fiverr.com/marcinswiss" target="_blank" rel="noopener">Fiverr · marcinswiss ↗</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="#" target="_blank" rel="noopener">Useme ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="motto">„Każda idea, która rodzi się uczciwie w biciu serca, może przekroczyć każdą granicę, a jej czas ma większą wagę niż każda waluta."</p>
+    <p class="seal"><b>MR73BIIO</b> · Pulsus Cordis Tui · 1998</p>
+  </div>
+</footer>
 
 <script>
-(function(){
-  var root=document.documentElement;
-  var btns=document.querySelectorAll('.langbar button');
-  function set(l){
-    root.setAttribute('data-lang',l);
-    root.setAttribute('lang',l);
-    btns.forEach(function(b){b.setAttribute('aria-current',b.dataset.set===l?'true':'false');});
-    try{localStorage.setItem('lang',l);}catch(e){}
+const I18N = {
+  pl:{
+    eyebrow_tail:"· moneta czasu",
+    h1a:"Oddaję Ci najdroższą walutę —", h1b:"czas.",
+    subhead:"Automatyzacja procesów i danych oraz transgraniczne doradztwo PL↔DE. 22 lata doświadczenia operacyjnego — dziś w kodzie.",
+    cta1:"Umów bezpłatną diagnozę", cta2:"Cennik i zakres",
+    st1:"lata operacji międzynarodowych", st2:"lat kariery zawodowej", st3:"certyfikat Harvard", st4:"języki: PL · DE · EN · RU",
+    k_lanes:"Stałe zakresy, jawne ceny", t_lanes:"Usługi i ceny",
+    l1t:"Diagnoza", l1h:"Diagnoza czasu", l1p:"Audyt: gdzie wyciekają Twoje godziny — ręczne procesy, chaos w danych, tarcie PL↔DE.", l1price:"150–300 EUR",
+    l2t:"Budowa", l2h:"Rusztowanie (ETL / automatyzacja)", l2p:"Pipeline’y, dashboardy, automaty, VPS. Tymczasowa struktura, która zostaje Twoja.", l2price:"od 500 EUR",
+    l3t:"Doradztwo", l3h:"Most DACH", l3p:"Transgraniczne doradztwo i tłumaczenia: 22 lata operacji i języki po obu stronach granicy.", l3price:"80–120 EUR/h",
+    l4t:"Opieka", l4h:"Opieka", l4p:"Lekki, stały nadzór — żeby to dalej działało bez Ciebie.", l4price:"200–400 EUR/mies.",
+    disc:"Ceny orientacyjne (netto). Dokładna wycena po bezpłatnej diagnozie.",
+    k_how:"Prosto i bez niespodzianek", t_how:"Jak to działa",
+    s1h:"Diagnoza", s1p:"15 minut, bezpłatnie. Ustalamy problem — i czy w ogóle mogę pomóc.",
+    s2h:"Wycena", s2p:"Stała cena za zakres, nie godzinówka. Wiesz z góry, ile i za co.",
+    s3h:"Dostawa", s3p:"Działa, z dokumentacją i wsparciem. Zostaje Twoje.",
+    k_proj:"Dowód, nie deklaracja", t_proj:"Zbudowane",
+    p1tag:"Dane · GIS", p2tag:"Automatyzacja", p3tag:"Języki · dane",
+    p1p:"Inwentaryzacja drzew z drona w Pythonie + QGIS — od surowych detekcji do gotowego katastru.",
+    p2p:"Automatyczny pipeline ETL: pobiera dane z API, deduplikuje, wypełnia luki, waliduje 100% pokrycia.",
+    p3p:"Ekstrakcja z niemieckich dokumentów PDF do czystego, ustrukturyzowanego CSV/Excel.",
+    p1link:"Repo + demo ↗", p_ask:"Szczegóły na Upworku ↗", p_ask2:"Szczegóły na Upworku ↗",
+    k_man:"Obsequium", t_man:"Stawiam rusztowanie, nie zależność",
+    m_lead:"Buduję strukturę, która pozwala Twojej pracy stać się trwałą — a potem schodzę.",
+    m_body:"To jest obsequium: służba, która oddaje sprawczość, zamiast uzależniać. Każdego dnia buduję siebie od nowa — tą samą ręką, którą buduję Twoje.",
+    k_tool:"Czym pracuję", t_tool:"Warsztat", tag_auto:"Automatyzacja",
+    k_con:"Zacznijmy od bezpłatnej diagnozy", t_con:"Kontakt"
+  },
+  de:{
+    eyebrow_tail:"· Währung der Zeit",
+    h1a:"Ich gebe dir die teuerste Währung zurück —", h1b:"Zeit.",
+    subhead:"Prozess- und Datenautomatisierung plus grenzüberschreitende Beratung PL↔DE. 22 Jahre operative Erfahrung — heute im Code.",
+    cta1:"Kostenlose Diagnose buchen", cta2:"Preise & Leistungen",
+    st1:"Jahre internationaler Betrieb", st2:"Jahre Berufserfahrung", st3:"Harvard-Zertifikat", st4:"Sprachen: PL · DE · EN · RU",
+    k_lanes:"Feste Leistungen, klare Preise", t_lanes:"Leistungen & Preise",
+    l1t:"Diagnose", l1h:"Zeit-Diagnose", l1p:"Audit: wo deine Stunden verloren gehen — manuelle Prozesse, Datenchaos, PL↔DE-Reibung.", l1price:"150–300 EUR",
+    l2t:"Aufbau", l2h:"Gerüst (ETL / Automatisierung)", l2p:"Pipelines, Dashboards, Automatisierung, VPS. Eine temporäre Struktur, die dir bleibt.", l2price:"ab 500 EUR",
+    l3t:"Beratung", l3h:"DACH-Brücke", l3p:"Grenzüberschreitende Beratung und Übersetzung: 22 Jahre Betrieb und Sprachen auf beiden Seiten.", l3price:"80–120 EUR/Std.",
+    l4t:"Betreuung", l4h:"Betreuung", l4p:"Leichte, laufende Betreuung — damit es ohne dich weiterläuft.", l4price:"200–400 EUR/Mon.",
+    disc:"Richtpreise (netto). Genaues Angebot nach der kostenlosen Diagnose.",
+    k_how:"Einfach, ohne Überraschungen", t_how:"So läuft es",
+    s1h:"Diagnose", s1p:"15 Minuten, kostenlos. Wir klären das Problem — und ob ich überhaupt helfen kann.",
+    s2h:"Angebot", s2p:"Festpreis für den Umfang, kein Stundenlohn. Du weißt vorab, wie viel und wofür.",
+    s3h:"Lieferung", s3p:"Läuft, mit Dokumentation und Support. Bleibt deins.",
+    k_proj:"Beweis statt Behauptung", t_proj:"Gebaut",
+    p1tag:"Daten · GIS", p2tag:"Automatisierung", p3tag:"Sprachen · Daten",
+    p1p:"Baum-Inventar per Drohne in Python + QGIS — von Rohdetektionen bis zum fertigen Kataster.",
+    p2p:"Automatische ETL-Pipeline: holt Daten per API, dedupliziert, füllt Lücken, validiert 100% Abdeckung.",
+    p3p:"Extraktion aus deutschen PDF-Dokumenten in sauberes, strukturiertes CSV/Excel.",
+    p1link:"Repo + Demo ↗", p_ask:"Details auf Upwork ↗", p_ask2:"Details auf Upwork ↗",
+    k_man:"Obsequium", t_man:"Ich baue ein Gerüst, keine Abhängigkeit",
+    m_lead:"Ich errichte die Struktur, die deine Arbeit dauerhaft macht — und trete dann ab.",
+    m_body:"Das ist obsequium: Dienst, der Handlungsfähigkeit zurückgibt, statt zu binden. Jeden Tag baue ich mich neu auf — mit derselben Hand, mit der ich deine Sache baue.",
+    k_tool:"Womit ich arbeite", t_tool:"Werkzeug", tag_auto:"Automatisierung",
+    k_con:"Beginnen wir mit der kostenlosen Diagnose", t_con:"Kontakt"
+  },
+  en:{
+    eyebrow_tail:"· the currency of time",
+    h1a:"I give you back your most valuable currency —", h1b:"time.",
+    subhead:"Process and data automation plus cross-border PL↔DE advisory. 22 years of operations experience — now in code.",
+    cta1:"Book a free diagnosis", cta2:"Pricing & scope",
+    st1:"years of international operations", st2:"years of career", st3:"Harvard certificate", st4:"languages: PL · DE · EN · RU",
+    k_lanes:"Fixed scope, clear prices", t_lanes:"Services & pricing",
+    l1t:"Diagnosis", l1h:"Time diagnosis", l1p:"Audit: where your hours leak — manual work, data chaos, PL↔DE friction.", l1price:"150–300 EUR",
+    l2t:"Build", l2h:"Scaffolding (ETL / automation)", l2p:"Pipelines, dashboards, automation, VPS. Temporary structure that stays yours.", l2price:"from 500 EUR",
+    l3t:"Advisory", l3h:"DACH bridge", l3p:"Cross-border advisory and translation: 22 years of operations and languages on both sides.", l3price:"80–120 EUR/h",
+    l4t:"Care", l4h:"Care", l4p:"Light, ongoing oversight — so it keeps running without you.", l4price:"200–400 EUR/mo",
+    disc:"Indicative prices (net). Exact quote after the free diagnosis.",
+    k_how:"Simple, no surprises", t_how:"How it works",
+    s1h:"Diagnosis", s1p:"15 minutes, free. We define the problem — and whether I can help at all.",
+    s2h:"Quote", s2p:"Fixed price per scope, not hourly. You know upfront what and how much.",
+    s3h:"Delivery", s3p:"It works, with docs and support. It stays yours.",
+    k_proj:"Proof, not claims", t_proj:"Built",
+    p1tag:"Data · GIS", p2tag:"Automation", p3tag:"Languages · data",
+    p1p:"Drone tree inventory in Python + QGIS — from raw detections to a ready cadastre.",
+    p2p:"Automated ETL pipeline: pulls data via API, deduplicates, fills gaps, validates 100% coverage.",
+    p3p:"Extraction from German PDF documents into clean, structured CSV/Excel.",
+    p1link:"Repo + demo ↗", p_ask:"Details on Upwork ↗", p_ask2:"Details on Upwork ↗",
+    k_man:"Obsequium", t_man:"I build scaffolding, not dependence",
+    m_lead:"I put up the structure that lets your work become permanent — then I step down.",
+    m_body:"That is obsequium: service that hands back agency instead of creating reliance. Every day I rebuild myself — with the same hand I use to build yours.",
+    k_tool:"What I work with", t_tool:"Toolkit", tag_auto:"Automation",
+    k_con:"Let's start with the free diagnosis", t_con:"Contact"
   }
-  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set);});});
-  var saved=null;
-  try{saved=localStorage.getItem('lang');}catch(e){}
-  var guess=saved||(navigator.language||'pl').slice(0,2).toLowerCase();
-  set(['pl','de','en'].indexOf(guess)>-1?guess:'pl');
-})();
+};
+function setLang(lang){
+  document.documentElement.lang = lang;
+  const dict = I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(dict[k]!==undefined) el.textContent = dict[k];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=> b.classList.toggle('active', b.dataset.lang===lang));
+}
+document.querySelectorAll('.lang-btn').forEach(b=> b.addEventListener('click', ()=>setLang(b.dataset.lang)));
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
