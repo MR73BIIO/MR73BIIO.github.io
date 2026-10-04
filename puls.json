@@ -405,7 +405,26 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 21,
+   "date": "2026-10-04T21:51:05+02:00",
+   "kind": "life",
+   "plane": "pl",
+   "question": "B4: raport QA",
+   "verdict": "CONFIRMED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:ab3f12c71e7f58fc693df7b1eb04b8613ae7b93c01de1485d75d9e2961b583b4",
+   "sha_outcome": "sha256:1f15f2c7f0e6b35597a9965cf6237357ea8001b9a9b21bc11ae9b723ae6d1a5c",
+   "follows": null,
+   "resolution": null,
+   "closes": 20,
+   "status": "closed",
    "pub": []
   }
  ]
