@@ -464,6 +464,25 @@
    "closes": 22,
    "status": "closed",
    "pub": []
+  },
+  {
+   "n": 24,
+   "date": "2026-10-04T22:43:50+02:00",
+   "kind": "prediction",
+   "plane": "pl",
+   "question": "B2b: kontrola kraju",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:5cfeeaf50da4c4f7b72eca62eade31f3d700ffb2ef43d2ddaa03a2e192236956",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
