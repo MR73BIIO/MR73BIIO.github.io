@@ -350,6 +350,25 @@
    "closes": null,
    "status": "open",
    "pub": []
+  },
+  {
+   "n": 18,
+   "date": "2026-10-04T21:28:23+02:00",
+   "kind": "prediction",
+   "plane": "voro",
+   "question": "L1: pierwszy pełny oddech według konstytucji",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:43d5329fc7f00ccb797316e62bca3c4d093a5abff8154f4ccb2dfa7eaa031c15",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
