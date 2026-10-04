@@ -426,6 +426,25 @@
    "closes": 20,
    "status": "closed",
    "pub": []
+  },
+  {
+   "n": 22,
+   "date": "2026-10-04T22:17:52+02:00",
+   "kind": "prediction",
+   "plane": "pl",
+   "question": "B4a: próbka zanonimizowana",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:1bc187bf6a03e4bf254b97417ac0e05a44fa3b4dafd9411cc19e22f8d33cb2b4",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
