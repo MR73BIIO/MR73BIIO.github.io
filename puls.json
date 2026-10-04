@@ -443,7 +443,26 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 23,
+   "date": "2026-10-04T22:21:26+02:00",
+   "kind": "life",
+   "plane": "pl",
+   "question": "B4a: próbka zanonimizowana",
+   "verdict": "CONFIRMED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:1bc187bf6a03e4bf254b97417ac0e05a44fa3b4dafd9411cc19e22f8d33cb2b4",
+   "sha_outcome": "sha256:e3bd81e770421ba0cfb735d6679b7efbb1b4fd7bcbfd7ad976e5e4ad92294eda",
+   "follows": null,
+   "resolution": null,
+   "closes": 22,
+   "status": "closed",
    "pub": []
   }
  ]
