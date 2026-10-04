@@ -331,6 +331,25 @@
    "pub": [
     "https://www.upwork.com/freelancers/~0181c636507bece80f?p=2106771681090564096"
    ]
+  },
+  {
+   "n": 17,
+   "date": "2026-10-04T21:23:45+02:00",
+   "kind": "prediction",
+   "plane": "voro",
+   "question": "H1: pierwszy plon (okno 5–31.10)",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:0bc15a479500efd9a39a2afcd63b5fec5c0e6887297ca4bebc8133868746a807",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
