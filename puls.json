@@ -481,7 +481,26 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 25,
+   "date": "2026-10-04T22:45:44+02:00",
+   "kind": "life",
+   "plane": "pl",
+   "question": "B2b: kontrola kraju",
+   "verdict": "CONFIRMED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:5cfeeaf50da4c4f7b72eca62eade31f3d700ffb2ef43d2ddaa03a2e192236956",
+   "sha_outcome": "sha256:a7118a4e8b997b8bbdc62263d3b180c6ca935d38ac7199366800969090701182",
+   "follows": null,
+   "resolution": null,
+   "closes": 24,
+   "status": "closed",
    "pub": []
   }
  ]
