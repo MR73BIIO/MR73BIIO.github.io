@@ -310,25 +310,6 @@
    "closes": null,
    "status": "closed",
    "pub": []
-  },
-  {
-   "n": 16,
-   "date": "2026-10-04T16:28:31+02:00",
-   "kind": "milestone",
-   "plane": "en-gis",
-   "question": "voro-gis-qa v0.2 with a DOI on Zenodo",
-   "verdict": null,
-   "score": null,
-   "public": true,
-   "fact": "DOI of v0.2: 10.5281/zenodo.XXXX",
-   "link": "https://doi.org/10.5281/zenodo.XXXX",
-   "sha_pred": null,
-   "sha_outcome": null,
-   "follows": null,
-   "resolution": null,
-   "closes": null,
-   "status": "closed",
-   "pub": []
   }
  ]
 }
