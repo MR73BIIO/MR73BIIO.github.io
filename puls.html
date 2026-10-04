@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puls · MR73BIIO</title>
+<meta name="description" content="Puls: dziennik zamkniętych żyć pracy. Przewidywanie przed uruchomieniem, wynik, werdykt, pieczęć SHA-256.">
+<link rel="icon" href="voro_favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D1117; --panel:#161B22; --border:#21262D; --grid:#1a2129; --grid-major:#232c36;
+  --ink:#E6EDF3; --muted:#8B949E; --blue:#58A6FF;
+  --ok:#3FB950; --refuted:#D29922; --nodata:#8B949E; --gold:#F2C94C;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,.beat:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:900px;margin:0 auto;padding:40px 20px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:40px}
+.home{font-family:var(--mono);font-size:14px;color:var(--muted);text-decoration:none}
+.home:hover{color:var(--ink)}
+.lang{display:flex;gap:4px}
+.lang button{font:500 13px var(--mono);color:var(--muted);background:none;border:1px solid var(--border);border-radius:6px;padding:4px 9px;cursor:pointer}
+.lang button[aria-pressed="true"]{color:var(--ink);border-color:var(--muted)}
+h1{font:700 64px/1 var(--mono);letter-spacing:-.04em;margin:0 0 16px}
+.lede{max-width:62ch;color:var(--ink);font-size:18px;margin:0 0 8px}
+.rhythm{color:var(--muted);margin:0;font-size:15px}
+.rhythm strong{color:var(--ink);font-weight:600}
+
+/* pasek EKG: jedyny mocny element strony */
+.strip{margin:36px -20px 12px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(var(--grid-major) 1px,transparent 1px),linear-gradient(90deg,var(--grid-major) 1px,transparent 1px),
+    linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:40px 40px,40px 40px,8px 8px,8px 8px;
+  overflow-x:auto;overscroll-behavior-x:contain}
+.strip svg{display:block}
+.trace{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-linejoin:round}
+.qrs{fill:none;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.v-CONFIRMED{stroke:var(--ok)} .v-REFUTED{stroke:var(--refuted)} .v-NODATA{stroke:var(--nodata)}
+.daylbl{font:500 11px var(--mono);fill:var(--muted)}
+.nlbl{font:500 10px var(--mono);fill:var(--muted)}
+.arc{fill:none;stroke:var(--refuted);stroke-width:1.2;stroke-dasharray:4 3}
+.beat{cursor:pointer}
+.beat:hover .qrs,.beat:focus .qrs{stroke-width:3.4}
+@media (prefers-reduced-motion:no-preference){
+  .trace.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.4s ease-out forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;color:var(--muted);font-size:13px;margin:0 0 40px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.d-CONFIRMED{background:var(--ok)} .d-REFUTED{background:var(--refuted)} .d-NODATA{background:var(--nodata)}
+.d-pred{border:2px solid var(--muted);background:none}
+.d-mile{background:var(--gold);border-radius:1px;transform:rotate(45deg);width:9px;height:9px}
+.d-pause{background:none;border-top:2px dashed var(--muted);border-radius:0;height:0;width:14px}
+
+.tally{display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--border);margin:0 0 6px}
+.tally i{display:block}
+.tallytxt{color:var(--muted);font-size:13px;margin:0 0 44px}
+
+h2{font:600 20px var(--sans);margin:0 0 16px}
+.entries{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.entry{display:grid;grid-template-columns:56px 1fr;gap:4px 16px;padding:18px 0;border-bottom:1px solid var(--border);scroll-margin-top:16px}
+.entry.hl{background:linear-gradient(90deg,rgba(88,166,255,.08),transparent 70%)}
+.num{font:700 15px var(--mono);color:var(--muted);display:flex;align-items:flex-start;gap:9px;padding-top:3px}
+.num .dot{margin-top:5px}
+.meta{font:400 13px var(--mono);color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+.q{margin:4px 0 0;font-weight:600;max-width:70ch}
+.fact{margin:6px 0 0;color:var(--ink);max-width:70ch}
+.verdict{font:600 13px var(--mono)}
+.vc-CONFIRMED{color:var(--ok)} .vc-REFUTED{color:var(--refuted)} .vc-NODATA{color:var(--nodata)} .vc-mile{color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-size:12.5px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:2px 10px}
+.chip.open{color:var(--refuted);border-color:var(--refuted)}
+.chip.sealed{color:var(--ink);border-color:var(--grid-major);background:var(--panel)}
+.links{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:14px}
+.seals{margin-top:8px;display:grid;grid-template-columns:max-content minmax(0,1fr) max-content;gap:3px 10px;align-items:center}
+.seal{display:contents;font:400 12.5px var(--mono);color:var(--muted)}
+.seal span,.seal code{font:400 12.5px var(--mono);color:var(--muted)}
+.seal code{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.seal button{font:500 11.5px var(--mono);color:var(--muted);background:none;border:1px solid var(--border);border-radius:5px;padding:1px 7px;cursor:pointer;flex:none}
+.seal button:hover{color:var(--ink)}
+.verify{margin-top:52px;max-width:70ch;color:var(--muted);font-size:15px}
+.verify h2{color:var(--ink)}
+.verify pre{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;font:13px/1.5 var(--mono);color:var(--ink)}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+.err{color:var(--refuted)}
+@media (max-width:560px){h1{font-size:48px}.entry{grid-template-columns:44px 1fr}.lede{font-size:16.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="home" href="https://mr73biio.github.io/">mr73biio.github.io</a>
+    <div class="lang" role="group" aria-label="Język">
+      <button data-l="pl">PL</button><button data-l="de">DE</button><button data-l="en">EN</button>
+    </div>
+  </div>
+
+  <h1>Puls</h1>
+  <p class="lede" data-t="lede"></p>
+  <p class="rhythm" id="rhythm"></p>
+
+  <div class="strip" id="strip" aria-label="EKG"></div>
+  <div class="legend" id="legend"></div>
+
+  <div class="tally" id="tally" aria-hidden="true"></div>
+  <p class="tallytxt" id="tallytxt"></p>
+
+  <h2 data-t="entries"></h2>
+  <ol class="entries" id="list" reversed></ol>
+
+  <section class="verify">
+    <h2 data-t="vh"></h2>
+    <p data-t="v1"></p>
+    <pre>git show &lt;commit&gt;:&lt;path&gt; | sha256sum
+git cat-file -t &lt;commit&gt;</pre>
+    <p data-t="v2"></p>
+  </section>
+
+  <footer>
+    <span>Marcin Ruszczak · MR73BIIO</span>
+    <span>PL · DE · RU · EN</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+const T={
+ pl:{lede:"Każde uderzenie to jedno zamknięte życie pracy: przewidywanie zapisane w gicie przed uruchomieniem, potem wynik i werdykt. REFUTED liczy się tak samo jak CONFIRMED, a każdy wpis ma pieczęć, którą da się sprawdzić.",
+   rhythm:(n,m)=>`Deklarowany rytm: co najmniej ${m} zamknięte życia w tygodniu. Ten tydzień: <strong>${n}</strong>.`,
+   entries:"Wpisy", life:"życie", prediction:"przewidywanie", milestone:"kamień milowy", pause:"przerwa",
+   lg_pred:"przewidywanie, wynik jeszcze nieznany", lg_mile:"kamień milowy", lg_pause:"przerwa", lg_arc:"diagnoza po REFUTED",
+   tally:(c,r,d)=>`${c} CONFIRMED, ${r} REFUTED, ${d} NO DATA`,
+   sealed:"zapieczętowane do decyzji", open:"otwarte: czeka na diagnozę", pre:"zamknięte konsekwencją zapisaną przed wynikiem",
+   follows:n=>`diagnoza po #${n}`, followed:n=>`diagnoza: #${n}`, closes:n=>`zamyka przewidywanie #${n}`, waiting:"czeka na wynik",
+   evidence:"dowód", pub:"publikacja", s_pred:"przewidywanie", s_out:"wynik", copy:"kopiuj", copied:"skopiowano",
+   vh:"Jak sprawdzić pieczęć",
+   v1:"sha256 to skrót pliku przewidywania lub OUTCOME w commicie, w którym powstał. git to identyfikator commita z wynikiem, obejmuje cały stan repozytorium. Oba można sprawdzić poleceniami:",
+   v2:"Wpisy zapieczętowane mają już pieczęć, ale treść otworzę dopiero po decyzji. Wtedy każdy może policzyć skrót i zobaczyć, że plik nie zmienił się od tej daty.",
+   err:"Nie udało się wczytać puls.json."},
+ de:{lede:"Jeder Schlag ist ein abgeschlossenes Arbeitsleben: eine Vorhersage, die vor dem Lauf in Git steht, dann Ergebnis und Urteil. REFUTED zählt genauso wie CONFIRMED, und jeder Eintrag trägt ein Siegel, das man prüfen kann.",
+   rhythm:(n,m)=>`Zugesagter Rhythmus: mindestens ${m} abgeschlossene Leben pro Woche. Diese Woche: <strong>${n}</strong>.`,
+   entries:"Einträge", life:"Leben", prediction:"Vorhersage", milestone:"Meilenstein", pause:"Pause",
+   lg_pred:"Vorhersage, Ergebnis noch offen", lg_mile:"Meilenstein", lg_pause:"Pause", lg_arc:"Diagnose nach REFUTED",
+   tally:(c,r,d)=>`${c} CONFIRMED, ${r} REFUTED, ${d} NO DATA`,
+   sealed:"versiegelt bis zur Entscheidung", open:"offen: Diagnose fehlt", pre:"abgeschlossen durch vorab festgelegte Konsequenz",
+   follows:n=>`Diagnose nach #${n}`, followed:n=>`Diagnose: #${n}`, closes:n=>`schließt Vorhersage #${n}`, waiting:"wartet auf Ergebnis",
+   evidence:"Beleg", pub:"Veröffentlichung", s_pred:"Vorhersage", s_out:"Ergebnis", copy:"kopieren", copied:"kopiert",
+   vh:"Wie man ein Siegel prüft",
+   v1:"sha256 ist der Hash der Vorhersage- oder OUTCOME-Datei im Commit, in dem sie entstand. git ist die Kennung des Ergebnis-Commits und deckt den ganzen Stand des Repos ab. Beides lässt sich so prüfen:",
+   v2:"Versiegelte Einträge haben ihr Siegel schon, der Inhalt öffnet sich erst nach der Entscheidung. Dann kann jeder den Hash nachrechnen und sehen, dass sich die Datei seit diesem Datum nicht geändert hat.",
+   err:"puls.json konnte nicht geladen werden."},
+ en:{lede:"Each beat is one closed working life: a prediction committed to git before the run, then the result and the verdict. REFUTED counts as much as CONFIRMED, and every entry carries a seal anyone can check.",
+   rhythm:(n,m)=>`Declared rhythm: at least ${m} closed lives a week. This week: <strong>${n}</strong>.`,
+   entries:"Entries", life:"life", prediction:"prediction", milestone:"milestone", pause:"pause",
+   lg_pred:"prediction, result not known yet", lg_mile:"milestone", lg_pause:"pause", lg_arc:"diagnosis after REFUTED",
+   tally:(c,r,d)=>`${c} CONFIRMED, ${r} REFUTED, ${d} NO DATA`,
+   sealed:"sealed until the decision", open:"open: waiting for a diagnosis", pre:"closed by a consequence written before the result",
+   follows:n=>`diagnosis after #${n}`, followed:n=>`diagnosis: #${n}`, closes:n=>`closes prediction #${n}`, waiting:"waiting for the result",
+   evidence:"evidence", pub:"publication", s_pred:"prediction", s_out:"result", copy:"copy", copied:"copied",
+   vh:"How to check a seal",
+   v1:"sha256 is the hash of the prediction or OUTCOME file in the commit where it was created. git is the id of the result commit and covers the whole state of the repository. Both can be checked with:",
+   v2:"Sealed entries already have their seal; the content opens after the decision. Then anyone can compute the hash and see that the file has not changed since that date.",
+   err:"Could not load puls.json."}
+};
+let lang="pl", DOC=null;
+try{const s=localStorage.getItem("puls-lang"); if(T[s]) lang=s;}catch(e){}
+const $=id=>document.getElementById(id);
+const vk=v=>v?v.replace(" ",""):"";
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+
+function status(e,E){
+  if(e.kind==="prediction") return E.some(x=>x.closes===e.n)?"closed":"open";
+  if(e.kind==="life"&&e.verdict==="REFUTED") return (E.some(x=>x.follows===e.n)||e.resolution==="pre")?"closed":"open";
+  return "closed";
+}
+function weekStart(d){const x=new Date(d);const k=(x.getDay()+6)%7;x.setHours(0,0,0,0);x.setDate(x.getDate()-k);return x;}
+
+/* ---------- EKG ---------- */
+function drawStrip(E){
+  const H=200, base=118, step=64, gap=52, pad=40;
+  let x=pad, prevDay=null; const pts=[], beats=[], days=[];
+  E.forEach(e=>{
+    const day=e.date.slice(0,10);
+    if(day!==prevDay){ if(prevDay!==null) x+=gap; days.push({x:x-14,day}); prevDay=day; }
+    beats.push({e,x}); x+=step;
+  });
+  const W=x+pad;
+  // linia bazowa z kształtem każdego uderzenia
+  let d=`M0 ${base}`; const overlays=[];
+  beats.forEach(({e,x})=>{
+    const b=base;
+    if(e.kind==="life"){
+      const amp={CONFIRMED:78,REFUTED:56,"NO DATA":30}[e.verdict]||40;
+      d+=` L${x-24} ${b} Q${x-20} ${b-7} ${x-16} ${b} L${x-6} ${b}`;
+      const q=`M${x-6} ${b} L${x-3} ${b+9} L${x} ${b-amp} L${x+4} ${b+20} L${x+8} ${b}`;
+      d+=` L${x-3} ${b+9} L${x} ${b-amp} L${x+4} ${b+20} L${x+8} ${b} L${x+14} ${b} Q${x+21} ${b-13} ${x+28} ${b}`;
+      overlays.push({e,x,svg:`<path class="qrs v-${vk(e.verdict)}" d="${q}"/>`,top:b-amp});
+    }else if(e.kind==="prediction"){
+      d+=` L${x-8} ${b} Q${x} ${b-9} ${x+8} ${b}`;
+      overlays.push({e,x,svg:`<circle cx="${x}" cy="${b-20}" r="5.5" fill="var(--bg)" stroke="var(--muted)" stroke-width="2"/>`,top:b-26});
+    }else if(e.kind==="milestone"){
+      d+=` L${x} ${b}`;
+      overlays.push({e,x,svg:`<line x1="${x}" y1="${b}" x2="${x}" y2="${b-84}" stroke="var(--gold)" stroke-width="2"/><rect x="${x-6}" y="${b-96}" width="12" height="12" transform="rotate(45 ${x} ${b-90})" fill="var(--gold)"/>`,top:b-98});
+    }else{
+      d+=` L${x+step} ${b}`;
+      overlays.push({e,x,svg:`<line x1="${x-20}" y1="${b-1}" x2="${x+step-10}" y2="${b-1}" stroke="var(--bg)" stroke-width="3"/><line x1="${x-20}" y1="${b}" x2="${x+step-10}" y2="${b}" stroke="var(--muted)" stroke-width="1.6" stroke-dasharray="3 5"/>`,top:b-10});
+    }
+  });
+  d+=` L${W} ${base}`;
+  const xOf=n=>(beats.find(b=>b.e.n===n)||{}).x;
+  const arcs=E.filter(e=>e.follows!=null).map(e=>{
+    const x1=xOf(e.follows), x2=xOf(e.n); if(x1==null||x2==null) return "";
+    const y=34, mid=(x1+x2)/2;
+    return `<path class="arc" d="M${x1} ${y+20} Q${mid} ${y-16} ${x2} ${y+20}"/><path d="M${x2-4} ${y+13} L${x2} ${y+21} L${x2+5} ${y+14}" fill="none" stroke="var(--refuted)" stroke-width="1.2"/>`;
+  }).join("");
+  const svg=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img">
+    <path class="trace draw" id="tr" d="${d}"/>
+    ${arcs}
+    ${overlays.map(o=>`<a class="beat" href="#e${o.e.n}" data-n="${o.e.n}" aria-label="#${o.e.n} ${esc(o.e.verdict||o.e.kind)}">
+       <rect x="${o.x-22}" y="12" width="44" height="${H-24}" fill="transparent"/>${o.svg}
+       <text class="nlbl" x="${o.x}" y="${base+42}" text-anchor="middle">${o.e.n}</text></a>`).join("")}
+    ${days.map(dd=>`<text class="daylbl" x="${dd.x}" y="${H-14}">${dd.day.slice(8,10)}.${dd.day.slice(5,7)}</text>`).join("")}
+  </svg>`;
+  const s=$("strip"); s.innerHTML=svg;
+  const tr=$("tr"); try{tr.style.setProperty("--len",Math.ceil(tr.getTotalLength()));}catch(e){}
+  s.scrollLeft=s.scrollWidth;
+  s.querySelectorAll(".beat").forEach(a=>a.addEventListener("click",ev=>{
+    ev.preventDefault(); const el=$("e"+a.dataset.n); if(!el) return;
+    document.querySelectorAll(".entry.hl").forEach(x=>x.classList.remove("hl"));
+    el.classList.add("hl"); el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});
+    history.replaceState(null,"","#e"+a.dataset.n);
+  }));
+}
+
+/* ---------- reszta ---------- */
+function render(){
+  const t=T[lang]; document.documentElement.lang=lang;
+  document.querySelectorAll("[data-t]").forEach(el=>el.textContent=t[el.dataset.t]);
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
+  if(!DOC) return;
+  const E=DOC.entries, P=DOC.planes;
+  const ws=weekStart(new Date()), we=new Date(ws); we.setDate(ws.getDate()+7);
+  const wk=E.filter(e=>e.kind==="life"&&new Date(e.date)>=ws&&new Date(e.date)<we).length;
+  $("rhythm").innerHTML=t.rhythm(wk,DOC.rhythm.min_lives_per_week);
+  $("legend").innerHTML=[
+    ["d-CONFIRMED","CONFIRMED"],["d-REFUTED","REFUTED"],["d-NODATA","NO DATA"],
+    ["d-pred",t.lg_pred],["d-mile",t.lg_mile],["d-pause",t.lg_pause]
+  ].map(([c,l])=>`<span><i class="dot ${c}"></i>${esc(l)}</span>`).join("")+
+    `<span><svg width="22" height="8"><path class="arc" d="M1 7 Q11 -3 21 7"/></svg>${esc(t.lg_arc)}</span>`;
+  const L=E.filter(e=>e.kind==="life"), c=k=>L.filter(e=>e.verdict===k).length;
+  const C=c("CONFIRMED"),R=c("REFUTED"),N=c("NO DATA"),S=L.length||1;
+  $("tally").innerHTML=`<i style="width:${C/S*100}%;background:var(--ok)"></i><i style="width:${R/S*100}%;background:var(--refuted)"></i><i style="width:${N/S*100}%;background:var(--nodata)"></i>`;
+  $("tallytxt").textContent=t.tally(C,R,N);
+
+  $("list").innerHTML=[...E].reverse().map(e=>{
+    const sealed=P[e.plane].gate!=="open"&&!e.public, st=status(e,E);
+    const dotc=e.kind==="life"?"d-"+vk(e.verdict):e.kind==="prediction"?"d-pred":e.kind==="milestone"?"d-mile":"d-pause";
+    const v=e.kind==="life"?`<span class="verdict vc-${vk(e.verdict)}">${esc(e.verdict)}${e.score?" "+esc(e.score):""}</span>`
+           :e.kind==="milestone"?`<span class="verdict vc-mile">${esc(t.milestone)}</span>`:`<span>${esc(t[e.kind])}</span>`;
+    const chips=[];
+    if(sealed) chips.push(`<span class="chip sealed">${esc(t.sealed)}</span>`);
+    if(st==="open") chips.push(`<span class="chip open">${esc(e.kind==="prediction"?t.waiting:t.open)}</span>`);
+    if(e.resolution==="pre") chips.push(`<span class="chip">${esc(t.pre)}</span>`);
+    if(e.follows!=null) chips.push(`<a class="chip" href="#e${e.follows}">${esc(t.follows(e.follows))}</a>`);
+    E.filter(x=>x.follows===e.n).forEach(x=>chips.push(`<a class="chip" href="#e${x.n}">${esc(t.followed(x.n))}</a>`));
+    if(e.closes!=null) chips.push(`<a class="chip" href="#e${e.closes}">${esc(t.closes(e.closes))}</a>`);
+    const links=[]; if(e.link) links.push(`<a href="${esc(e.link)}" rel="noopener">${esc(t.evidence)}</a>`);
+    (e.pub||[]).forEach((u,i)=>links.push(`<a href="${esc(u)}" rel="noopener">${esc(t.pub)}${e.pub.length>1?" "+(i+1):""}</a>`));
+    const seal=(lbl,val)=>val?`<div class="seal"><span>${esc(lbl)}</span><code title="${esc(val)}">${esc(val)}</code><button data-c="${esc(val)}">${esc(t.copy)}</button></div>`:"";
+    const ds=`${e.date.slice(8,10)}.${e.date.slice(5,7)}.${e.date.slice(0,4)} ${e.date.slice(11,16)}`;
+    return `<li class="entry" id="e${e.n}">
+      <div class="num"><i class="dot ${dotc}"></i>${e.n}</div>
+      <div>
+        <div class="meta"><span>${ds}</span><span>${esc(P[e.plane].label)}</span>${v}</div>
+        <p class="q" lang="${esc(P[e.plane].lang)}">${esc(e.question)}</p>
+        ${e.fact?`<p class="fact" lang="${esc(P[e.plane].lang)}">${esc(e.fact)}</p>`:""}
+        ${chips.length?`<div class="chips">${chips.join("")}</div>`:""}
+        ${links.length?`<div class="links">${links.join("")}</div>`:""}
+        <div class="seals">${seal(t.s_pred,e.sha_pred)}${seal(t.s_out,e.sha_outcome)}</div>
+      </div></li>`;
+  }).join("");
+  document.querySelectorAll(".seal button").forEach(b=>b.addEventListener("click",()=>{
+    const done=()=>{b.textContent=t.copied;setTimeout(()=>b.textContent=t.copy,1400);};
+    try{navigator.clipboard.writeText(b.dataset.c).then(done,()=>{});}catch(e){}
+  }));
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{
+  lang=b.dataset.l; try{localStorage.setItem("puls-lang",lang);}catch(e){} render();
+}));
+render();
+fetch("puls.json",{cache:"no-store"}).then(r=>{if(!r.ok) throw 0; return r.json();}).then(doc=>{
+  DOC=doc; DOC.entries.sort((a,b)=>a.n-b.n); drawStrip(DOC.entries); render();
+  if(location.hash){const el=document.querySelector(location.hash); if(el){el.classList.add("hl"); el.scrollIntoView({block:"center"});}}
+}).catch(()=>{$("list").innerHTML=`<li class="err">${esc(T[lang].err)}</li>`;});
+})();
+</script>
+</body>
+</html>
