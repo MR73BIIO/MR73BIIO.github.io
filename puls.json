@@ -367,7 +367,26 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 19,
+   "date": "2026-10-04T21:31:35+02:00",
+   "kind": "life",
+   "plane": "voro",
+   "question": "L1: pierwszy pełny oddech według konstytucji",
+   "verdict": "CONFIRMED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:43d5329fc7f00ccb797316e62bca3c4d093a5abff8154f4ccb2dfa7eaa031c15",
+   "sha_outcome": "sha256:fa7089d8103274fce25471d5f672436271f6058b6b75fb2bab4a10938eefe5ec",
+   "follows": null,
+   "resolution": null,
+   "closes": 18,
+   "status": "closed",
    "pub": []
   }
  ]
