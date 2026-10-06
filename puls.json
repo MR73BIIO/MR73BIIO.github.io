@@ -519,7 +519,26 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 27,
+   "date": "2026-10-06T16:28:36+02:00",
+   "kind": "life",
+   "plane": "pl",
+   "question": "B4b: raport z kontrolą kraju",
+   "verdict": "CONFIRMED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:dabcded0d1aa5dc66d4cd11f3a97cdbd6230c2305a62a0907e93547cc9799175",
+   "sha_outcome": "sha256:9f1d41f5ea6bb521f83870cec6384aeac36ef649b42a8a3088dbda0c36aef5a5",
+   "follows": null,
+   "resolution": null,
+   "closes": 26,
+   "status": "closed",
    "pub": []
   }
  ]
