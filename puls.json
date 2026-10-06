@@ -502,6 +502,25 @@
    "closes": 24,
    "status": "closed",
    "pub": []
+  },
+  {
+   "n": 26,
+   "date": "2026-10-06T16:26:30+02:00",
+   "kind": "prediction",
+   "plane": "pl",
+   "question": "B4b: raport z kontrolą kraju",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:dabcded0d1aa5dc66d4cd11f3a97cdbd6230c2305a62a0907e93547cc9799175",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
