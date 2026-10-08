@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ekstraklasa Cards — Matchday 10</title>
+<meta name="description" content="A yellow-card model for the Polish Ekstraklasa, tested against the market. Predictions published before Matchday 10, results added after.">
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel-2: #1d212b;
+    --line: #2a2f3a;
+    --ink: #e8eaed;
+    --ink-dim: #9aa1ad;
+    --ink-faint: #6b7280;
+    --accent: #4ea1ff;
+    --warm: #e0b341;
+    --green: #3fb950;
+    --red: #f06a5d;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f7f9; --panel: #ffffff; --panel-2: #f0f2f5; --line: #e2e5ea;
+      --ink: #1a1d23; --ink-dim: #545b66; --ink-faint: #8a909b;
+      --accent: #1f6fd6; --warm: #b5861a; --green: #1a7f37; --red: #c0392b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1115; --panel: #171a21; --panel-2: #1d212b; --line: #2a2f3a;
+    --ink: #e8eaed; --ink-dim: #9aa1ad; --ink-faint: #6b7280;
+    --accent: #4ea1ff; --warm: #e0b341; --green: #3fb950; --red: #f06a5d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 16px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 36px; }
+  .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 10px; }
+  h1 { font-size: clamp(26px, 5vw, 38px); line-height: 1.15; margin: 0 0 6px; letter-spacing: -.02em; }
+  .sub { color: var(--ink-dim); font-size: 15px; margin: 0; }
+
+  .lede { font-size: 17px; line-height: 1.7; }
+  .lede p { margin: 0 0 14px; }
+  .lede strong { color: var(--ink); }
+  .verdict { font-family: var(--mono); font-size: 15px; color: var(--warm); font-weight: 600; }
+
+  .block { margin: 40px 0; }
+  .block h2 { font-size: 13px; font-family: var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 16px; font-weight: 600; }
+
+  .highlight {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px; margin: 32px 0;
+  }
+  .highlight .row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: 15px; }
+  .highlight .row:last-child { border-bottom: 0; }
+  .highlight .lab { color: var(--ink-dim); }
+  .highlight .val { font-family: var(--mono); font-weight: 600; }
+  .highlight .big { font-size: 15px; }
+  .match-title { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+  .match-meta { font-size: 13px; color: var(--ink-faint); margin: 0 0 16px; font-family: var(--mono); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+  td.num, th.num { text-align: right; font-family: var(--mono); }
+  tbody tr:hover { background: var(--panel-2); }
+  .hot { color: var(--warm); }
+  .fresh { font-family: var(--mono); font-size: 11px; color: var(--warm); border: 1px solid var(--warm); border-radius: 4px; padding: 1px 5px; margin-left: 6px; opacity: .85; }
+
+  .note { font-size: 13px; color: var(--ink-faint); margin-top: 12px; line-height: 1.55; }
+
+  .result-box {
+    border: 1px dashed var(--line); border-radius: 12px; padding: 24px;
+    background: var(--panel-2); text-align: center; color: var(--ink-faint);
+    font-family: var(--mono); font-size: 14px; margin: 32px 0;
+  }
+  .result-box strong { color: var(--ink-dim); display: block; margin-bottom: 8px; letter-spacing: .05em; }
+
+  footer { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 24px; font-size: 13px; color: var(--ink-faint); }
+  footer .name { color: var(--ink-dim); font-weight: 600; }
+  footer .langs { font-family: var(--mono); margin-top: 4px; }
+  .stamp { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker">Ekstraklasa · Cards Model · Public Log</p>
+    <h1>I built a cards model, then tested it against the market</h1>
+    <p class="sub">Predictions published <strong>before</strong> Matchday 10 · results added after</p>
+  </header>
+
+  <div class="lede">
+    <p>I built a yellow-card model for the Polish Ekstraklasa.<br>
+    Then I tested it against the market.<br>
+    <strong>There is no edge.</strong></p>
+
+    <p>The model uses the referee assigned to the match and estimates the expected number of yellow cards. For several rounds I checked whether the model could find a gap between its estimate and the bookmaker's line. It couldn't.</p>
+  </div>
+
+  <div class="highlight">
+    <p class="match-title">Wieczysta Kraków – Wisła Płock</p>
+    <p class="match-meta">Fri 9 Oct · ref. Bartosz Frankowski</p>
+    <div class="row"><span class="lab">Model</span><span class="val">3.5 yellow cards</span></div>
+    <div class="row"><span class="lab">Market (OPTA, yellows only)</span><span class="val">3.5</span></div>
+    <div class="row"><span class="lab">Odds</span><span class="val">1.84 / 1.84</span></div>
+    <p class="note">A coin flip. So there is nothing to play here.</p>
+  </div>
+
+  <div class="lede">
+    <p>The important part is that I am publishing this <strong>before</strong> the match. After the game I will add the actual number of cards and compare it with the prediction. The result will stay in the repository with its timestamp — no changing the prediction after seeing the result, no fitting the model backwards.</p>
+
+    <p><strong>Why publish a model that doesn't beat the market?</strong><br>
+    Because that is also a result. If the model and the market give the same number, there is no reason to pretend there is an edge.</p>
+
+    <p>One match is still one match. The actual number of cards can land well above or below 3.5. The point is not to make the model look good. The point is to find out whether it actually works.</p>
+
+    <p class="verdict">And so far, for this market: no edge.</p>
+  </div>
+
+  <div class="block">
+    <h2>The model's call on all 9 matches</h2>
+    <p class="note" style="margin-top:-6px;margin-bottom:16px;">Baseline = referee λ − 1.01 (the correction measured across the season). Sorted from the most card-heavy referee setup down.</p>
+    <table>
+      <thead>
+        <tr><th>Match</th><th>Referee</th><th class="num">Model</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Raków – GKS Katowice</td><td>Damian Kos</td><td class="num hot">4.26</td></tr>
+        <tr><td>Śląsk – Lech Poznań</td><td>Patryk Gryckiewicz</td><td class="num">3.96</td></tr>
+        <tr><td>Piast – Widzew Łódź</td><td>Jarosław Przybył</td><td class="num">3.82</td></tr>
+        <tr><td>Legia – Wisła Kraków</td><td>Damian Sylwestrzak</td><td class="num">3.80</td></tr>
+        <tr><td>Wieczysta – Wisła Płock</td><td>Bartosz Frankowski</td><td class="num">3.50</td></tr>
+        <tr><td>Radomiak – Motor Lublin</td><td>Tomasz Kwiatkowski</td><td class="num">3.47</td></tr>
+        <tr><td>Cracovia – Zagłębie Lubin</td><td>Tomasz Marciniak</td><td class="num">3.34</td></tr>
+        <tr><td>Jagiellonia – Górnik</td><td>Wojciech Myć</td><td class="num">3.30</td></tr>
+        <tr><td>Pogoń – Korona Kielce</td><td>Piotr Lasyk</td><td class="num">3.05</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="block">
+    <h2>Where the match is being read deeper — Wieczysta – Wisła Płock</h2>
+    <div class="highlight" style="margin-top:0;">
+      <div class="row"><span class="lab">Referee halves (1st / 2nd)</span><span class="val">2.0 / 1.6 — even</span></div>
+      <div class="row"><span class="lab">Wieczysta — card halves</span><span class="val">1.29 / 1.14</span></div>
+      <div class="row"><span class="lab">Wisła Płock — card halves</span><span class="val">0.57 / 1.29 — late</span></div>
+      <div class="row"><span class="lab">Benches</span><span class="val">both new (1–2 mo)</span></div>
+    </div>
+    <p class="note">The market priced Wisła Płock slightly higher on cards than Wieczysta — and the player data agrees: Wisła carries more of the card-prone players (Gallapeni, Kobacki), Wieczysta is the quieter side. Model and market point the same way again.</p>
+  </div>
+
+  <div class="result-box">
+    <strong>RESULT — Saturday</strong>
+    actual cards: _______ · vs model 3.5 · vs market 3.5
+  </div>
+
+  <footer>
+    <p class="name">Marcin Ruszczak</p>
+    <p class="langs">PL · DE · RU · EN</p>
+    <p class="stamp">Published 2026-10-08 · Ekstraklasa Matchday 10</p>
+  </footer>
+
+</div>
+</body>
+</html>
