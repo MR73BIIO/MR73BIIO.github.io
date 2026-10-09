@@ -616,6 +616,25 @@
    "closes": 30,
    "status": "open",
    "pub": []
+  },
+  {
+   "n": 32,
+   "date": "2026-10-09T19:13:59+02:00",
+   "kind": "milestone",
+   "plane": "de",
+   "question": "voro-tree-qa v0.1 mit DOI auf Zenodo",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "DOI v0.1: 10.5281/zenodo.23267380",
+   "link": "https://doi.org/10.5281/zenodo.23267380",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": []
   }
  ]
 }
