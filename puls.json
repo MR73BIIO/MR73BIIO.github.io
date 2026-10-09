@@ -578,6 +578,25 @@
    "closes": 28,
    "status": "closed",
    "pub": []
+  },
+  {
+   "n": 30,
+   "date": "2026-10-09T17:52:31+02:00",
+   "kind": "prediction",
+   "plane": "de",
+   "question": "M0: Zeigt das Zürcher Baumkataster die Grenzen, die die Stadt selbst angibt?",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:343357976e0bff8c1e535bb4585e767f84eaec00d399e4f6626c33be84005053",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
