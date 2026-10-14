@@ -699,6 +699,25 @@
    "closes": 34,
    "status": "open",
    "pub": []
+  },
+  {
+   "n": 36,
+   "date": "2026-10-14T20:06:12+02:00",
+   "kind": "prediction",
+   "plane": "de",
+   "question": "D1: Warum lag M0 in Wien daneben?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "4 Erklärungen mit Schwellen festgelegt, vor dem Messskript",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/blob/main/wien/D1_PREDICTIONS.md",
+   "sha_pred": "sha256:8a893fa3fbcafda836e5fab9254a1e52d0bce3f8a4fe81fc26899bff82a73b1f",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
