@@ -697,7 +697,7 @@
    "follows": null,
    "resolution": null,
    "closes": 34,
-   "status": "open",
+   "status": "closed",
    "pub": []
   },
   {
@@ -716,6 +716,25 @@
    "follows": null,
    "resolution": null,
    "closes": null,
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 37,
+   "date": "2026-10-14T20:12:55+02:00",
+   "kind": "life",
+   "plane": "de",
+   "question": "D1: Warum lag M0 in Wien daneben?",
+   "verdict": "REFUTED",
+   "score": "2/4",
+   "public": true,
+   "fact": "Strassenbäume ohne Pflanzjahr 3,6 %, Parkbäume 24,0 %; 3 534 Datensätze „Jungbaum wird gepflanzt“, 98,9 % ohne Jahr und Stammumfang",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/400ccfe",
+   "sha_pred": "sha256:8a893fa3fbcafda836e5fab9254a1e52d0bce3f8a4fe81fc26899bff82a73b1f",
+   "sha_outcome": "sha256:fd497df5a39c410a5b8adf93de9b8a2b373ae52f254a258dec0aa43926a21499",
+   "follows": 35,
+   "resolution": null,
+   "closes": 36,
    "status": "open",
    "pub": []
   }
