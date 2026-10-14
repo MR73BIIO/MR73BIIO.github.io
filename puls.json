@@ -23,6 +23,11 @@
    "lang": "de",
    "label": "DE",
    "gate": "open"
+  },
+  "en-sport": {
+   "lang": "en",
+   "label": "EN Sport",
+   "gate": "open"
   }
  },
  "entries": [
@@ -630,6 +635,25 @@
    "public": true,
    "fact": "DOI v0.1: 10.5281/zenodo.23267380",
    "link": "https://doi.org/10.5281/zenodo.23267380",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 33,
+   "date": "2026-10-14T13:05:28+02:00",
+   "kind": "milestone",
+   "plane": "en-sport",
+   "question": "ekstraklasa-model v0.1 with DOI on Zenodo",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "DOI v0.1: 10.5281/zenodo.23363158",
+   "link": "https://doi.org/10.5281/zenodo.23363158",
    "sha_pred": null,
    "sha_outcome": null,
    "follows": null,
