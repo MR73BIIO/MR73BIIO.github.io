@@ -661,6 +661,25 @@
    "closes": null,
    "status": "closed",
    "pub": []
+  },
+  {
+   "n": 34,
+   "date": "2026-10-14T20:02:40+02:00",
+   "kind": "prediction",
+   "plane": "de",
+   "question": "M0: Zeigt das Wiener Baumkataster, was die Stadt über ihre Bäume sagt?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "12 Punkte mit Schwellen festgelegt, vor dem Messskript und vor dem Lauf",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/7165d7c",
+   "sha_pred": "sha256:f8150326e04ad3ea726198f44a4ff44a3977b863d1f566c9e1a27513ec16c310",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
