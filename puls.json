@@ -678,6 +678,25 @@
    "follows": null,
    "resolution": null,
    "closes": null,
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 35,
+   "date": "2026-10-14T20:02:43+02:00",
+   "kind": "life",
+   "plane": "de",
+   "question": "M0: Zeigt das Wiener Baumkataster, was die Stadt über ihre Bäume sagt?",
+   "verdict": "REFUTED",
+   "score": "8/12",
+   "public": true,
+   "fact": "36,2 % der Pflanzjahre vor 2006 enden auf 0 oder 5 (gleichverteilt 20 %); Kronen-Code und Kronen-Text nicht 1:1",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/be2a9c9",
+   "sha_pred": "sha256:f8150326e04ad3ea726198f44a4ff44a3977b863d1f566c9e1a27513ec16c310",
+   "sha_outcome": "sha256:1d957d6be4837d2678eac7a06465f7467ab3b2494f7cb8f317ecaf7a98dee04f",
+   "follows": null,
+   "resolution": null,
+   "closes": 34,
    "status": "open",
    "pub": []
   }
