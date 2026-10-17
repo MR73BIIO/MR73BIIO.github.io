@@ -739,6 +739,25 @@
    "pub": [
     "https://www.linkedin.com/feed/update/urn:li:activity:7516203524008017920/"
    ]
+  },
+  {
+   "n": 38,
+   "date": "2026-10-17T21:45:04+02:00",
+   "kind": "prediction",
+   "plane": "pl",
+   "question": "M0: Co naprawdę mówi publiczny eksport archiwum audiowizualnego?",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:cd53f2cc7f96e1935a77daa73817ad9a262f66991beef531e661ae705b1aa326",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": []
   }
  ]
 }
