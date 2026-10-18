@@ -1336,7 +1336,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -1346,6 +1346,35 @@
     "en": {
      "question": "D1: What is behind street names, crown 0 and shared locations in Berlin?",
      "fact": "7 explanations with thresholds fixed before the diagnosis script"
+    }
+   }
+  },
+  {
+   "n": 49,
+   "date": "2026-10-18T18:18:38+02:00",
+   "kind": "life",
+   "plane": "de",
+   "question": "D1: Was steckt hinter Straßennamen, Krone 0 und gemeinsamen Standorten in Berlin?",
+   "verdict": "REFUTED",
+   "score": "6/7",
+   "public": true,
+   "fact": "Krone 0 m hängt am Bezirk: Tempelhof-Schöneberg 60,36 %, Treptow-Köpenick 0,23 % (262 ×); die Hälfte aller „0 m“ in 823 von 12 721 Pflegeobjekten",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/a6f06cb",
+   "sha_pred": "sha256:f00cc349e2461a9d78122f434cc59918a1422d40517ea2d8dd0488716cce0187",
+   "sha_outcome": "sha256:0cabb06119406af8288682418d08fe411afe29fd29a182f300204b568ee48e40",
+   "follows": null,
+   "resolution": "pre",
+   "closes": 48,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "D1: Co stoi za nazwami ulic, koroną 0 i wspólnymi punktami w Berlinie?",
+     "fact": "Korona 0 m zależy od dzielnicy: Tempelhof-Schöneberg 60,36%, Treptow-Köpenick 0,23% (262 ×); połowa wszystkich „0 m” w 823 z 12 721 obiektów"
+    },
+    "en": {
+     "question": "D1: What is behind street names, crown 0 and shared locations in Berlin?",
+     "fact": "Crown 0 m depends on the district: Tempelhof-Schöneberg 60.36 %, Treptow-Köpenick 0.23 % (262 ×); half of all \"0 m\" sit in 823 of 12,721 care objects"
     }
    }
   }
