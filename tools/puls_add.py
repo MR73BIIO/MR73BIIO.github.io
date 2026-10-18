@@ -12,12 +12,19 @@ Komendy:
   bramka       otworz plaszczyzne (po decyzji); odsloniecie wpisow komenda `odslon`
   odslon       dopisz fakt / link / wynik do wpisu z plaszczyzny juz otwartej
   sprawdz      sprawdz pieczecie wpisow wobec historii lokalnych repo
+  tlumacz      dopisz / popraw tlumaczenie pytania i faktu (pl / de / en) do wpisu
 
 Zabezpieczenia (odmowa PRZED commitem):
   - life bez pliku OUTCOME (wyjatek tylko --wstecz z --outcome-commit),
   - plik przewidywania / OUTCOME niezacommitowany, zmieniony lub niewypchniety,
   - na plaszczyznie zapieczetowanej: pole fact, link, score lub dowolny URL,
-  - w kazdym polu tekstowym: wzorce z tools/.puls_bramki.local (lokalny, poza gitem).
+  - w kazdym polu tekstowym: wzorce z tools/.puls_bramki.local (lokalny, poza gitem),
+  - to samo w kazdym tlumaczeniu (pole i18n), a na plaszczyznie zapieczetowanej
+    tlumaczenie faktu tez musi byc puste.
+
+Tlumaczenia: oryginal zostaje w question / fact (jezyk plaszczyzny). Obok opcjonalne
+  "i18n": {"en": {"question": ..., "fact": ...}, "de": {...}, "pl": {...}}
+Tylko jezyki inne niz jezyk plaszczyzny. Pieczecie nie zaleza od tekstu wpisu.
 
 Tylko biblioteka standardowa, Python 3.8+.
 """
@@ -36,6 +43,8 @@ GATES = os.path.join(ROOT, "tools", ".puls_bramki.local")
 KINDS = ("prediction", "life", "milestone", "pause")
 VERDICTS = ("CONFIRMED", "REFUTED", "NO DATA")
 TEXT_FIELDS = ("question", "fact", "link", "score")
+LANGS = ("pl", "de", "en")
+I18N_FIELDS = ("question", "fact")
 
 
 def die(msg):
@@ -88,6 +97,20 @@ def validate(doc):
             for k in ("fact", "link", "score"):
                 if e.get(k):
                     die("wpis %d: pole %s na plaszczyznie zapieczetowanej" % (n, k))
+        tr = e.get("i18n")
+        if tr is not None:
+            if not isinstance(tr, dict):
+                die("wpis %d: i18n musi byc slownikiem" % n)
+            own = doc["planes"][e["plane"]]["lang"]
+            for lg, d in tr.items():
+                if lg not in LANGS:
+                    die("wpis %d: nieznany jezyk tlumaczenia %s" % (n, lg))
+                if lg == own:
+                    die("wpis %d: tlumaczenie na jezyk oryginalu (%s)" % (n, lg))
+                if not isinstance(d, dict) or set(d) - set(I18N_FIELDS):
+                    die("wpis %d: i18n.%s moze miec tylko %s" % (n, lg, ", ".join(I18N_FIELDS)))
+                if sealed and not e.get("public") and d.get("fact"):
+                    die("wpis %d: tlumaczenie faktu (%s) na plaszczyznie zapieczetowanej" % (n, lg))
 
 
 def gate_patterns():
@@ -105,17 +128,46 @@ def gate_patterns():
 
 def check_text(entry, sealed):
     pats = gate_patterns()
-    for k in TEXT_FIELDS:
-        v = entry.get(k) or ""
+    texts = [(k, entry.get(k) or "") for k in TEXT_FIELDS]
+    for lg, d in (entry.get("i18n") or {}).items():
+        texts += [("%s.%s" % (k, lg), (d or {}).get(k) or "") for k in I18N_FIELDS]
+    for k, v in texts:
         for p in pats:
             if p.search(v):
                 die("pole %s zawiera wzorzec zza bramki (%s)" % (k, p.pattern))
-        if sealed and k == "question" and re.search(r"https?://|www\.", v):
-            die("adres w pytaniu na plaszczyznie zapieczetowanej")
+        if sealed and k.split(".")[0] == "question" and re.search(r"https?://|www\.", v):
+            die("adres w pytaniu (%s) na plaszczyznie zapieczetowanej" % k)
     if sealed:
         for k in ("fact", "link", "score"):
             if entry.get(k):
                 die("plaszczyzna zapieczetowana: pole %s musi byc puste" % k)
+        for lg, d in (entry.get("i18n") or {}).items():
+            if (d or {}).get("fact"):
+                die("plaszczyzna zapieczetowana: tlumaczenie faktu (%s) musi byc puste" % lg)
+
+
+def i18n_from_args(a, own_lang, base=None):
+    """Zbiera --question-xx / --fact-xx w slownik i18n (scala z istniejacym)."""
+    tr = {lg: dict(d) for lg, d in (base or {}).items()}
+    for lg in LANGS:
+        for k in I18N_FIELDS:
+            v = getattr(a, "%s_%s" % (k, lg), None)
+            if v is None:
+                continue
+            if lg == own_lang:
+                die("--%s-%s: to jezyk oryginalu, wpisz go w --%s" % (k, lg, k))
+            v = v.strip()
+            if v:
+                tr.setdefault(lg, {})[k] = v
+            elif lg in tr:
+                tr[lg].pop(k, None)
+    return {lg: d for lg, d in tr.items() if d}
+
+
+def add_i18n_args(p):
+    for lg in LANGS:
+        p.add_argument("--question-%s" % lg, dest="question_%s" % lg)
+        p.add_argument("--fact-%s" % lg, dest="fact_%s" % lg)
 
 
 # ------------------------------------------------------------------ pieczecie
@@ -187,6 +239,9 @@ def cmd_dodaj(a):
              public=not sealed, fact=a.fact or "", link=a.link or "",
              sha_pred=None, sha_outcome=None, follows=a.follows,
              resolution=a.resolution, closes=None, status="closed", pub=[])
+    tr = i18n_from_args(a, plane["lang"])
+    if tr:
+        e["i18n"] = tr
     check_text(e, sealed)
 
     if a.kind in ("prediction", "life"):
@@ -303,6 +358,9 @@ def cmd_odslon(a):
         die("plaszczyzna nadal zapieczetowana (najpierw `bramka`)")
     new = dict(e, fact=a.fact or e["fact"], link=a.link or e["link"], score=a.score or e["score"],
                question=a.question or e["question"], public=True)
+    tr = i18n_from_args(a, doc["planes"][e["plane"]]["lang"], e.get("i18n"))
+    if tr:
+        new["i18n"] = tr
     check_text(new, False)
     e.update(new)
     save(doc)
@@ -311,6 +369,30 @@ def cmd_odslon(a):
     if not a.bez_push:
         git(ROOT, "push")
     print("wpis #%d odsloniety" % a.n)
+
+
+def cmd_tlumacz(a):
+    doc = load()
+    e = find(doc, a.n)
+    plane = doc["planes"][e["plane"]]
+    sealed = plane["gate"] != "open" and not e.get("public")
+    tr = i18n_from_args(a, plane["lang"], e.get("i18n"))
+    new = dict(e)
+    if tr:
+        new["i18n"] = tr
+    else:
+        new.pop("i18n", None)
+    check_text(new, sealed)
+    if new == e:
+        die("brak zmian w tlumaczeniu wpisu %d" % a.n)
+    e.clear()
+    e.update(new)
+    save(doc)
+    git(ROOT, "add", "puls.json")
+    git(ROOT, "commit", "-m", "puls #%d: tlumaczenie" % a.n)
+    if not a.bez_push:
+        git(ROOT, "push")
+    print("wpis #%d: tlumaczenia %s" % (a.n, ", ".join(sorted(tr)) or "brak"))
 
 
 def cmd_sprawdz(a):
@@ -369,6 +451,7 @@ def main():
     d.add_argument("--date")
     d.add_argument("--wstecz", action="store_true")
     d.add_argument("--bez-push", action="store_true")
+    add_i18n_args(d)
     d.set_defaults(f=cmd_dodaj)
 
     z = sub.add_parser("zaleglosci")
@@ -392,7 +475,14 @@ def main():
     s.add_argument("--score")
     s.add_argument("--question")
     s.add_argument("--bez-push", action="store_true")
+    add_i18n_args(s)
     s.set_defaults(f=cmd_odslon)
+
+    t = sub.add_parser("tlumacz")
+    t.add_argument("n", type=int)
+    t.add_argument("--bez-push", action="store_true")
+    add_i18n_args(t)
+    t.set_defaults(f=cmd_tlumacz)
 
     c = sub.add_parser("sprawdz")
     c.add_argument("--repo", action="append", required=True)

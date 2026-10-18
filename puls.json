@@ -41,6 +41,16 @@
    "score": "2/2",
    "public": true,
    "fact": "Golden dataset: PASS, seed 42: REJECT, both with readiness 1.0, as written into git before the code.",
+   "i18n": {
+    "pl": {
+     "question": "1.3d: czy VORO wybiera właściwą hipotezę (PASS / REVIEW / REJECT) na danych GIS?",
+     "fact": "Złoty zbiór: PASS, seed 42: REJECT, oba z readiness 1,0 — tak, jak zapisano w gicie przed kodem."
+    },
+    "de": {
+     "question": "1.3d: Wählt VORO auf GIS-Daten die richtige Hypothese (PASS / REVIEW / REJECT)?",
+     "fact": "Goldener Datensatz: PASS, Seed 42: REJECT, beide mit Readiness 1,0 – so, wie es vor dem Code in Git stand."
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/91cce8ff8874b788b8bd053dc324a5a76227fe25/voro_adapter/domains_gis_qa.py",
    "sha_pred": "sha256:ba218d437c6bf5398605daaaef7efffa0840a4fbb3887cd10e4b5223c33541c8",
    "sha_outcome": "git:1c3d67eb217fe99098f9e2a5fe315cd20cc3b362",
@@ -60,6 +70,16 @@
    "score": "3/3",
    "public": true,
    "fact": "Seed 42: 2,335 findings became 170 incidents (predicted 160 to 190). 160 of 160 errors are inside an incident, 0 incidents without an error.",
+   "i18n": {
+    "pl": {
+     "question": "1.4: czy incydenty grupują znaleziska według przyczyny, nie gubiąc żadnego błędu?",
+     "fact": "Seed 42: 2335 znalezisk dało 170 incydentów (przewidywane 160–190). 160 ze 160 błędów jest w incydencie, 0 incydentów bez błędu."
+    },
+    "de": {
+     "question": "1.4: Bündeln Incidents die Befunde nach Ursache, ohne einen Fehler zu verlieren?",
+     "fact": "Seed 42: Aus 2.335 Befunden wurden 170 Incidents (vorhergesagt 160 bis 190). 160 von 160 Fehlern liegen in einem Incident, 0 Incidents ohne Fehler."
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/c179849e54b629c8e9809b831731c2f3ccc2f994/docs/prediction_1.4_incidents.md",
    "sha_pred": "sha256:e7ca0accf9ca46ad3f71bd3134952a9d717fff76d9761222b6f36cf224b7d651",
    "sha_outcome": "git:4e6b81d81f93f525a6223ae3fe547068373936ab",
@@ -79,6 +99,16 @@
    "score": "3/3",
    "public": true,
    "fact": "Golden dataset PASS, sea exception applied once. 20 of 20 gaps at the border found, 0 false alarms. The design changed after a synthetic test; the change is written down, the rule and the expected results stayed.",
+   "i18n": {
+    "pl": {
+     "question": "1.6: czy C7 znajduje szczeliny na granicy państwa bez fałszywych alarmów na morzu?",
+     "fact": "Złoty zbiór PASS, wyjątek morza użyty raz. Znalezione 20 z 20 szczelin na granicy, 0 fałszywych alarmów. Konstrukcja zmieniła się po teście syntetycznym; zmiana jest zapisana, reguła i oczekiwane wyniki zostały."
+    },
+    "de": {
+     "question": "1.6: Findet C7 Lücken an der Staatsgrenze ohne Fehlalarme an der See?",
+     "fact": "Goldener Datensatz PASS, Meeres-Ausnahme einmal angewendet. 20 von 20 Lücken an der Grenze gefunden, 0 Fehlalarme. Der Aufbau änderte sich nach einem synthetischen Test; die Änderung ist festgehalten, Regel und erwartete Ergebnisse blieben."
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/d2ff3c5866811c010a5b918adb6296c2999bee06/docs/prediction_1.6_border.md",
    "sha_pred": "sha256:12e33c67009a66f3ac379fa071938494a11dbad903250bb706bb1f29f4d40071",
    "sha_outcome": "git:c7924a95eb8d78637368e5041ded05a36b7d5528",
@@ -98,6 +128,16 @@
    "score": null,
    "public": true,
    "fact": "DOI for all versions: 10.5281/zenodo.23104107",
+   "i18n": {
+    "pl": {
+     "question": "voro-gis-qa v0.1 z DOI w Zenodo",
+     "fact": "DOI wszystkich wersji: 10.5281/zenodo.23104107"
+    },
+    "de": {
+     "question": "voro-gis-qa v0.1 mit DOI auf Zenodo",
+     "fact": "DOI aller Versionen: 10.5281/zenodo.23104107"
+    }
+   },
    "link": "https://doi.org/10.5281/zenodo.23104107",
    "sha_pred": null,
    "sha_outcome": "git:a5de84f29f11b0f6f923869835c2c060c7df3c97",
@@ -117,6 +157,16 @@
    "score": "4/4",
    "public": true,
    "fact": "4 of 4 decisions as predicted before the code.",
+   "i18n": {
+    "pl": {
+     "question": "2.0: czy VORO utrzymuje swoje decyzje po dodaniu kontroli granicy państwa (C7)?",
+     "fact": "4 z 4 decyzji tak, jak przewidziano przed kodem."
+    },
+    "de": {
+     "question": "2.0: Behält VORO seine Entscheidungen, wenn die Prüfung der Staatsgrenze (C7) hinzukommt?",
+     "fact": "4 von 4 Entscheidungen wie vor dem Code vorhergesagt."
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/3d9baf8ca0739a099187be93e0e2df1d2c25dde2/docs/results_stage2.md",
    "sha_pred": "sha256:d15f095610229caff0e40a1b00d5ef2b4a358e5f30bf46c427b13ad184453870",
    "sha_outcome": "git:aa18b868778a3d15dad60a4978442c4d3196657f",
@@ -136,6 +186,16 @@
    "score": "5/5",
    "public": true,
    "fact": "4 of 4 decisions match the truth. A control with a deliberately wrong truth gives REFUTED, as predicted, so the truth does not leak into the decision.",
+   "i18n": {
+    "pl": {
+     "question": "2.1: czy decyzja zgadza się z prawdą, którą pokazuje się dopiero po niej?",
+     "fact": "4 z 4 decyzji zgodne z prawdą. Kontrola z celowo fałszywą prawdą daje REFUTED, zgodnie z przewidywaniem, więc prawda nie przecieka do decyzji."
+    },
+    "de": {
+     "question": "2.1: Stimmt die Entscheidung mit der Wahrheit überein, die erst danach gezeigt wird?",
+     "fact": "4 von 4 Entscheidungen stimmen mit der Wahrheit überein. Eine Kontrolle mit absichtlich falscher Wahrheit ergibt REFUTED, wie vorhergesagt – die Wahrheit sickert also nicht in die Entscheidung."
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/3d9baf8ca0739a099187be93e0e2df1d2c25dde2/docs/results_stage2.md",
    "sha_pred": "sha256:84652a7ef80b897220b4e4303588907504604a29a3620adfd61957def583a71e",
    "sha_outcome": "git:4975c1df14aafd68840aa7913907e23afdaeba5c",
@@ -155,6 +215,16 @@
    "score": "4/4",
    "public": true,
    "fact": "Four real lives, memory 74 to 86 records: 4 of 4 CONFIRMED, every memory record linked to its evidence, football regression unchanged.",
+   "i18n": {
+    "pl": {
+     "question": "2.2: czy VORO trafia dalej, gdy rośnie jego pamięć?",
+     "fact": "Cztery prawdziwe życia, pamięć od 74 do 86 rekordów: 4 z 4 CONFIRMED, każdy rekord pamięci powiązany ze swoim dowodem, regresja piłkarska bez zmian."
+    },
+    "de": {
+     "question": "2.2: Bleibt VORO richtig, wenn sein Gedächtnis wächst?",
+     "fact": "Vier echte Leben, Gedächtnis von 74 auf 86 Einträge: 4 von 4 CONFIRMED, jeder Gedächtniseintrag mit seinem Beleg verknüpft, Fußball-Regression unverändert."
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/3d9baf8ca0739a099187be93e0e2df1d2c25dde2/docs/results_stage2.md",
    "sha_pred": "sha256:2ff8050159e65a3b8ae7ae34376cfd87b89b2df29d88f91bddb0c496355176cb",
    "sha_outcome": "git:edb13c91c086e626f967346efc54a585109fcaee",
@@ -174,6 +244,16 @@
    "score": "10/10",
    "public": true,
    "fact": "One error of each type E1 to E9 plus one mixed set: 10 of 10 CONFIRMED. One error is not one finding: a single E5 gave 104 findings.",
+   "i18n": {
+    "pl": {
+     "question": "2.3: czy jeden wstrzyknięty błąd wystarcza do właściwej decyzji?",
+     "fact": "Po jednym błędzie każdego typu E1–E9 plus jeden zestaw mieszany: 10 z 10 CONFIRMED. Jeden błąd to nie jedno znalezisko: pojedynczy E5 dał 104 znaleziska."
+    },
+    "de": {
+     "question": "2.3: Reicht ein einziger eingeschleuster Fehler für die richtige Entscheidung?",
+     "fact": "Je ein Fehler jedes Typs E1 bis E9 plus ein gemischter Satz: 10 von 10 CONFIRMED. Ein Fehler ist nicht ein Befund: ein einzelner E5 ergab 104 Befunde."
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/3d9baf8ca0739a099187be93e0e2df1d2c25dde2/docs/results_stage2.md",
    "sha_pred": "sha256:b634e149b5c67b92603af6b3f848575c94ff3591f321398cad1b532e3d7c6aa6",
    "sha_outcome": "git:cecd67b971366b258e75ec9c34c0fc2ad23a7dcf",
@@ -250,6 +330,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B3, draw 1"
+    },
+    "de": {
+     "question": "B3, Ziehung 1"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:bea0302ac3f282bbb8a9d216237e1088d0cffd896b722ea8ef6a1ca8e7125062",
    "sha_outcome": "sha256:38253798cf18569f947d2c1a57acc173181142b26da4a59bcb88b6a97683b638",
@@ -269,6 +357,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B3, draw 2"
+    },
+    "de": {
+     "question": "B3, Ziehung 2"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:8ecd4144066ef95a18633f93f538a58fde7cc32c7299a3b71638071713209c33",
    "sha_outcome": "sha256:e7b0f2704a013fb7d5e88a878fb37c7c8775ad045d1c8161309a0e0efa6a8243",
@@ -288,6 +384,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B3, diagnosis after draw 2"
+    },
+    "de": {
+     "question": "B3, Diagnose nach Ziehung 2"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:140c756efcada326b028b8661a5b5481bab3ae9bb3a1ca3adb015894a008bf9a",
    "sha_outcome": "sha256:7dc0da1477460d0e13e9bd6cae91464704044eed7a9c4dc584c631568d92d40d",
@@ -307,6 +411,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B3, draw 3"
+    },
+    "de": {
+     "question": "B3, Ziehung 3"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:c8780ef41f523320acadf42d53c1afe4e7d1d89865da0a4ce678d79e2bbebbab",
    "sha_outcome": "sha256:dba3c5e7f3a17f9f3a0bbd6b22b9f21069906b89cd3af8f22a3bffacecfbfa40",
@@ -326,6 +438,16 @@
    "score": null,
    "public": true,
    "fact": "DOI of v0.2: 10.5281/zenodo.23138611",
+   "i18n": {
+    "pl": {
+     "question": "voro-gis-qa v0.2 z DOI w Zenodo",
+     "fact": "DOI wersji v0.2: 10.5281/zenodo.23138611"
+    },
+    "de": {
+     "question": "voro-gis-qa v0.2 mit DOI auf Zenodo",
+     "fact": "DOI von v0.2: 10.5281/zenodo.23138611"
+    }
+   },
    "link": "https://doi.org/10.5281/zenodo.23138611",
    "sha_pred": null,
    "sha_outcome": null,
@@ -347,6 +469,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "H1: first harvest (window 5–31 Oct)"
+    },
+    "de": {
+     "question": "H1: erste Ernte (Fenster 5.–31.10.)"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:0bc15a479500efd9a39a2afcd63b5fec5c0e6887297ca4bebc8133868746a807",
    "sha_outcome": null,
@@ -366,6 +496,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "L1: first full breath according to the constitution"
+    },
+    "de": {
+     "question": "L1: erster voller Atemzug nach der Verfassung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:43d5329fc7f00ccb797316e62bca3c4d093a5abff8154f4ccb2dfa7eaa031c15",
    "sha_outcome": null,
@@ -385,6 +523,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "L1: first full breath according to the constitution"
+    },
+    "de": {
+     "question": "L1: erster voller Atemzug nach der Verfassung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:43d5329fc7f00ccb797316e62bca3c4d093a5abff8154f4ccb2dfa7eaa031c15",
    "sha_outcome": "sha256:fa7089d8103274fce25471d5f672436271f6058b6b75fb2bab4a10938eefe5ec",
@@ -404,6 +550,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4: QA report"
+    },
+    "de": {
+     "question": "B4: QA-Bericht"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:ab3f12c71e7f58fc693df7b1eb04b8613ae7b93c01de1485d75d9e2961b583b4",
    "sha_outcome": null,
@@ -423,6 +577,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4: QA report"
+    },
+    "de": {
+     "question": "B4: QA-Bericht"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:ab3f12c71e7f58fc693df7b1eb04b8613ae7b93c01de1485d75d9e2961b583b4",
    "sha_outcome": "sha256:1f15f2c7f0e6b35597a9965cf6237357ea8001b9a9b21bc11ae9b723ae6d1a5c",
@@ -442,6 +604,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4a: anonymised sample"
+    },
+    "de": {
+     "question": "B4a: anonymisierte Probe"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:1bc187bf6a03e4bf254b97417ac0e05a44fa3b4dafd9411cc19e22f8d33cb2b4",
    "sha_outcome": null,
@@ -461,6 +631,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4a: anonymised sample"
+    },
+    "de": {
+     "question": "B4a: anonymisierte Probe"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:1bc187bf6a03e4bf254b97417ac0e05a44fa3b4dafd9411cc19e22f8d33cb2b4",
    "sha_outcome": "sha256:e3bd81e770421ba0cfb735d6679b7efbb1b4fd7bcbfd7ad976e5e4ad92294eda",
@@ -480,6 +658,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B2b: country check"
+    },
+    "de": {
+     "question": "B2b: Länderprüfung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:5cfeeaf50da4c4f7b72eca62eade31f3d700ffb2ef43d2ddaa03a2e192236956",
    "sha_outcome": null,
@@ -499,6 +685,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B2b: country check"
+    },
+    "de": {
+     "question": "B2b: Länderprüfung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:5cfeeaf50da4c4f7b72eca62eade31f3d700ffb2ef43d2ddaa03a2e192236956",
    "sha_outcome": "sha256:a7118a4e8b997b8bbdc62263d3b180c6ca935d38ac7199366800969090701182",
@@ -518,6 +712,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4b: report with the country check"
+    },
+    "de": {
+     "question": "B4b: Bericht mit Länderprüfung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:dabcded0d1aa5dc66d4cd11f3a97cdbd6230c2305a62a0907e93547cc9799175",
    "sha_outcome": null,
@@ -537,6 +739,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4b: report with the country check"
+    },
+    "de": {
+     "question": "B4b: Bericht mit Länderprüfung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:dabcded0d1aa5dc66d4cd11f3a97cdbd6230c2305a62a0907e93547cc9799175",
    "sha_outcome": "sha256:9f1d41f5ea6bb521f83870cec6384aeac36ef649b42a8a3088dbda0c36aef5a5",
@@ -556,6 +766,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4c: German version"
+    },
+    "de": {
+     "question": "B4c: deutsche Fassung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:29bdcdef7b9749cb590b6623536605e48338aaf0dfcbd76125be62a31c9f8d38",
    "sha_outcome": null,
@@ -575,6 +793,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "B4c: German version"
+    },
+    "de": {
+     "question": "B4c: deutsche Fassung"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:29bdcdef7b9749cb590b6623536605e48338aaf0dfcbd76125be62a31c9f8d38",
    "sha_outcome": "sha256:f7d173d3394101b79ec71433bdba0a6360d3904084bb3f6fd9a876339728ae0b",
@@ -594,6 +820,16 @@
    "score": null,
    "public": true,
    "fact": "13 Punkte mit Schwellen festgelegt, vor dem Messskript und vor dem Lauf",
+   "i18n": {
+    "en": {
+     "question": "M0: Does the Zurich tree register show the limits the city itself states?",
+     "fact": "13 points with thresholds set before the measurement script and before the run"
+    },
+    "pl": {
+     "question": "M0: Czy zuryski kataster drzew pokazuje granice, które podaje samo miasto?",
+     "fact": "13 punktów z progami ustalonymi przed skryptem pomiaru i przed uruchomieniem"
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-tree-qa/blob/main/docs/M0_PREDICTION.md",
    "sha_pred": "sha256:343357976e0bff8c1e535bb4585e767f84eaec00d399e4f6626c33be84005053",
    "sha_outcome": null,
@@ -613,6 +849,16 @@
    "score": "11/13",
    "public": true,
    "fact": "Krone genau 8 m: 16,2 % Bildschirmeingabe vs 9,3 % eingemessen; 921 seit 2022 gepflanzte Bäume mit Krone ≥ 8 m",
+   "i18n": {
+    "en": {
+     "question": "M0: Does the Zurich tree register show the limits the city itself states?",
+     "fact": "Crown exactly 8 m: 16.2 % of screen-entered trees vs 9.3 % of surveyed ones; 921 trees planted since 2022 with a crown ≥ 8 m"
+    },
+    "pl": {
+     "question": "M0: Czy zuryski kataster drzew pokazuje granice, które podaje samo miasto?",
+     "fact": "Korona dokładnie 8 m: 16,2% drzew wpisanych z ekranu wobec 9,3% zmierzonych w terenie; 921 drzew posadzonych od 2022 z koroną ≥ 8 m"
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-tree-qa/blob/main/docs/M0_OUTCOME.md",
    "sha_pred": "sha256:343357976e0bff8c1e535bb4585e767f84eaec00d399e4f6626c33be84005053",
    "sha_outcome": "sha256:00c65f88976a800eae8aa9bc66dbd5e6c080848d419c925bad92f1416d6e035f",
@@ -634,6 +880,14 @@
    "score": null,
    "public": true,
    "fact": "DOI v0.1: 10.5281/zenodo.23267380",
+   "i18n": {
+    "en": {
+     "question": "voro-tree-qa v0.1 with a DOI on Zenodo"
+    },
+    "pl": {
+     "question": "voro-tree-qa v0.1 z DOI w Zenodo"
+    }
+   },
    "link": "https://doi.org/10.5281/zenodo.23267380",
    "sha_pred": null,
    "sha_outcome": null,
@@ -653,6 +907,14 @@
    "score": null,
    "public": true,
    "fact": "DOI v0.1: 10.5281/zenodo.23363158",
+   "i18n": {
+    "pl": {
+     "question": "ekstraklasa-model v0.1 z DOI w Zenodo"
+    },
+    "de": {
+     "question": "ekstraklasa-model v0.1 mit DOI auf Zenodo"
+    }
+   },
    "link": "https://doi.org/10.5281/zenodo.23363158",
    "sha_pred": null,
    "sha_outcome": null,
@@ -672,6 +934,16 @@
    "score": null,
    "public": true,
    "fact": "12 Punkte mit Schwellen festgelegt, vor dem Messskript und vor dem Lauf",
+   "i18n": {
+    "en": {
+     "question": "M0: Does the Vienna tree register show what the city says about its trees?",
+     "fact": "12 points with thresholds set before the measurement script and before the run"
+    },
+    "pl": {
+     "question": "M0: Czy wiedeński kataster drzew pokazuje to, co miasto mówi o swoich drzewach?",
+     "fact": "12 punktów z progami ustalonymi przed skryptem pomiaru i przed uruchomieniem"
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/7165d7c",
    "sha_pred": "sha256:f8150326e04ad3ea726198f44a4ff44a3977b863d1f566c9e1a27513ec16c310",
    "sha_outcome": null,
@@ -691,6 +963,16 @@
    "score": "8/12",
    "public": true,
    "fact": "36,2 % der Pflanzjahre vor 2006 enden auf 0 oder 5 (gleichverteilt 20 %); Kronen-Code und Kronen-Text nicht 1:1",
+   "i18n": {
+    "en": {
+     "question": "M0: Does the Vienna tree register show what the city says about its trees?",
+     "fact": "36.2 % of planting years before 2006 end in 0 or 5 (20 % if evenly spread); crown code and crown text do not match 1:1"
+    },
+    "pl": {
+     "question": "M0: Czy wiedeński kataster drzew pokazuje to, co miasto mówi o swoich drzewach?",
+     "fact": "36,2% lat sadzenia sprzed 2006 kończy się na 0 lub 5 (przy równym rozkładzie 20%); kod korony i opis korony nie odpowiadają sobie 1:1"
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/be2a9c9",
    "sha_pred": "sha256:f8150326e04ad3ea726198f44a4ff44a3977b863d1f566c9e1a27513ec16c310",
    "sha_outcome": "sha256:1d957d6be4837d2678eac7a06465f7467ab3b2494f7cb8f317ecaf7a98dee04f",
@@ -710,6 +992,16 @@
    "score": null,
    "public": true,
    "fact": "4 Erklärungen mit Schwellen festgelegt, vor dem Messskript",
+   "i18n": {
+    "en": {
+     "question": "D1: Why did M0 miss in Vienna?",
+     "fact": "4 explanations with thresholds set before the measurement script"
+    },
+    "pl": {
+     "question": "D1: Dlaczego M0 w Wiedniu się rozminął?",
+     "fact": "4 wyjaśnienia z progami ustalonymi przed skryptem pomiaru"
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-tree-qa/blob/main/wien/D1_PREDICTIONS.md",
    "sha_pred": "sha256:8a893fa3fbcafda836e5fab9254a1e52d0bce3f8a4fe81fc26899bff82a73b1f",
    "sha_outcome": null,
@@ -729,6 +1021,16 @@
    "score": "2/4",
    "public": true,
    "fact": "Strassenbäume ohne Pflanzjahr 3,6 %, Parkbäume 24,0 %; 3 534 Datensätze „Jungbaum wird gepflanzt“, 98,9 % ohne Jahr und Stammumfang",
+   "i18n": {
+    "en": {
+     "question": "D1: Why did M0 miss in Vienna?",
+     "fact": "Street trees without a planting year 3.6 %, park trees 24.0 %; 3,534 records „Jungbaum wird gepflanzt“ (young tree to be planted), 98.9 % without year and trunk girth"
+    },
+    "pl": {
+     "question": "D1: Dlaczego M0 w Wiedniu się rozminął?",
+     "fact": "Drzewa uliczne bez roku sadzenia 3,6%, parkowe 24,0%; 3534 rekordy „Jungbaum wird gepflanzt” (młode drzewo do posadzenia), 98,9% bez roku i obwodu pnia"
+    }
+   },
    "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/400ccfe",
    "sha_pred": "sha256:8a893fa3fbcafda836e5fab9254a1e52d0bce3f8a4fe81fc26899bff82a73b1f",
    "sha_outcome": "sha256:fd497df5a39c410a5b8adf93de9b8a2b373ae52f254a258dec0aa43926a21499",
@@ -750,6 +1052,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "M0: What does the public export of an audiovisual archive really say?"
+    },
+    "de": {
+     "question": "M0: Was sagt der öffentliche Export eines audiovisuellen Archivs wirklich?"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:cd53f2cc7f96e1935a77daa73817ad9a262f66991beef531e661ae705b1aa326",
    "sha_outcome": null,
@@ -769,6 +1079,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "M0: What does the public export of an audiovisual archive really say?"
+    },
+    "de": {
+     "question": "M0: Was sagt der öffentliche Export eines audiovisuellen Archivs wirklich?"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:cd53f2cc7f96e1935a77daa73817ad9a262f66991beef531e661ae705b1aa326",
    "sha_outcome": "sha256:53e4f210f9bffdcf012d2b41bc0aae240a4a16b29d002b6a29b8fb3831e0ccd4",
@@ -788,6 +1106,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "D0: Why did the M0 measurement miss the prediction?"
+    },
+    "de": {
+     "question": "D0: Warum wich die M0-Messung von der Vorhersage ab?"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:afa593a03726b03c512db0560e6cf9072395881ef718f2503d53cbb76c7d596f",
    "sha_outcome": null,
@@ -807,6 +1133,14 @@
    "score": null,
    "public": false,
    "fact": "",
+   "i18n": {
+    "en": {
+     "question": "D0: Why did the M0 measurement miss the prediction?"
+    },
+    "de": {
+     "question": "D0: Warum wich die M0-Messung von der Vorhersage ab?"
+    }
+   },
    "link": "",
    "sha_pred": "sha256:afa593a03726b03c512db0560e6cf9072395881ef718f2503d53cbb76c7d596f",
    "sha_outcome": "sha256:7771527f12d28ebf17beef90bf815a3472455964a4e48ceaaa6c05c25a865a1e",

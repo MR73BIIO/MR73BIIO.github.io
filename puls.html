@@ -78,6 +78,7 @@ h2{font:600 20px var(--sans);margin:0 0 16px}
 .meta{font:400 13px var(--mono);color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
 .q{margin:4px 0 0;font-weight:600;max-width:70ch}
 .fact{margin:6px 0 0;color:var(--ink);max-width:70ch}
+.orig{font:400 12px var(--mono);color:var(--muted);border:1px dashed var(--border);border-radius:5px;padding:0 6px}
 .verdict{font:600 13px var(--mono)}
 .vc-CONFIRMED{color:var(--ok)} .vc-REFUTED{color:var(--refuted)} .vc-NODATA{color:var(--nodata)} .vc-mile{color:var(--gold)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
@@ -146,6 +147,7 @@ const T={
    sealed:"zapieczętowane do decyzji", open:"otwarte: czeka na diagnozę", pre:"zamknięte konsekwencją zapisaną przed wynikiem",
    follows:n=>`diagnoza po #${n}`, followed:n=>`diagnoza: #${n}`, closes:n=>`zamyka przewidywanie #${n}`, waiting:"czeka na wynik",
    evidence:"dowód", pub:"publikacja", s_pred:"przewidywanie", s_out:"wynik", copy:"kopiuj", copied:"skopiowano",
+   orig:l=>`tłumaczenie · oryginał: ${l}`,
    vh:"Jak sprawdzić pieczęć",
    v1:"sha256 to skrót pliku przewidywania lub OUTCOME w commicie, w którym powstał. git to identyfikator commita z wynikiem, obejmuje cały stan repozytorium. Oba można sprawdzić poleceniami:",
    v2:"Wpisy zapieczętowane mają już pieczęć, ale treść otworzę dopiero po decyzji. Wtedy każdy może policzyć skrót i zobaczyć, że plik nie zmienił się od tej daty.",
@@ -158,6 +160,7 @@ const T={
    sealed:"versiegelt bis zur Entscheidung", open:"offen: Diagnose fehlt", pre:"abgeschlossen durch vorab festgelegte Konsequenz",
    follows:n=>`Diagnose nach #${n}`, followed:n=>`Diagnose: #${n}`, closes:n=>`schließt Vorhersage #${n}`, waiting:"wartet auf Ergebnis",
    evidence:"Beleg", pub:"Veröffentlichung", s_pred:"Vorhersage", s_out:"Ergebnis", copy:"kopieren", copied:"kopiert",
+   orig:l=>`Übersetzung · Original: ${l}`,
    vh:"Wie man ein Siegel prüft",
    v1:"sha256 ist der Hash der Vorhersage- oder OUTCOME-Datei im Commit, in dem sie entstand. git ist die Kennung des Ergebnis-Commits und deckt den ganzen Stand des Repos ab. Beides lässt sich so prüfen:",
    v2:"Versiegelte Einträge haben ihr Siegel schon, der Inhalt öffnet sich erst nach der Entscheidung. Dann kann jeder den Hash nachrechnen und sehen, dass sich die Datei seit diesem Datum nicht geändert hat.",
@@ -170,6 +173,7 @@ const T={
    sealed:"sealed until the decision", open:"open: waiting for a diagnosis", pre:"closed by a consequence written before the result",
    follows:n=>`diagnosis after #${n}`, followed:n=>`diagnosis: #${n}`, closes:n=>`closes prediction #${n}`, waiting:"waiting for the result",
    evidence:"evidence", pub:"publication", s_pred:"prediction", s_out:"result", copy:"copy", copied:"copied",
+   orig:l=>`translation · original: ${l}`,
    vh:"How to check a seal",
    v1:"sha256 is the hash of the prediction or OUTCOME file in the commit where it was created. git is the id of the result commit and covers the whole state of the repository. Both can be checked with:",
    v2:"Sealed entries already have their seal; the content opens after the decision. Then anyone can compute the hash and see that the file has not changed since that date.",
@@ -281,12 +285,16 @@ function render(){
     (e.pub||[]).forEach((u,i)=>links.push(`<a href="${esc(u)}" rel="noopener">${esc(t.pub)}${e.pub.length>1?" "+(i+1):""}</a>`));
     const seal=(lbl,val)=>val?`<div class="seal"><span>${esc(lbl)}</span><code title="${esc(val)}">${esc(val)}</code><button data-c="${esc(val)}">${esc(t.copy)}</button></div>`:"";
     const ds=`${e.date.slice(8,10)}.${e.date.slice(5,7)}.${e.date.slice(0,4)} ${e.date.slice(11,16)}`;
+    const own=P[e.plane].lang, tr=(e.i18n&&e.i18n[lang])||{};
+    const qTr=lang!==own&&!!tr.question, fTr=lang!==own&&!!tr.fact&&!!e.fact;
+    const qText=qTr?tr.question:e.question, fText=fTr?tr.fact:e.fact;
+    const used=qTr||fTr;
     return `<li class="entry" id="e${e.n}">
       <div class="num"><i class="dot ${dotc}"></i>${e.n}</div>
       <div>
-        <div class="meta"><span>${ds}</span><span>${esc(P[e.plane].label)}</span>${v}</div>
-        <p class="q" lang="${esc(P[e.plane].lang)}">${esc(e.question)}</p>
-        ${e.fact?`<p class="fact" lang="${esc(P[e.plane].lang)}">${esc(e.fact)}</p>`:""}
+        <div class="meta"><span>${ds}</span><span>${esc(P[e.plane].label)}</span>${v}${used?`<span class="orig" title="${esc(e.question)}">${esc(t.orig(own.toUpperCase()))}</span>`:""}</div>
+        <p class="q" lang="${esc(qTr?lang:own)}">${esc(qText)}</p>
+        ${e.fact?`<p class="fact" lang="${esc(fTr?lang:own)}">${esc(fText)}</p>`:""}
         ${chips.length?`<div class="chips">${chips.join("")}</div>`:""}
         ${links.length?`<div class="links">${links.join("")}</div>`:""}
         <div class="seals">${seal(t.s_pred,e.sha_pred)}${seal(t.s_out,e.sha_outcome)}</div>
