@@ -1366,7 +1366,9 @@
    "resolution": "pre",
    "closes": 48,
    "status": "closed",
-   "pub": [],
+   "pub": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7517622579788922880/"
+   ],
    "i18n": {
     "pl": {
      "question": "D1: Co stoi za nazwami ulic, koroną 0 i wspólnymi punktami w Berlinie?",
