@@ -775,7 +775,7 @@
    "follows": null,
    "resolution": null,
    "closes": 38,
-   "status": "open",
+   "status": "closed",
    "pub": []
   },
   {
@@ -794,7 +794,26 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 41,
+   "date": "2026-10-18T09:46:15+02:00",
+   "kind": "life",
+   "plane": "pl",
+   "question": "D0: Dlaczego pomiar M0 rozminął się z przewidywaniem?",
+   "verdict": "REFUTED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:afa593a03726b03c512db0560e6cf9072395881ef718f2503d53cbb76c7d596f",
+   "sha_outcome": "sha256:7771527f12d28ebf17beef90bf815a3472455964a4e48ceaaa6c05c25a865a1e",
+   "follows": 39,
+   "resolution": "pre",
+   "closes": 40,
+   "status": "closed",
    "pub": []
   }
  ]
