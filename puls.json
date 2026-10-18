@@ -1166,7 +1166,34 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "M1: Zerfällt derselbe Film in zwei Titel?"
+    },
+    "en": {
+     "question": "M1: Does the same film split into two titles?"
+    }
+   }
+  },
+  {
+   "n": 43,
+   "date": "2026-10-18T10:22:14+02:00",
+   "kind": "life",
+   "plane": "pl",
+   "question": "M1: Czy ten sam film rozpada się na dwa tytuły?",
+   "verdict": "REFUTED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:d34dae718875dd95d1b93f75400b02206ddcc087c272ed5022bde241522cf85f",
+   "sha_outcome": "sha256:db78acb9c8365e44ba59bba9a660faca41d715ccb99bb00c2b6d9ccc4a60b575",
+   "follows": null,
+   "resolution": "pre",
+   "closes": 42,
+   "status": "closed",
    "pub": [],
    "i18n": {
     "de": {
