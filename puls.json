@@ -1220,7 +1220,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -1230,6 +1230,35 @@
     "en": {
      "question": "M0: What does Berlin's tree inventory show about its 962,545 records?",
      "fact": "14 points with thresholds fixed before the measuring script and before the run"
+    }
+   }
+  },
+  {
+   "n": 45,
+   "date": "2026-10-18T17:28:47+02:00",
+   "kind": "life",
+   "plane": "de",
+   "question": "M0: Was zeigt der Berliner Baumbestand über seine 962 545 Datensätze?",
+   "verdict": "REFUTED",
+   "score": "9/14",
+   "public": true,
+   "fact": "6 198 leere Datensätze (0,64 %) liegen in einem einzigen Block – die Stichprobe hatte 10 % gezeigt; wo ein Pflanzjahr steht, ist das Standalter in 99,95 % einfach 2026 minus Jahr",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/4829ec7",
+   "sha_pred": "sha256:5fbdbeeda17641e8ab652c008e8d2065d9791e3676baf1b614f41633fa13a710",
+   "sha_outcome": "sha256:04abd3d2f8ca69aab3026894e502d38ad5fc30040144fc52f6c0d107da7375fd",
+   "follows": null,
+   "resolution": "pre",
+   "closes": 44,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "M0: Co pokazuje berliński kataster drzew o swoich 962 545 rekordach?",
+     "fact": "6 198 pustych rekordów (0,64%) leży w jednym bloku – próba pokazała 10%; tam, gdzie jest rok sadzenia, wiek drzewa to w 99,95% po prostu 2026 minus ten rok"
+    },
+    "en": {
+     "question": "M0: What does Berlin's tree inventory show about its 962,545 records?",
+     "fact": "6,198 empty records (0.64 %) sit in one single block – the sample had shown 10 %; where a planting year exists, the stand age is simply 2026 minus the year in 99.95 %"
     }
    }
   }
