@@ -756,6 +756,25 @@
    "follows": null,
    "resolution": null,
    "closes": null,
+   "status": "closed",
+   "pub": []
+  },
+  {
+   "n": 39,
+   "date": "2026-10-18T09:33:28+02:00",
+   "kind": "life",
+   "plane": "pl",
+   "question": "M0: Co naprawdę mówi publiczny eksport archiwum audiowizualnego?",
+   "verdict": "REFUTED",
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:cd53f2cc7f96e1935a77daa73817ad9a262f66991beef531e661ae705b1aa326",
+   "sha_outcome": "sha256:ed50027fdc975104ac4fe64af9679c8f01060a8eaf76cbb79732668fd27f0548",
+   "follows": null,
+   "resolution": null,
+   "closes": 38,
    "status": "open",
    "pub": []
   }
