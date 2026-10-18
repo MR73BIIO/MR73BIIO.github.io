@@ -1319,6 +1319,35 @@
      "fact": "Without a planting year the stand age is empty – except 20,377 trees (99.7 % in green spaces) where it says \"0\"; crown 0 m is rarer in young trees than in old ones (5.8 % vs 9.3 %)"
     }
    }
+  },
+  {
+   "n": 48,
+   "date": "2026-10-18T18:13:28+02:00",
+   "kind": "prediction",
+   "plane": "de",
+   "question": "D1: Was steckt hinter Straßennamen, Krone 0 und gemeinsamen Standorten in Berlin?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "7 Erklärungen mit Schwellen festgelegt, vor dem Diagnoseskript",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/2ce4dea",
+   "sha_pred": "sha256:f00cc349e2461a9d78122f434cc59918a1422d40517ea2d8dd0488716cce0187",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "D1: Co stoi za nazwami ulic, koroną 0 i wspólnymi punktami w Berlinie?",
+     "fact": "7 wyjaśnień z progami ustalonych przed skryptem diagnozy"
+    },
+    "en": {
+     "question": "D1: What is behind street names, crown 0 and shared locations in Berlin?",
+     "fact": "7 explanations with thresholds fixed before the diagnosis script"
+    }
+   }
   }
  ]
 }
