@@ -1379,6 +1379,35 @@
      "fact": "Crown 0 m depends on the district: Tempelhof-Schöneberg 60.36 %, Treptow-Köpenick 0.23 % (262 ×); half of all \"0 m\" sit in 823 of 12,721 care objects"
     }
    }
+  },
+  {
+   "n": 50,
+   "date": "2026-10-18T19:00:24+02:00",
+   "kind": "milestone",
+   "plane": "de",
+   "question": "v0.2: DACH-Trio Zürich, Wien, Berlin – drei Baumkataster, eine Methode",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "1 276 769 Datensätze aus drei Städten, jede Vorhersage vor der Messung im Git; DOI 10.5281/zenodo.23455971",
+   "link": "https://doi.org/10.5281/zenodo.23455971",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "v0.2: trio DACH Zurych, Wiedeń, Berlin – trzy katastry drzew, jedna metoda",
+     "fact": "1 276 769 rekordów z trzech miast, każde przewidywanie w gicie przed pomiarem; DOI 10.5281/zenodo.23455971"
+    },
+    "en": {
+     "question": "v0.2: DACH trio Zurich, Wien, Berlin – three tree registers, one method",
+     "fact": "1,276,769 records from three cities, every prediction committed before the measurement; DOI 10.5281/zenodo.23455971"
+    }
+   }
   }
  ]
 }
