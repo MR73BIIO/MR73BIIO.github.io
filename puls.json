@@ -1261,6 +1261,35 @@
      "fact": "6,198 empty records (0.64 %) sit in one single block – the sample had shown 10 %; where a planting year exists, the stand age is simply 2026 minus the year in 99.95 %"
     }
    }
+  },
+  {
+   "n": 46,
+   "date": "2026-10-18T17:33:48+02:00",
+   "kind": "prediction",
+   "plane": "de",
+   "question": "D0: Warum lag M0 in Berlin daneben, und was bedeuten Standalter, Krone 0 und die Straßennamen?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "8 Erklärungen mit Schwellen festgelegt, vor dem Diagnoseskript",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/0cbc310",
+   "sha_pred": "sha256:ce940481c4fd14cf0d296e9c22f8ca2ac867f9e5235372ea3ee7849b0f8dba8b",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "D0: Dlaczego M0 w Berlinie chybiło i co znaczą wiek drzewa, korona 0 i nazwy ulic?",
+     "fact": "8 wyjaśnień z progami ustalonych przed skryptem diagnozy"
+    },
+    "en": {
+     "question": "D0: Why did M0 miss in Berlin, and what do stand age, crown 0 and the street names mean?",
+     "fact": "8 explanations with thresholds fixed before the diagnosis script"
+    }
+   }
   }
  ]
 }
