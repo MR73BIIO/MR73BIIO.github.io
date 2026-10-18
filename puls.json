@@ -1149,6 +1149,33 @@
    "closes": 40,
    "status": "closed",
    "pub": []
+  },
+  {
+   "n": 42,
+   "date": "2026-10-18T10:15:38+02:00",
+   "kind": "prediction",
+   "plane": "pl",
+   "question": "M1: Czy ten sam film rozpada się na dwa tytuły?",
+   "verdict": null,
+   "score": null,
+   "public": false,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:d34dae718875dd95d1b93f75400b02206ddcc087c272ed5022bde241522cf85f",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "M1: Zerfällt derselbe Film in zwei Titel?"
+    },
+    "en": {
+     "question": "M1: Does the same film split into two titles?"
+    }
+   }
   }
  ]
 }
