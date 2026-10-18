@@ -1278,7 +1278,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -1288,6 +1288,35 @@
     "en": {
      "question": "D0: Why did M0 miss in Berlin, and what do stand age, crown 0 and the street names mean?",
      "fact": "8 explanations with thresholds fixed before the diagnosis script"
+    }
+   }
+  },
+  {
+   "n": 47,
+   "date": "2026-10-18T17:41:22+02:00",
+   "kind": "life",
+   "plane": "de",
+   "question": "D0: Warum lag M0 in Berlin daneben, und was bedeuten Standalter, Krone 0 und die Straßennamen?",
+   "verdict": "REFUTED",
+   "score": "3/8",
+   "public": true,
+   "fact": "Ohne Pflanzjahr bleibt das Standalter leer – außer bei 20 377 Bäumen (99,7 % Anlagenbäume), dort steht „0“; Krone 0 m bei jungen Bäumen seltener als bei alten (5,8 % vs 9,3 %)",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/cca7406",
+   "sha_pred": "sha256:ce940481c4fd14cf0d296e9c22f8ca2ac867f9e5235372ea3ee7849b0f8dba8b",
+   "sha_outcome": "sha256:ca9eacf8ac4fbfed25e0634f753203b68237ace4f023b277d7181a01fd91bf83",
+   "follows": null,
+   "resolution": "pre",
+   "closes": 46,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "D0: Dlaczego M0 w Berlinie chybiło i co znaczą wiek drzewa, korona 0 i nazwy ulic?",
+     "fact": "Bez roku sadzenia wiek drzewa jest pusty – poza 20 377 drzewami (99,7% w parkach), gdzie wpisano „0”; korona 0 m rzadziej u młodych drzew niż u starych (5,8% wobec 9,3%)"
+    },
+    "en": {
+     "question": "D0: Why did M0 miss in Berlin, and what do stand age, crown 0 and the street names mean?",
+     "fact": "Without a planting year the stand age is empty – except 20,377 trees (99.7 % in green spaces) where it says \"0\"; crown 0 m is rarer in young trees than in old ones (5.8 % vs 9.3 %)"
     }
    }
   }
