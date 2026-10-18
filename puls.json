@@ -1203,6 +1203,35 @@
      "question": "M1: Does the same film split into two titles?"
     }
    }
+  },
+  {
+   "n": 44,
+   "date": "2026-10-18T16:39:53+02:00",
+   "kind": "prediction",
+   "plane": "de",
+   "question": "M0: Was zeigt der Berliner Baumbestand über seine 962 545 Datensätze?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "14 Punkte mit Schwellen festgelegt, vor dem Messskript und vor dem Lauf",
+   "link": "https://github.com/MR73BIIO/voro-tree-qa/commit/9a86559",
+   "sha_pred": "sha256:5fbdbeeda17641e8ab652c008e8d2065d9791e3676baf1b614f41633fa13a710",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "M0: Co pokazuje berliński kataster drzew o swoich 962 545 rekordach?",
+     "fact": "14 punktów z progami ustalonych przed skryptem pomiaru i przed uruchomieniem"
+    },
+    "en": {
+     "question": "M0: What does Berlin's tree inventory show about its 962,545 records?",
+     "fact": "14 points with thresholds fixed before the measuring script and before the run"
+    }
+   }
   }
  ]
 }
