@@ -1132,15 +1132,17 @@
    "plane": "pl",
    "question": "D0: Dlaczego pomiar M0 rozminął się z przewidywaniem?",
    "verdict": "REFUTED",
-   "score": null,
-   "public": false,
-   "fact": "",
+   "score": "5/7",
+   "public": true,
+   "fact": "Pierwsze 1000 rekordów w kolejności API to w 41,5% filmy, w całym zbiorze 0,67% – próba z początku daje fałszywy obraz; miejsce i wiek eksportu wycofane jako nierozstrzygnięte",
    "i18n": {
     "en": {
-     "question": "D0: Why did the M0 measurement miss the prediction?"
+     "question": "D0: Why did the M0 measurement miss the prediction?",
+     "fact": "The first 1,000 records in API order are 41.5% films, the whole set 0.67% – a sample from the start misleads; place and export age withdrawn as unresolved"
     },
     "de": {
-     "question": "D0: Warum wich die M0-Messung von der Vorhersage ab?"
+     "question": "D0: Warum wich die M0-Messung von der Vorhersage ab?",
+     "fact": "Die ersten 1000 Datensätze in API-Reihenfolge sind zu 41,5 % Filme, im ganzen Bestand 0,67 % – eine Stichprobe vom Anfang täuscht; Ort und Exportalter als ungeklärt zurückgezogen"
     }
    },
    "link": "",
