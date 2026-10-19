@@ -1198,7 +1198,9 @@
    "resolution": "pre",
    "closes": 42,
    "status": "closed",
-   "pub": [],
+   "pub": [
+    "WKLEJ_LINK_DO_POSTA_KRZYZACY"
+   ],
    "i18n": {
     "de": {
      "question": "M1: Zerfällt derselbe Film in zwei Titel?",
