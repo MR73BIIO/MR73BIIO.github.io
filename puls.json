@@ -1188,9 +1188,9 @@
    "plane": "pl",
    "question": "M1: Czy ten sam film rozpada się na dwa tytuły?",
    "verdict": "REFUTED",
-   "score": null,
-   "public": false,
-   "fact": "",
+   "score": "5/6",
+   "public": true,
+   "fact": "71% utworów z dwoma tytułami (1 092 z 1 534) występuje w obu kolejnościach PL | EN i EN | PL; 92,5% rekordów; 1 708 utworów zamiast 2 794 tytułów; kontrola „Krzyżacy”: 207 + 198 = 405",
    "link": "",
    "sha_pred": "sha256:d34dae718875dd95d1b93f75400b02206ddcc087c272ed5022bde241522cf85f",
    "sha_outcome": "sha256:db78acb9c8365e44ba59bba9a660faca41d715ccb99bb00c2b6d9ccc4a60b575",
@@ -1201,10 +1201,12 @@
    "pub": [],
    "i18n": {
     "de": {
-     "question": "M1: Zerfällt derselbe Film in zwei Titel?"
+     "question": "M1: Zerfällt derselbe Film in zwei Titel?",
+     "fact": "71 % der Werke mit zwei Titeln (1 092 von 1 534) erscheinen in beiden Reihenfolgen PL | EN und EN | PL; 92,5 % der Datensätze; 1 708 Werke statt 2 794 Titel; Kontrolle „Krzyżacy“: 207 + 198 = 405"
     },
     "en": {
-     "question": "M1: Does the same film split into two titles?"
+     "question": "M1: Does the same film split into two titles?",
+     "fact": "71% of two-title works (1,092 of 1,534) appear in both orders PL | EN and EN | PL; 92.5% of records; 1,708 works instead of 2,794 titles; control „Krzyżacy”: 207 + 198 = 405"
     }
    }
   },
