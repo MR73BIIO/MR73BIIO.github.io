@@ -1076,15 +1076,17 @@
    "plane": "pl",
    "question": "M0: Co naprawdę mówi publiczny eksport archiwum audiowizualnego?",
    "verdict": "REFUTED",
-   "score": null,
-   "public": false,
-   "fact": "",
+   "score": "8/14",
+   "public": true,
+   "fact": "71 958 rekordów; 2 794 tytuły, 99,21% rekordów dzieli tytuł z innymi; autor zdjęcia w 0,05%; opis ma 2,49% zdjęć wobec 99,79% filmów",
    "i18n": {
     "en": {
-     "question": "M0: What does the public export of an audiovisual archive really say?"
+     "question": "M0: What does the public export of an audiovisual archive really say?",
+     "fact": "71,958 records; 2,794 titles, 99.21% of records share a title; photographer in 0.05%; description in 2.49% of photos vs 99.79% of films"
     },
     "de": {
-     "question": "M0: Was sagt der öffentliche Export eines audiovisuellen Archivs wirklich?"
+     "question": "M0: Was sagt der öffentliche Export eines audiovisuellen Archivs wirklich?",
+     "fact": "71 958 Datensätze; 2 794 Titel, 99,21 % teilen einen Titel; Fotograf in 0,05 %; Beschreibung bei 2,49 % der Fotos gegenüber 99,79 % der Filme"
     }
    },
    "link": "",
