@@ -1416,6 +1416,35 @@
      "fact": "1,276,769 records from three cities, every prediction committed before the measurement; DOI 10.5281/zenodo.23455971"
     }
    }
+  },
+  {
+   "n": 51,
+   "date": "2026-10-21T18:21:37+02:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Can the engine run Ekstraklasa round 11 on its own: prediction before kickoff, odds, settlement, verdict?",
+   "verdict": "REFUTED",
+   "score": null,
+   "public": true,
+   "fact": "Prediction sealed 4 h before kickoff, 9/9 matches settled. Two human interventions (odds manifest, verdict commit): the engine did not run alone (W6).",
+   "link": "https://doi.org/10.5281/zenodo.23526319",
+   "sha_pred": "sha256:18c6fe72741227c2ba788f95340ce0c1c966a2381b6f6ecdd406686e6fe1628a",
+   "sha_outcome": "sha256:b23f1c7b00b324a1a7337e383bfdaef4beaa34cc0377fb3076718bad3f6fc5fe",
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy silnik sam przejdzie 11. kolejkę Ekstraklasy: prognoza przed gwizdkiem, kursy, rozliczenie, werdykt?",
+     "fact": "Prognoza zapieczętowana 4 h przed gwizdkiem, 9/9 meczów rozliczonych. Dwie interwencje człowieka (manifest kursów, commit werdyktu): silnik nie przeszedł sam (W6)."
+    },
+    "de": {
+     "question": "Schafft die Engine den 11. Ekstraklasa-Spieltag allein: Prognose vor Anpfiff, Quoten, Abrechnung, Urteil?",
+     "fact": "Prognose 4 h vor Anpfiff versiegelt, 9/9 Spiele abgerechnet. Zwei manuelle Eingriffe (Quoten-Manifest, Commit des Urteils): die Engine lief nicht allein (W6)."
+    }
+   }
   }
  ]
 }
