@@ -1445,6 +1445,33 @@
      "fact": "Prognose 4 h vor Anpfiff versiegelt, 9/9 Spiele abgerechnet. Zwei manuelle Eingriffe (Quoten-Manifest, Commit des Urteils): die Engine lief nicht allein (W6)."
     }
    }
+  },
+  {
+   "n": 52,
+   "date": "2026-10-22T16:58:42+02:00",
+   "kind": "prediction",
+   "plane": "en-sport",
+   "question": "Does match material (table gap, starting line-up, coach pressure) explain fouls and cards beyond the referee?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:dad9d7bc900c7b0e0030de3b37d53c9921251e63b33d729df33cdb4dc2cdedd6",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy materiał meczu (różnica w tabeli, skład, presja na trenera) tłumaczy faule i kartki ponad sędziego?"
+    },
+    "de": {
+     "question": "Erklärt das Spielmaterial (Tabellenabstand, Aufstellung, Trainerdruck) Fouls und Karten über den Schiedsrichter hinaus?"
+    }
+   }
   }
  ]
 }
