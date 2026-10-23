@@ -1472,6 +1472,33 @@
      "question": "Erklärt das Spielmaterial (Tabellenabstand, Aufstellung, Trainerdruck) Fouls und Karten über den Schiedsrichter hinaus?"
     }
    }
+  },
+  {
+   "n": 53,
+   "date": "2026-10-23T21:08:07+02:00",
+   "kind": "prediction",
+   "plane": "en-sport",
+   "question": "Can the engine run Ekstraklasa round 12 on its own, with zero human interventions from seed to verdict (W6)?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:d552f52fbc8483d57fdbb11f7f3adf1c5acc9319926690453bc29054112b1c88",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy silnik przejdzie 12. kolejkę Ekstraklasy sam, bez żadnej interwencji człowieka od seedu do werdyktu (W6)?"
+    },
+    "de": {
+     "question": "Schafft die Engine den 12. Ekstraklasa-Spieltag allein, ohne jeden manuellen Eingriff vom Seed bis zum Urteil (W6)?"
+    }
+   }
   }
  ]
 }
