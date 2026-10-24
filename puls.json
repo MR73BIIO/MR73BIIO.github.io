@@ -1504,6 +1504,35 @@
      "question": "Schafft die Engine den 12. Ekstraklasa-Spieltag allein, ohne jeden manuellen Eingriff vom Seed bis zum Urteil (W6)?"
     }
    }
+  },
+  {
+   "n": 54,
+   "date": "2026-10-24T21:46:53+02:00",
+   "kind": "milestone",
+   "plane": "pl-drzewa",
+   "question": "Czy reguły Standardu 688/2025 m.st. Warszawy działają jako publiczne narzędzie z DOI?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "voro-tree-standard-qa v0.1.0: 10 reguł, na pliku syntetycznym (30 drzew) wykryte wszystkie 11 wstawionych błędów, testy w GitHub Actions, DOI 10.5281/zenodo.23624899",
+   "link": "https://doi.org/10.5281/zenodo.23624899",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "Laufen die Regeln des Warschauer Standards 688/2025 als öffentliches Werkzeug mit DOI?",
+     "fact": "voro-tree-standard-qa v0.1.0: 10 Regeln, auf synthetischer Datei (30 Bäume) alle 11 eingebauten Fehler gefunden, Tests in GitHub Actions, DOI 10.5281/zenodo.23624899"
+    },
+    "en": {
+     "question": "Do the rules of the Warsaw Standard 688/2025 run as a public tool with a DOI?",
+     "fact": "voro-tree-standard-qa v0.1.0: 10 rules, all 11 inserted errors found on a synthetic file (30 trees), tests in GitHub Actions, DOI 10.5281/zenodo.23624899"
+    }
+   }
   }
  ]
 }
