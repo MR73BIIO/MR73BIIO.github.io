@@ -28,6 +28,11 @@
    "lang": "en",
    "label": "EN Sport",
    "gate": "open"
+  },
+  "pl-drzewa": {
+   "lang": "pl",
+   "label": "PL Drzewa",
+   "gate": "open"
   }
  },
  "entries": [
