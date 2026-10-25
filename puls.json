@@ -1533,6 +1533,35 @@
      "fact": "voro-tree-standard-qa v0.1.0: 10 rules, all 11 inserted errors found on a synthetic file (30 trees), tests in GitHub Actions, DOI 10.5281/zenodo.23624899"
     }
    }
+  },
+  {
+   "n": 55,
+   "date": "2026-10-25T12:16:29+01:00",
+   "kind": "milestone",
+   "plane": "pl-drzewa",
+   "question": "Czy publiczne dane drzew Warszawy wystarczą, żeby sprawdzić zgodność ze Standardem 688/2025?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "v0.1.1, DOI 10.5281/zenodo.23640565. R0 zamknięte: WMS miasta dla ZIELEN_DRZEWA zwraca tylko OBJECTID (114 wierszy, 109 z ID, 5 pustych), bez klasy ryzyka, gatunku i obwodu. Kontrola ma sens na dostawie GPKG wykonawcy.",
+   "link": "https://github.com/MR73BIIO/voro-tree-standard-qa/releases/tag/v0.1.1",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "Reichen die öffentlichen Baumdaten Warschaus aus, um die Konformität mit dem Standard 688/2025 zu prüfen?",
+     "fact": "v0.1.1, DOI 10.5281/zenodo.23640565. R0 geschlossen: Der WMS der Stadt liefert für ZIELEN_DRZEWA nur OBJECTID (114 Zeilen, 109 mit ID, 5 leer), ohne Risikoklasse, Art und Stammumfang. Die Prüfung gehört an die GPKG-Lieferung des Auftragnehmers."
+    },
+    "en": {
+     "question": "Are Warsaw's public tree data enough to check compliance with Standard 688/2025?",
+     "fact": "v0.1.1, DOI 10.5281/zenodo.23640565. R0 closed: the city WMS returns only OBJECTID for ZIELEN_DRZEWA (114 rows, 109 with ID, 5 empty), no risk class, species or girth. The check belongs on the contractor's GPKG delivery."
+    }
+   }
   }
  ]
 }
