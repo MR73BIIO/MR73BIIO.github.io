@@ -1705,6 +1705,35 @@
      "fact": "thresholds exact (60 cm, 31/32 days); 3 second errors masked after R01, R02, R04, as predicted"
     }
    }
+  },
+  {
+   "n": 61,
+   "date": "2026-10-25T15:57:52+01:00",
+   "kind": "milestone",
+   "plane": "pl-drzewa",
+   "question": "Czy silnik vtsqa zachowuje się na wstrzykniętych błędach dokładnie tak, jak przewidziano przed pomiarem?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "v0.2.0: 4 życia na zestawach wstrzykniętych błędów, 4/4 CONFIRMED (#57–#60), dwa zmierzone ograniczenia opisane w RULES.md, DOI 10.5281/zenodo.23644207",
+   "link": "https://doi.org/10.5281/zenodo.23644207",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "Verhält sich die Engine vtsqa bei eingebauten Fehlern genau so, wie vor der Messung vorhergesagt?",
+     "fact": "v0.2.0: 4 Läufe auf Sätzen mit eingebauten Fehlern, 4/4 CONFIRMED (#57–#60), zwei gemessene Grenzen in RULES.md, DOI 10.5281/zenodo.23644207"
+    },
+    "en": {
+     "question": "Does the vtsqa engine behave on injected errors exactly as predicted before the measurement?",
+     "fact": "v0.2.0: 4 runs on injected-error sets, 4/4 CONFIRMED (#57–#60), two measured limits documented in RULES.md, DOI 10.5281/zenodo.23644207"
+    }
+   }
   }
  ]
 }
