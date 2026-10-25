@@ -1676,6 +1676,35 @@
      "fact": "4 of 5 as predicted; girth '45 cm' skipped silently (predicted); typed GPKG without false alarms"
     }
    }
+  },
+  {
+   "n": 60,
+   "date": "2026-10-25T14:35:28+01:00",
+   "kind": "life",
+   "plane": "pl-drzewa",
+   "question": "L4: granice progów i dwa błędy w jednym rekordzie, czy kolejność reguł jest taka, jak w kodzie?",
+   "verdict": "CONFIRMED",
+   "score": "11/3/0",
+   "public": true,
+   "fact": "granice dokładnie (60 cm, 31/32 dni); 3 drugie błędy zamaskowane po R01, R02, R04, tak jak przewidziano",
+   "link": "",
+   "sha_pred": "sha256:2820f2f8556fd59dedd9c7d5aff813278939b850d5b802eaa8016443bec35da5",
+   "sha_outcome": "sha256:fa4d94bd3ccbcbb8a87fe6a20d597ad6bceb07fbd044a24e9976260f942ee817",
+   "follows": 56,
+   "resolution": null,
+   "closes": 56,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "L4: Schwellen und zwei Fehler pro Datensatz, ist die Regelreihenfolge wie im Code?",
+     "fact": "Schwellen exakt (60 cm, 31/32 Tage); 3 Zweitfehler nach R01, R02, R04 verdeckt, wie vorhergesagt"
+    },
+    "en": {
+     "question": "L4: thresholds and two errors per record, is the rule order as in the code?",
+     "fact": "thresholds exact (60 cm, 31/32 days); 3 second errors masked after R01, R02, R04, as predicted"
+    }
+   }
   }
  ]
 }
