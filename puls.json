@@ -1579,7 +1579,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "de": {
@@ -1587,6 +1587,35 @@
     },
     "en": {
      "question": "Will the vtsqa engine behave on 4 sets of injected errors (rules, delivery formats, thresholds, two errors per record) exactly as reading its code suggests?"
+    }
+   }
+  },
+  {
+   "n": 57,
+   "date": "2026-10-25T14:35:28+01:00",
+   "kind": "life",
+   "plane": "pl-drzewa",
+   "question": "L1: czy silnik znajdzie 13 wstrzykniętych błędów (wszystkie reguły) i nic na czystym pliku?",
+   "verdict": "CONFIRMED",
+   "score": "13/0/0",
+   "public": true,
+   "fact": "13/13, 0 fałszywych alarmów, czysty plik 0 znalezisk",
+   "link": "",
+   "sha_pred": "sha256:2820f2f8556fd59dedd9c7d5aff813278939b850d5b802eaa8016443bec35da5",
+   "sha_outcome": "sha256:fa4d94bd3ccbcbb8a87fe6a20d597ad6bceb07fbd044a24e9976260f942ee817",
+   "follows": 56,
+   "resolution": null,
+   "closes": 56,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "L1: Findet die Engine 13 injizierte Fehler (alle Regeln) und nichts in der sauberen Datei?",
+     "fact": "13/13, 0 Fehlalarme, saubere Datei 0 Befunde"
+    },
+    "en": {
+     "question": "L1: will the engine find 13 injected errors (all rules) and nothing in the clean file?",
+     "fact": "13/13, 0 false alarms, clean file 0 findings"
     }
    }
   }
