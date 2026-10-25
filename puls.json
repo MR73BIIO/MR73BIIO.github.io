@@ -1562,6 +1562,33 @@
      "fact": "v0.1.1, DOI 10.5281/zenodo.23640565. R0 closed: the city WMS returns only OBJECTID for ZIELEN_DRZEWA (114 rows, 109 with ID, 5 empty), no risk class, species or girth. The check belongs on the contractor's GPKG delivery."
     }
    }
+  },
+  {
+   "n": 56,
+   "date": "2026-10-25T13:11:35+01:00",
+   "kind": "prediction",
+   "plane": "pl-drzewa",
+   "question": "Czy silnik vtsqa zachowa się na 4 zestawach wstrzykniętych błędów (reguły, formaty z dostaw, granice progów, dwa błędy w rekordzie) dokładnie tak, jak wynika z czytania jego kodu?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "",
+   "link": "",
+   "sha_pred": "sha256:2820f2f8556fd59dedd9c7d5aff813278939b850d5b802eaa8016443bec35da5",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "Verhält sich die Engine vtsqa bei 4 Sätzen injizierter Fehler (Regeln, Formate aus Lieferungen, Schwellen, zwei Fehler pro Datensatz) genau so, wie es das Lesen ihres Codes ergibt?"
+    },
+    "en": {
+     "question": "Will the vtsqa engine behave on 4 sets of injected errors (rules, delivery formats, thresholds, two errors per record) exactly as reading its code suggests?"
+    }
+   }
   }
  ]
 }
