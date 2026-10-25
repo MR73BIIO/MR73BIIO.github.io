@@ -1438,7 +1438,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -1494,7 +1494,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -1732,6 +1732,35 @@
     "en": {
      "question": "Does the vtsqa engine behave on injected errors exactly as predicted before the measurement?",
      "fact": "v0.2.0: 4 runs on injected-error sets, 4/4 CONFIRMED (#57–#60), two measured limits documented in RULES.md, DOI 10.5281/zenodo.23644207"
+    }
+   }
+  },
+  {
+   "n": 62,
+   "date": "2026-10-25T20:41:26+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Can the engine run Ekstraklasa round 12 on its own, with zero human interventions from seed to verdict (W6)?",
+   "verdict": "CONFIRMED",
+   "score": "4/4",
+   "public": true,
+   "fact": "Prediction sealed 4 h before kickoff, 9/9 matches settled, verdict computed once and published by the engine itself. Zero human interventions. Closes the diagnosis of #51.",
+   "link": "https://mr73biio.github.io/puls.html",
+   "sha_pred": "sha256:d552f52fbc8483d57fdbb11f7f3adf1c5acc9319926690453bc29054112b1c88",
+   "sha_outcome": "sha256:7ff307ca4b72c267f346dabd785ee78304d9015b42ba4fdd2eb223c67de51b2d",
+   "follows": 51,
+   "resolution": null,
+   "closes": 53,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy silnik przejdzie 12. kolejkę Ekstraklasy sam, bez żadnej interwencji człowieka od seedu do werdyktu (W6)?",
+     "fact": "Prognoza zapieczętowana 4 h przed gwizdkiem, 9/9 meczów rozliczonych, werdykt policzony raz i opublikowany przez sam silnik. Zero interwencji człowieka. Zamyka diagnozę #51."
+    },
+    "de": {
+     "question": "Schafft die Engine den 12. Ekstraklasa-Spieltag allein, ohne jeden manuellen Eingriff vom Seed bis zum Urteil (W6)?",
+     "fact": "Prognose 4 h vor Anpfiff versiegelt, 9/9 Spiele abgerechnet, Urteil einmal berechnet und von der Engine selbst veröffentlicht. Kein manueller Eingriff. Schließt die Diagnose zu #51."
     }
    }
   }
