@@ -1821,6 +1821,35 @@
      "fact": "Nicht berechenbar. Die Einsatzminuten sind jetzt in den Daten (Aufstellungsparser repariert), aber Spielerfouls pro Spiel mit dem Stand vor dem Spiel fehlen. Die einzigen Daten sind Momentaufnahmen aus dem Oktober, die die Testspiele enthalten; ihre Nutzung wäre ein Datenleck. Freigeschaltet durch das Erfassen der Spielerfouls aus jedem abgerechneten Spiel."
     }
    }
+  },
+  {
+   "n": 65,
+   "date": "2026-10-28T22:18:11+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Does a player one yellow card away from a suspension get booked less often than his own average (H-E)?",
+   "verdict": "CONFIRMED",
+   "score": "1/1",
+   "public": true,
+   "fact": "46 appearances from round 11, players on 3, 7 or 11 yellows who played: booked in 15.2% of matches against an own average of 34.2%. Ratio 0.445, threshold 0.70. Confirmed. Consequence written before: observation for match context only, not for the model.",
+   "link": "",
+   "sha_pred": "sha256:dad9d7bc900c7b0e0030de3b37d53c9921251e63b33d729df33cdb4dc2cdedd6",
+   "sha_outcome": "sha256:372b309ac7f34fdc9df966274795fbbd51b6c64958fb14c39244306c87778561",
+   "follows": 52,
+   "resolution": null,
+   "closes": 52,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy zawodnik o jedną żółtą od pauzy dostaje kartkę rzadziej niż wynosi jego własna średnia (H-E)?",
+     "fact": "46 występów od kolejki 11, zawodnicy z 3, 7 lub 11 żółtymi, którzy zagrali: kartka w 15,2% meczów przy własnej średniej 34,2%. Stosunek 0,445, próg 0,70. Potwierdzone. Konsekwencja zapisana wcześniej: tylko obserwacja w kontekście meczu, nie do modelu."
+    },
+    "de": {
+     "question": "Wird ein Spieler, dem eine Gelbe Karte zur Sperre fehlt, seltener verwarnt als in seinem eigenen Durchschnitt (H-E)?",
+     "fact": "46 Einsätze ab dem 11. Spieltag, Spieler mit 3, 7 oder 11 Gelben, die gespielt haben: Karte in 15,2 % der Spiele bei einem eigenen Durchschnitt von 34,2 %. Verhältnis 0,445, Schwelle 0,70. Bestätigt. Vorab festgelegte Konsequenz: nur Beobachtung im Spielkontext, nicht im Modell."
+    }
+   }
   }
  ]
 }
