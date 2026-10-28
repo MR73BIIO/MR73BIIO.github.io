@@ -1792,6 +1792,35 @@
      "fact": "88 Spiele, Spieltage 3-12, Tabelle vor jedem Spiel. H-A: Das tiefer platzierte Team foulte nur in 43,9 % der Spiele mehr, im Schnitt 0,52 Fouls weniger. H-B: kein Effekt (+0,03 Karten). Beide widerlegt; der Tabellenabstand kommt nicht ins Modell."
     }
    }
+  },
+  {
+   "n": 64,
+   "date": "2026-10-28T22:18:09+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Does the starting line-up carry a foul profile that predicts match fouls better than team averages (H-C)?",
+   "verdict": "NO DATA",
+   "score": null,
+   "public": true,
+   "fact": "Not computable. Minutes are now in the data (lineup parser fixed), but player fouls per match, as known before each match, are missing. The only player foul data are October snapshots that include the test matches; using them would leak. Unblocked by collecting player fouls from every settled match.",
+   "link": "",
+   "sha_pred": "sha256:dad9d7bc900c7b0e0030de3b37d53c9921251e63b33d729df33cdb4dc2cdedd6",
+   "sha_outcome": "sha256:372b309ac7f34fdc9df966274795fbbd51b6c64958fb14c39244306c87778561",
+   "follows": 52,
+   "resolution": null,
+   "closes": 52,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy skład wyjściowy niesie profil fauli, który przewiduje faule meczu lepiej niż średnie drużyn (H-C)?",
+     "fact": "Nie do policzenia. Minuty są już w danych (naprawiony parser składów), ale brakuje fauli zawodników mecz po meczu, takich jakie były znane przed meczem. Jedyne dane to migawki z października, które obejmują mecze testowe; użycie ich byłoby przeciekiem. Odblokuje to zbieranie fauli zawodników z każdego rozliczonego meczu."
+    },
+    "de": {
+     "question": "Trägt die Startelf ein Foulprofil, das die Fouls eines Spiels besser vorhersagt als Mannschaftsdurchschnitte (H-C)?",
+     "fact": "Nicht berechenbar. Die Einsatzminuten sind jetzt in den Daten (Aufstellungsparser repariert), aber Spielerfouls pro Spiel mit dem Stand vor dem Spiel fehlen. Die einzigen Daten sind Momentaufnahmen aus dem Oktober, die die Testspiele enthalten; ihre Nutzung wäre ein Datenleck. Freigeschaltet durch das Erfassen der Spielerfouls aus jedem abgerechneten Spiel."
+    }
+   }
   }
  ]
 }
