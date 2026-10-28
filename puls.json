@@ -1850,6 +1850,35 @@
      "fact": "46 Einsätze ab dem 11. Spieltag, Spieler mit 3, 7 oder 11 Gelben, die gespielt haben: Karte in 15,2 % der Spiele bei einem eigenen Durchschnitt von 34,2 %. Verhältnis 0,445, Schwelle 0,70. Bestätigt. Vorab festgelegte Konsequenz: nur Beobachtung im Spielkontext, nicht im Modell."
     }
    }
+  },
+  {
+   "n": 66,
+   "date": "2026-10-28T22:18:23+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Is the lower booking rate on the edge of a suspension caution, and not just regression to the mean (H-E2)?",
+   "verdict": "REFUTED",
+   "score": "0/1",
+   "public": true,
+   "fact": "Control group: players on 2, 5, 6, 9 or 10 yellows, no suspension at stake. From round 11 their ratio is 0.529 (n=102) against 0.445 on the edge (n=46). Difference 0.084, below 0.10. Refuted: the effect in H-E is mostly regression to the mean. H-E keeps its verdict and gets this note.",
+   "link": "",
+   "sha_pred": "sha256:4d37a0a1333cefc5906ba15777144d033f8121d4c77ed98c14348f85951e6f9c",
+   "sha_outcome": "sha256:4268a489b1c0a289ee50131ea24e80fcc478afcb9fc8dee3116f3e85ee8fc8bb",
+   "follows": 65,
+   "resolution": "pre",
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy rzadsza kartka na krawędzi pauzy to ostrożność, a nie tylko regresja do średniej (H-E2)?",
+     "fact": "Grupa kontrolna: zawodnicy z 2, 5, 6, 9 lub 10 żółtymi, bez groźby pauzy. Od kolejki 11 ich stosunek to 0,529 (n=102) wobec 0,445 na krawędzi (n=46). Różnica 0,084, poniżej 0,10. Obalone: efekt z H-E to głównie regresja do średniej. H-E zachowuje werdykt i dostaje tę adnotację."
+    },
+    "de": {
+     "question": "Ist die seltenere Verwarnung an der Sperrgrenze Vorsicht und nicht nur Regression zur Mitte (H-E2)?",
+     "fact": "Kontrollgruppe: Spieler mit 2, 5, 6, 9 oder 10 Gelben, ohne drohende Sperre. Ab dem 11. Spieltag liegt ihr Verhältnis bei 0,529 (n=102) gegenüber 0,445 an der Sperrgrenze (n=46). Differenz 0,084, unter 0,10. Widerlegt: der Effekt aus H-E ist überwiegend Regression zur Mitte. H-E behält sein Urteil und erhält diesen Hinweis."
+    }
+   }
   }
  ]
 }
