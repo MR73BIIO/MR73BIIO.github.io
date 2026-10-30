@@ -1879,6 +1879,35 @@
      "fact": "Kontrollgruppe: Spieler mit 2, 5, 6, 9 oder 10 Gelben, ohne drohende Sperre. Ab dem 11. Spieltag liegt ihr Verhältnis bei 0,529 (n=102) gegenüber 0,445 an der Sperrgrenze (n=46). Differenz 0,084, unter 0,10. Widerlegt: der Effekt aus H-E ist überwiegend Regression zur Mitte. H-E behält sein Urteil und erhält diesen Hinweis."
     }
    }
+  },
+  {
+   "n": 67,
+   "date": "2026-10-30T20:01:17+01:00",
+   "kind": "prediction",
+   "plane": "en-sport",
+   "question": "Do the fixes after round 12 hold in round 13: cards market in the prediction, 11 starters and minutes for every match, and the model against the closing market?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "Sealed on Friday at 14:00:01, four hours before the first match. Referees 9 of 9. Known before the result and logged: one code fix during the round (two matches at the same time blocked the referee list, W6) and one manual referee change after a newer official list (W1). Cards market in the prediction for 3 of 9 matches: every match with an odds link got it, but 6 links were missing.",
+   "link": "",
+   "sha_pred": "sha256:0bba6088c7dd46b76ed537925651b40cbe01903b8afd9eb6ab11f3d707d6dc71",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy naprawy po 12. kolejce działają w 13.: rynek kartek w predykcji, 11 podstawowych i minuty w każdym meczu oraz model wobec rynku zamknięcia?",
+     "fact": "Zapieczętowane w piątek o 14:00:01, cztery godziny przed pierwszym meczem. Sędziowie 9 z 9. Wiadomo przed wynikiem i zapisane w logu: jedna poprawka kodu w trakcie kolejki (dwa mecze o tej samej godzinie blokowały obsadę, W6) i jedna ręczna zmiana sędziego według nowszego komunikatu (W1). Rynek kartek w predykcji dla 3 z 9 meczów: każdy mecz z linkiem do kursów go dostał, ale 6 linków brakowało."
+    },
+    "de": {
+     "question": "Halten die Korrekturen nach dem 12. Spieltag im 13.: Kartenmarkt in der Prognose, 11 Startspieler und Minuten in jedem Spiel sowie das Modell gegenüber dem Schlussmarkt?",
+     "fact": "Versiegelt am Freitag um 14:00:01, vier Stunden vor dem ersten Spiel. Schiedsrichter 9 von 9. Vor dem Ergebnis bekannt und protokolliert: eine Codekorrektur während des Spieltags (zwei Spiele zur selben Uhrzeit blockierten die Ansetzung, W6) und eine manuelle Schiedsrichteränderung nach einer neueren offiziellen Liste (W1). Kartenmarkt in der Prognose für 3 von 9 Spielen: jedes Spiel mit Quotenlink bekam ihn, aber 6 Links fehlten."
+    }
+   }
   }
  ]
 }
