@@ -1908,6 +1908,35 @@
      "fact": "Versiegelt am Freitag um 14:00:01, vier Stunden vor dem ersten Spiel. Schiedsrichter 9 von 9. Vor dem Ergebnis bekannt und protokolliert: eine Codekorrektur während des Spieltags (zwei Spiele zur selben Uhrzeit blockierten die Ansetzung, W6) und eine manuelle Schiedsrichteränderung nach einer neueren offiziellen Liste (W1). Kartenmarkt in der Prognose für 3 von 9 Spielen: jedes Spiel mit Quotenlink bekam ihn, aber 6 Links fehlten."
     }
    }
+  },
+  {
+   "n": 68,
+   "date": "2026-11-01T12:08:03+01:00",
+   "kind": "milestone",
+   "plane": "pl-drzewa",
+   "question": "Korekta opisu #56 i #59: skąd są błędy formatu B1–B9 w L3?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "Syntetyczne. Opis „z prawdziwych dostaw” był błędny: wstawia je tools/inject.py do bazy syntetycznej, a publiczny WMS Warszawy podaje tylko położenie i OBJECTID (R0, 25.10). Korekta z 01.11.2026. Wynik L3 bez zmian: CONFIRMED 4/1/0, ale nie mówi nic o formatach w prawdziwych dostawach. Wpisy #56 i #59 zostają bez zmian.",
+   "link": "https://github.com/MR73BIIO/voro-tree-standard-qa/blob/main/OUTCOME_v0_2a.md#korekta-01112026",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": 59,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "de": {
+     "question": "Korrektur zu #56 und #59: Woher stammen die Formatfehler B1–B9 in L3?",
+     "fact": "Synthetisch. Die Angabe „aus echten Lieferungen“ war falsch: tools/inject.py setzt sie in eine synthetische Datenbasis ein, und der öffentliche WMS von Warschau liefert nur Lage und OBJECTID (R0, 25.10.). Korrektur vom 01.11.2026. Ergebnis L3 unverändert: CONFIRMED 4/1/0, aber ohne Aussage über Formate in echten Lieferungen. Die Einträge #56 und #59 bleiben unverändert."
+    },
+    "en": {
+     "question": "Correction to #56 and #59: where do the format errors B1–B9 in L3 come from?",
+     "fact": "Synthetic. The description “from real deliveries” was wrong: tools/inject.py inserts them into a synthetic base, and the public Warsaw WMS returns only location and OBJECTID (R0, 25.10). Correction dated 01.11.2026. L3 result unchanged: CONFIRMED 4/1/0, but it says nothing about formats in real deliveries. Entries #56 and #59 stay unchanged."
+    }
+   }
   }
  ]
 }
