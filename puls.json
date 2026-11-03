@@ -1995,6 +1995,35 @@
      "fact": "Die Schwachstelle war nicht das Modell, sondern die Quelle der Spielerdaten. Spielerdaten (Aufstellungen, Minuten, Ereignisse, Spielerstatistiken) kommen jetzt aus einer strukturierten Statistik-API statt aus Spielseiten. Prüfung an Runde 13: Teamstatistiken 9/9 identisch, 51 fehlende Minuten ergänzt. Runden 1-12 geladen: 106/106 Spiele, 4991 Spielerzeilen. Modell unverändert."
     }
    }
+  },
+  {
+   "n": 71,
+   "date": "2026-11-03T10:56:45+01:00",
+   "kind": "milestone",
+   "plane": "en-sport",
+   "question": "ekstraklasa-model v0.4: Round 13 and Rounds 11-13 together",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "Release v0.4 archived in Zenodo, DOI 10.5281/zenodo.23913638. Round 13 refuted with diagnosis; player data moved to a structured statistics API; Rounds 11-13 together: closing market ahead on cards (log-loss 0.699 vs 0.734, n=23), referee-based models ahead on fouls (4.18 vs 4.62, n=24). Model unchanged.",
+   "link": "https://doi.org/10.5281/zenodo.23913638",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "ekstraklasa-model v0.4: 13. kolejka i kolejki 11-13 łącznie",
+     "fact": "Wydanie v0.4 zarchiwizowane w Zenodo, DOI 10.5281/zenodo.23913638. 13. kolejka REFUTED z diagnozą; dane zawodników przeszły na strukturalne API statystyk; kolejki 11-13 łącznie: rynek zamknięcia lepszy na kartkach (log-loss 0.699 vs 0.734, n=23), modele oparte na sędzi lepsze na faulach (4.18 vs 4.62, n=24). Model bez zmian."
+    },
+    "de": {
+     "question": "ekstraklasa-model v0.4: Runde 13 und Runden 11-13 zusammen",
+     "fact": "Release v0.4 in Zenodo archiviert, DOI 10.5281/zenodo.23913638. Runde 13 widerlegt, mit Diagnose; Spielerdaten aus einer strukturierten Statistik-API; Runden 11-13 zusammen: Schlussmarkt bei Karten besser (Log-Loss 0.699 vs. 0.734, n=23), schiedsrichterbasierte Modelle bei Fouls besser (4.18 vs. 4.62, n=24). Modell unverändert."
+    }
+   }
   }
  ]
 }
