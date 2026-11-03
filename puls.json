@@ -2024,6 +2024,35 @@
      "fact": "Release v0.4 in Zenodo archiviert, DOI 10.5281/zenodo.23913638. Runde 13 widerlegt, mit Diagnose; Spielerdaten aus einer strukturierten Statistik-API; Runden 11-13 zusammen: Schlussmarkt bei Karten besser (Log-Loss 0.699 vs. 0.734, n=23), schiedsrichterbasierte Modelle bei Fouls besser (4.18 vs. 4.62, n=24). Modell unverändert."
     }
    }
+  },
+  {
+   "n": 72,
+   "date": "2026-11-03T16:07:35+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Do minutes and match rating in the Ekstraklasa predict which young players move to a stronger league within a year?",
+   "verdict": "REFUTED",
+   "score": "0/3",
+   "public": true,
+   "fact": "Refuted on two seasons, thresholds written before the data. 2024/25: 4 of 53 young players moved; their median minutes were lower than the rest (1012 vs 1245). 2025/26: 8 of 42 moved; minutes 1401 vs 1301, rating +0.08. The rule '1400+ minutes and rating 6.80+' caught 0 of 4 and 2 of 8.",
+   "link": "",
+   "sha_pred": "sha256:a870f9bcc6a4ab73ee7100813989c3b2060e3b0d29455cf73195501ed8a5ee2f",
+   "sha_outcome": "sha256:fac6a84216c0deff920fd66eece7bc281b28dea3ed0a95c7c8d6c3259a2e1965",
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy minuty i ocena meczowa w Ekstraklasie zapowiadają, którzy młodzi w ciągu roku przejdą do mocniejszej ligi?",
+     "fact": "Obalone na dwóch sezonach, progi zapisane przed danymi. 2024/25: skoczyło 4 z 53 młodych; ich mediana minut była niższa niż reszty (1012 vs 1245). 2025/26: 8 z 42; minuty 1401 vs 1301, ocena +0.08. Reguła '1400+ minut i ocena 6.80+' złapała 0 z 4 i 2 z 8."
+    },
+    "de": {
+     "question": "Sagen Einsatzminuten und Spielbewertung in der Ekstraklasa voraus, welche jungen Spieler innerhalb eines Jahres in eine stärkere Liga wechseln?",
+     "fact": "Widerlegt in zwei Saisons, Schwellen vor den Daten festgelegt. 2024/25: 4 von 53 jungen Spielern wechselten; ihr Median an Minuten lag unter dem der übrigen (1012 vs. 1245). 2025/26: 8 von 42; Minuten 1401 vs. 1301, Bewertung +0.08. Die Regel '1400+ Minuten und Bewertung 6.80+' traf 0 von 4 und 2 von 8."
+    }
+   }
   }
  ]
 }
