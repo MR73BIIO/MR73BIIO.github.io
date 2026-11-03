@@ -1896,7 +1896,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -1935,6 +1935,35 @@
     "en": {
      "question": "Correction to #56 and #59: where do the format errors B1–B9 in L3 come from?",
      "fact": "Synthetic. The description “from real deliveries” was wrong: tools/inject.py inserts them into a synthetic base, and the public Warsaw WMS returns only location and OBJECTID (R0, 25.10). Correction dated 01.11.2026. L3 result unchanged: CONFIRMED 4/1/0, but it says nothing about formats in real deliveries. Entries #56 and #59 stay unchanged."
+    }
+   }
+  },
+  {
+   "n": 69,
+   "date": "2026-11-03T10:43:00+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Do the fixes after Round 12 work in Round 13: cards market in the prediction, 11 starters and minutes in every match, and the model against the closing market?",
+   "verdict": "REFUTED",
+   "score": "3/7",
+   "public": true,
+   "fact": "3 of 7 process conditions met. Prediction sealed before the first match, 9/9 settled, line-ups 9/9. Broken: 3 code changes and 2 manual inputs during the round (scraped pages changed), opening market 3/9, minutes 5/9. Model: cards MAE 1.93 vs constant 1.75; closing market better on log-loss (0.665 vs 0.841, n=8); fouls: referee alone best (3.35).",
+   "link": "https://github.com/MR73BIIO/ekstraklasa-model/blob/main/docs/findings.md",
+   "sha_pred": "sha256:0bba6088c7dd46b76ed537925651b40cbe01903b8afd9eb6ab11f3d707d6dc71",
+   "sha_outcome": "sha256:41d109836c1ab4dc3ed63766024bf77a29cb8190c4843a52e04445a4f8d25a0c",
+   "follows": null,
+   "resolution": null,
+   "closes": 67,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy naprawy po 12. kolejce działają w 13.: rynek kartek w predykcji, 11 podstawowych i minuty w każdym meczu oraz model wobec rynku zamknięcia?",
+     "fact": "Spełnione 3 z 7 warunków przebiegu. Predykcja zapieczętowana przed pierwszym meczem, 9/9 rozliczonych, składy 9/9. Złamane: 3 zmiany kodu i 2 ręczne wejścia w trakcie kolejki (zmiany na stronach meczów), rynek otwarcia 3/9, minuty 5/9. Model: kartki MAE 1.93 vs stała 1.75; rynek zamknięcia lepszy w log-loss (0.665 vs 0.841, n=8); faule: najlepszy sam sędzia (3.35)."
+    },
+    "de": {
+     "question": "Greifen die Korrekturen nach Runde 12 in Runde 13: Kartenmarkt in der Prognose, 11 Startspieler und Minuten in jedem Spiel, und das Modell gegen den Schlussmarkt?",
+     "fact": "3 von 7 Ablaufbedingungen erfüllt. Prognose vor dem ersten Spiel versiegelt, 9/9 abgerechnet, Aufstellungen 9/9. Verletzt: 3 Codeänderungen und 2 manuelle Eingaben während der Runde (Spielseiten geändert), Eröffnungsmarkt 3/9, Minuten 5/9. Modell: Karten MAE 1.93 vs. Konstante 1.75; Schlussmarkt besser im Log-Loss (0.665 vs. 0.841, n=8); Fouls: Schiedsrichter allein am besten (3.35)."
     }
    }
   }
