@@ -1954,7 +1954,7 @@
    "follows": null,
    "resolution": null,
    "closes": 67,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -1964,6 +1964,35 @@
     "de": {
      "question": "Greifen die Korrekturen nach Runde 12 in Runde 13: Kartenmarkt in der Prognose, 11 Startspieler und Minuten in jedem Spiel, und das Modell gegen den Schlussmarkt?",
      "fact": "3 von 7 Ablaufbedingungen erfüllt. Prognose vor dem ersten Spiel versiegelt, 9/9 abgerechnet, Aufstellungen 9/9. Verletzt: 3 Codeänderungen und 2 manuelle Eingaben während der Runde (Spielseiten geändert), Eröffnungsmarkt 3/9, Minuten 5/9. Modell: Karten MAE 1.93 vs. Konstante 1.75; Schlussmarkt besser im Log-Loss (0.665 vs. 0.841, n=8); Fouls: Schiedsrichter allein am besten (3.35)."
+    }
+   }
+  },
+  {
+   "n": 70,
+   "date": "2026-11-03T10:43:03+01:00",
+   "kind": "milestone",
+   "plane": "en-sport",
+   "question": "Why did Round 13 fail, and what changed?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "The model was not the weak part; the source of player data was. Player data (line-ups, minutes, events, player stats) moved from scraped pages to a structured statistics API. Check on Round 13: team stats identical 9/9, 51 missing minutes filled. Rounds 1-12 loaded: 106/106 matches, 4,991 player rows. Model unchanged.",
+   "link": "https://github.com/MR73BIIO/ekstraklasa-model/blob/main/docs/findings.md",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": 69,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Dlaczego 13. kolejka nie przeszła i co się zmieniło?",
+     "fact": "Słabym punktem nie był model, tylko źródło danych zawodników. Dane zawodników (składy, minuty, zdarzenia, statystyki) przeszły ze stron meczów na strukturalne API statystyk. Kontrola na K13: statystyki drużyn zgodne 9/9, uzupełnione 51 brakujących minut. Kolejki 1-12 wczytane: 106/106 meczów, 4991 wierszy zawodników. Model bez zmian."
+    },
+    "de": {
+     "question": "Warum ist Runde 13 gescheitert, und was hat sich geändert?",
+     "fact": "Die Schwachstelle war nicht das Modell, sondern die Quelle der Spielerdaten. Spielerdaten (Aufstellungen, Minuten, Ereignisse, Spielerstatistiken) kommen jetzt aus einer strukturierten Statistik-API statt aus Spielseiten. Prüfung an Runde 13: Teamstatistiken 9/9 identisch, 51 fehlende Minuten ergänzt. Runden 1-12 geladen: 106/106 Spiele, 4991 Spielerzeilen. Modell unverändert."
     }
    }
   }
