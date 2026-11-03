@@ -2041,7 +2041,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -2051,6 +2051,35 @@
     "de": {
      "question": "Sagen Einsatzminuten und Spielbewertung in der Ekstraklasa voraus, welche jungen Spieler innerhalb eines Jahres in eine stärkere Liga wechseln?",
      "fact": "Widerlegt in zwei Saisons, Schwellen vor den Daten festgelegt. 2024/25: 4 von 53 jungen Spielern wechselten; ihr Median an Minuten lag unter dem der übrigen (1012 vs. 1245). 2025/26: 8 von 42; Minuten 1401 vs. 1301, Bewertung +0.08. Die Regel '1400+ Minuten und Bewertung 6.80+' traf 0 von 4 und 2 von 8."
+    }
+   }
+  },
+  {
+   "n": 73,
+   "date": "2026-11-03T16:08:30+01:00",
+   "kind": "milestone",
+   "plane": "en-sport",
+   "question": "After H-S1: what is tested next, and how?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "Two leads seen in the result, age and European-cup clubs, are not tested on the same data. H-S2 is written forward: 37 young Ekstraklasa players frozen on 3 Nov 2026 with a SHA-256 seal (5 born mid-2006 or later, 11 from clubs in European cups 2025-26). Checked on 15 Sep 2027, after two transfer windows.",
+   "link": "https://mr73biio.github.io/puls.html#e72",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": 72,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Po H-S1: co dalej i jak to sprawdzić?",
+     "fact": "Dwóch tropów widocznych w wyniku, wieku i klubów z pucharów, nie sprawdzamy na tych samych danych. H-S2 zapisana do przodu: 37 młodych z Ekstraklasy zamrożonych 3.11.2026 z pieczęcią SHA-256 (5 z rocznika od połowy 2006, 11 z klubów grających w pucharach 2025-26). Sprawdzenie 15.09.2027, po dwóch oknach transferowych."
+    },
+    "de": {
+     "question": "Nach H-S1: Was wird als Nächstes getestet, und wie?",
+     "fact": "Zwei im Ergebnis sichtbare Spuren, Alter und Europapokal-Klubs, werden nicht an denselben Daten getestet. H-S2 ist vorwärts festgelegt: 37 junge Ekstraklasa-Spieler am 3.11.2026 mit SHA-256-Siegel eingefroren (5 ab Jahrgang Mitte 2006, 11 aus Klubs im Europapokal 2025-26). Prüfung am 15.09.2027, nach zwei Transferfenstern."
     }
    }
   }
