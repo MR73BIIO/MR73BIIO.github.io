@@ -2082,6 +2082,35 @@
      "fact": "Zwei im Ergebnis sichtbare Spuren, Alter und Europapokal-Klubs, werden nicht an denselben Daten getestet. H-S2 ist vorwärts festgelegt: 37 junge Ekstraklasa-Spieler am 3.11.2026 mit SHA-256-Siegel eingefroren (5 ab Jahrgang Mitte 2006, 11 aus Klubs im Europapokal 2025-26). Prüfung am 15.09.2027, nach zwei Transferfenstern."
     }
    }
+  },
+  {
+   "n": 74,
+   "date": "2026-11-09T13:29:09+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Round 14 on the new data source: can the engine run the whole round alone, with odds links as the only manual input?",
+   "verdict": "REFUTED",
+   "score": "5/7",
+   "public": true,
+   "fact": "5 of 7 conditions met. Prediction sealed 4 hours before the first match, 9/9 matches settled automatically from the API, no code change during the round. Broken: cards market 0/9 (the odds page changed its layout) and the final commit was done by hand. Cards MAE: model 2.55, constant 2.48. Fouls MAE: full model 4.23, constant 4.61, referee alone 5.30.",
+   "link": "https://github.com/MR73BIIO/ekstraklasa-model",
+   "sha_pred": "sha256:af5d24d7cc83b9def50ace82bcc8034797887cd143721e5c90390e4608348c34",
+   "sha_outcome": "sha256:bc33bedd2d755de516df49e5d405345fe3b3b55ec4c28dff94b781867a3bddd3",
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "14. kolejka na nowym źródle danych: czy silnik przejdzie całą kolejkę sam, z linkami do kursów jako jedynym ręcznym wejściem?",
+     "fact": "Spełnione 5 z 7 warunków. Predykcja zapieczętowana 4 godziny przed pierwszym meczem, 9/9 meczów rozliczonych automatycznie z API, zero zmian kodu w trakcie kolejki. Złamane: rynek kartek 0/9 (strona z kursami zmieniła układ) i ostatni commit zrobiony ręcznie. Kartki MAE: model 2.55, stała 2.48. Faule MAE: pełny model 4.23, stała 4.61, sam sędzia 5.30."
+    },
+    "de": {
+     "question": "Runde 14 mit der neuen Datenquelle: Läuft die Engine die ganze Runde allein, mit Quotenlinks als einziger manueller Eingabe?",
+     "fact": "5 von 7 Bedingungen erfüllt. Prognose 4 Stunden vor dem ersten Spiel versiegelt, 9/9 Spiele automatisch aus der API abgerechnet, keine Codeänderung während der Runde. Verletzt: Kartenmarkt 0/9 (die Quotenseite hat ihr Layout geändert) und der letzte Commit von Hand. Karten MAE: Modell 2.55, Konstante 2.48. Fouls MAE: volles Modell 4.23, Konstante 4.61, nur Schiedsrichter 5.30."
+    }
+   }
   }
  ]
 }
