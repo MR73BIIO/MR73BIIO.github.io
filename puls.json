@@ -2099,7 +2099,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -2109,6 +2109,35 @@
     "de": {
      "question": "Runde 14 mit der neuen Datenquelle: Läuft die Engine die ganze Runde allein, mit Quotenlinks als einziger manueller Eingabe?",
      "fact": "5 von 7 Bedingungen erfüllt. Prognose 4 Stunden vor dem ersten Spiel versiegelt, 9/9 Spiele automatisch aus der API abgerechnet, keine Codeänderung während der Runde. Verletzt: Kartenmarkt 0/9 (die Quotenseite hat ihr Layout geändert) und der letzte Commit von Hand. Karten MAE: Modell 2.55, Konstante 2.48. Fouls MAE: volles Modell 4.23, Konstante 4.61, nur Schiedsrichter 5.30."
+    }
+   }
+  },
+  {
+   "n": 75,
+   "date": "2026-11-09T13:29:12+01:00",
+   "kind": "milestone",
+   "plane": "en-sport",
+   "question": "Why did Round 14 fail, and what changes before Round 15?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "The weak part was again a scraped page, now the odds page. A parallel witness took the cards market from an odds API: Superbet for 9/9 matches from Thursday evening, opening and closing prices, identical to the scraped page (line 1.5: 1.05 / 5.90). From Round 15 the market comes from that API, the odds links disappear, and a missing market ends as NO DATA instead of blocking the verdict.",
+   "link": "https://mr73biio.github.io/puls.html#e74",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": 74,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Dlaczego 14. kolejka nie przeszła i co się zmienia przed 15.?",
+     "fact": "Słabym punktem znów była pobierana strona, tym razem strona z kursami. Równoległy świadek brał rynek kartek z API kursów: Superbet dla 9/9 meczów od czwartku wieczorem, kursy otwarcia i zamknięcia, identyczne jak na stronie (linia 1.5: 1.05 / 5.90). Od 15. kolejki rynek idzie z tego API, linki do kursów znikają, a brak rynku kończy się wynikiem NO DATA zamiast blokady werdyktu."
+    },
+    "de": {
+     "question": "Warum ist Runde 14 gescheitert, und was ändert sich vor Runde 15?",
+     "fact": "Die Schwachstelle war wieder eine abgerufene Webseite, diesmal die Quotenseite. Ein paralleler Zeuge nahm den Kartenmarkt aus einer Quoten-API: Superbet für 9/9 Spiele ab Donnerstagabend, Eröffnungs- und Schlussquoten, identisch mit der Webseite (Linie 1.5: 1.05 / 5.90). Ab Runde 15 kommt der Markt aus dieser API, die Quotenlinks entfallen, und ein fehlender Markt endet als NO DATA statt das Urteil zu blockieren."
     }
    }
   }
