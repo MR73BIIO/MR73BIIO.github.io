@@ -2140,6 +2140,35 @@
      "fact": "Die Schwachstelle war wieder eine abgerufene Webseite, diesmal die Quotenseite. Ein paralleler Zeuge nahm den Kartenmarkt aus einer Quoten-API: Superbet für 9/9 Spiele ab Donnerstagabend, Eröffnungs- und Schlussquoten, identisch mit der Webseite (Linie 1.5: 1.05 / 5.90). Ab Runde 15 kommt der Markt aus dieser API, die Quotenlinks entfallen, und ein fehlender Markt endet als NO DATA statt das Urteil zu blockieren."
     }
    }
+  },
+  {
+   "n": 76,
+   "date": "2026-11-15T16:22:07+01:00",
+   "kind": "prediction",
+   "plane": "en-gis",
+   "question": "Do the parcels from the Gdańsk land register (EGiB) agree with the cadastral districts in PRG?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "Expected: 0 parcels in a wrong district, 0 overlaps, at most 5 of 181 districts with a coverage piece above 150 m2.",
+   "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/3450e44/docs/prediction_1.7_egib_gdansk.md",
+   "sha_pred": "sha256:de1ff7124290132bdef6663feaa32abee1366db43f972b4b6cbe808bf226f0e9",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy działki z ewidencji gruntów Gdańska (EGiB) zgadzają się z obrębami w PRG?",
+     "fact": "Oczekiwane: 0 działek w obcym obrębie, 0 nakładek, najwyżej 5 ze 181 obrębów z kawałkiem pokrycia powyżej 150 m2."
+    },
+    "de": {
+     "question": "Stimmen die Flurstücke aus dem Liegenschaftskataster von Danzig (EGiB) mit den Gemarkungen im PRG überein?",
+     "fact": "Erwartet: 0 Flurstücke in einer falschen Gemarkung, 0 Überlappungen, höchstens 5 von 181 Gemarkungen mit einer Abdeckungslücke über 150 m2."
+    }
+   }
   }
  ]
 }
