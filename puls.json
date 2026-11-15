@@ -2157,7 +2157,7 @@
    "follows": null,
    "resolution": null,
    "closes": null,
-   "status": "open",
+   "status": "closed",
    "pub": [],
    "i18n": {
     "pl": {
@@ -2167,6 +2167,35 @@
     "de": {
      "question": "Stimmen die Flurstücke aus dem Liegenschaftskataster von Danzig (EGiB) mit den Gemarkungen im PRG überein?",
      "fact": "Erwartet: 0 Flurstücke in einer falschen Gemarkung, 0 Überlappungen, höchstens 5 von 181 Gemarkungen mit einer Abdeckungslücke über 150 m2."
+    }
+   }
+  },
+  {
+   "n": 77,
+   "date": "2026-11-15T20:01:15+01:00",
+   "kind": "life",
+   "plane": "en-gis",
+   "question": "Do the parcels from the Gdańsk land register (EGiB) agree with the cadastral districts in PRG?",
+   "verdict": "REFUTED",
+   "score": null,
+   "public": true,
+   "fact": "93,804 parcels, 0 overlaps, but 10 parcels lie in another district and 41 districts have pieces above 150 m2. The pieces come in mirrored pairs between neighbours.",
+   "link": "https://github.com/MR73BIIO/voro-gis-qa/blob/2c645b8/docs/outcome_1.7_egib_gdansk.md",
+   "sha_pred": "sha256:de1ff7124290132bdef6663feaa32abee1366db43f972b4b6cbe808bf226f0e9",
+   "sha_outcome": "sha256:87625d9a511f2d7726919f94c0ddb3f3e48e9aec05f98df2995e4bb9e543dd55",
+   "follows": null,
+   "resolution": null,
+   "closes": 76,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Czy działki z ewidencji gruntów Gdańska (EGiB) zgadzają się z obrębami w PRG?",
+     "fact": "93 804 działki, 0 nakładek, ale 10 działek leży w innym obrębie, a 41 obrębów ma kawałki powyżej 150 m2. Kawałki tworzą lustrzane pary między sąsiadami."
+    },
+    "de": {
+     "question": "Stimmen die Flurstücke aus dem Liegenschaftskataster von Danzig (EGiB) mit den Gemarkungen im PRG überein?",
+     "fact": "93.804 Flurstücke, 0 Überlappungen, aber 10 Flurstücke liegen in einer anderen Gemarkung und 41 Gemarkungen haben Teilflächen über 150 m2. Die Teilflächen bilden gespiegelte Paare zwischen Nachbarn."
     }
    }
   }
