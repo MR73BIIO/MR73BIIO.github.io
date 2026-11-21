@@ -2216,7 +2216,9 @@
    "resolution": null,
    "closes": null,
    "status": "closed",
-   "pub": [],
+   "pub": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7529697622903668737/"
+   ],
    "i18n": {
     "pl": {
      "question": "Ile kilometrów napowietrznych linii energetycznych ma Polska według BDOT10k?",
