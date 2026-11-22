@@ -2258,6 +2258,35 @@
      "fact": "bdot10k-power-lines v1.1.0: Potenzial ca. 21 Mrd. PLN, Erwartungswert ca. 6,3 Mrd. PLN, Rückstellungen der Netzbetreiber ca. 0,83 Mrd. PLN"
     }
    }
+  },
+  {
+   "n": 80,
+   "date": "2026-11-22T19:09:00+01:00",
+   "kind": "milestone",
+   "plane": "en-gis",
+   "question": "What do MV lines and the value of claims look like on a map of Poland?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "bdot10k-power-lines v1.1.1: map of 222 110 km of MV lines with claims value per km² of municipality, funnel chart from potential to provisions",
+   "link": "https://doi.org/10.5281/zenodo.24446561",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Jak wyglądają linie SN i wartość roszczeń na mapie Polski?",
+     "fact": "bdot10k-power-lines v1.1.1: mapa 222 110 km linii SN z wartością roszczeń na km² gminy, wykres od potencjału do rezerw"
+    },
+    "de": {
+     "question": "Wie sehen die MS-Leitungen und der Wert der Ansprüche auf einer Karte Polens aus?",
+     "fact": "bdot10k-power-lines v1.1.1: Karte von 222 110 km MS-Leitungen mit Anspruchswert je km² Gemeinde, Diagramm vom Potenzial zu den Rückstellungen"
+    }
+   }
   }
  ]
 }
