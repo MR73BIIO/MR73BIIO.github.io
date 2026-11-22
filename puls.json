@@ -2229,6 +2229,35 @@
      "fact": "Release v1.0.0 mit DOI 10.5281/zenodo.24408612. Mittelspannung: 222 110 km, 110 kV: 30 875 km, 220/400 kV: 10 200 km, zusammen 263 185 km. Ergebnisse pro Woiwodschaft und Kreis sowie eine Liste der TERYT-Fehler in OT_ADJA_A (z. B. Kreis Nakło 1004 statt 0410)."
     }
    }
+  },
+  {
+   "n": 79,
+   "date": "2026-11-22T17:27:55+01:00",
+   "kind": "milestone",
+   "plane": "en-gis",
+   "question": "How much could landowners' claims under MV lines in Poland be worth?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "bdot10k-power-lines v1.1.0: potential about 21 bn PLN, expected value about 6.3 bn PLN, operator provisions about 0.83 bn PLN",
+   "link": "https://doi.org/10.5281/zenodo.24444918",
+   "sha_pred": null,
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "Ile mogą być warte roszczenia właścicieli pod liniami SN w Polsce?",
+     "fact": "bdot10k-power-lines v1.1.0: potencjał ok. 21 mld zł, wartość oczekiwana ok. 6,3 mld zł, rezerwy operatorów ok. 0,83 mld zł"
+    },
+    "de": {
+     "question": "Wie viel könnten die Ansprüche der Eigentümer unter Mittelspannungsleitungen in Polen wert sein?",
+     "fact": "bdot10k-power-lines v1.1.0: Potenzial ca. 21 Mrd. PLN, Erwartungswert ca. 6,3 Mrd. PLN, Rückstellungen der Netzbetreiber ca. 0,83 Mrd. PLN"
+    }
+   }
   }
  ]
 }
