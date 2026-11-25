@@ -2287,6 +2287,35 @@
      "fact": "bdot10k-power-lines v1.1.1: Karte von 222 110 km MS-Leitungen mit Anspruchswert je km² Gemeinde, Diagramm vom Potenzial zu den Rückstellungen"
     }
    }
+  },
+  {
+   "n": 81,
+   "date": "2026-11-25T18:06:06+01:00",
+   "kind": "life",
+   "plane": "en-sport",
+   "question": "Round 15 with the cards market from an odds API: can the engine run the whole round with zero manual input?",
+   "verdict": "CONFIRMED",
+   "score": "7/7",
+   "public": true,
+   "fact": "7 of 7 conditions met. Rules committed before the seed, prediction sealed 4 hours before the first match (referees 9/9, cards market 8/9), closing odds 9/9, all 9 matches settled from the API, verdict committed by the engine 2h45 after the last match. Zero manual inputs, zero code changes. Two short outages of outside services (API timeout, weather 503) were retried by the engine itself. Superbet did not move its cards prices between Thursday and kick-off. Cards MAE: constant 1.47, opening market 1.62, model 1.68; log-loss model 0.86, market 0.71. Fouls MAE: referee alone 5.90, full model 6.41, constant 6.76.",
+   "link": "https://github.com/MR73BIIO/ekstraklasa-model",
+   "sha_pred": "sha256:0f2841f919b03d5ed60adcf0fefc197a20e722b9d56afa7e2a158749670fcc4c",
+   "sha_outcome": "sha256:03ad3c9a0ba31ac02ba3552194fbf399ce78c9df2fc9e327efcf89cb39ff5b8a",
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "closed",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "15. kolejka z rynkiem kartek z API kursów: czy silnik przejdzie całą kolejkę bez żadnego ręcznego wejścia?",
+     "fact": "Spełnione 7 z 7 warunków. Reguły zacommitowane przed seedem, predykcja zapieczętowana 4 godziny przed pierwszym meczem (sędziowie 9/9, rynek kartek 8/9), kursy zamknięcia 9/9, wszystkie 9 meczów rozliczone z API, werdykt zacommitowany przez silnik 2h45 po ostatnim meczu. Zero ręcznych wejść, zero zmian kodu. Dwie krótkie awarie zewnętrznych usług (timeout API, pogoda 503) silnik ponowił sam. Superbet nie ruszył cen kartek od czwartku do gwizdka. Kartki MAE: stała 1.47, rynek otwarcia 1.62, model 1.68; log-loss model 0.86, rynek 0.71. Faule MAE: sam sędzia 5.90, pełny model 6.41, stała 6.76."
+    },
+    "de": {
+     "question": "Runde 15 mit dem Kartenmarkt aus einer Quoten-API: Läuft die Engine die ganze Runde ohne jede manuelle Eingabe?",
+     "fact": "7 von 7 Bedingungen erfüllt. Regeln vor dem Seed committet, Prognose 4 Stunden vor dem ersten Spiel versiegelt (Schiedsrichter 9/9, Kartenmarkt 8/9), Schlussquoten 9/9, alle 9 Spiele aus der API abgerechnet, Urteil 2h45 nach dem letzten Spiel von der Engine committet. Keine manuelle Eingabe, keine Codeänderung. Zwei kurze Ausfälle externer Dienste (API-Timeout, Wetter 503) hat die Engine selbst wiederholt. Superbet hat die Kartenquoten von Donnerstag bis zum Anpfiff nicht bewegt. Karten MAE: Konstante 1.47, Eröffnungsmarkt 1.62, Modell 1.68; Log-Loss Modell 0.86, Markt 0.71. Fouls MAE: nur Schiedsrichter 5.90, volles Modell 6.41, Konstante 6.76."
+    }
+   }
   }
  ]
 }
