@@ -2316,6 +2316,35 @@
      "fact": "7 von 7 Bedingungen erfüllt. Regeln vor dem Seed committet, Prognose 4 Stunden vor dem ersten Spiel versiegelt (Schiedsrichter 9/9, Kartenmarkt 8/9), Schlussquoten 9/9, alle 9 Spiele aus der API abgerechnet, Urteil 2h45 nach dem letzten Spiel von der Engine committet. Keine manuelle Eingabe, keine Codeänderung. Zwei kurze Ausfälle externer Dienste (API-Timeout, Wetter 503) hat die Engine selbst wiederholt. Superbet hat die Kartenquoten von Donnerstag bis zum Anpfiff nicht bewegt. Karten MAE: Konstante 1.47, Eröffnungsmarkt 1.62, Modell 1.68; Log-Loss Modell 0.86, Markt 0.71. Fouls MAE: nur Schiedsrichter 5.90, volles Modell 6.41, Konstante 6.76."
     }
    }
+  },
+  {
+   "n": 82,
+   "date": "2026-11-27T14:30:10+01:00",
+   "kind": "prediction",
+   "plane": "en-sport",
+   "question": "Round 16, same engine as Round 15: does it run the whole round with zero manual input again?",
+   "verdict": null,
+   "score": null,
+   "public": true,
+   "fact": "Sealed on 2026-11-27 14:00, 4 hours before the first match. Referees 9 of 9, cards market (Superbet via odds API) for 8 of 9 matches. Model expects 3.53 cards per match on average. No code change since Round 15.",
+   "link": "",
+   "sha_pred": "sha256:e3a8ecfdcf0294dce48cf3ecfd6cfebda78a12b5b7687d90eb1b1d168dd342ec",
+   "sha_outcome": null,
+   "follows": null,
+   "resolution": null,
+   "closes": null,
+   "status": "open",
+   "pub": [],
+   "i18n": {
+    "pl": {
+     "question": "16. kolejka, ten sam silnik co w 15.: czy znów przejdzie całą kolejkę bez żadnego ręcznego wejścia?",
+     "fact": "Zapieczętowane 2026-11-27 14:00, 4 godziny przed pierwszym meczem. Sędziowie 9 z 9, rynek kartek (Superbet przez API kursów) dla 8 z 9 meczów. Model oczekuje średnio 3.53 kartki na mecz. Żadnej zmiany kodu od 15. kolejki."
+    },
+    "de": {
+     "question": "Runde 16, dieselbe Engine wie in Runde 15: Läuft sie wieder die ganze Runde ohne jede manuelle Eingabe?",
+     "fact": "Versiegelt am 2026-11-27 14:00, 4 Stunden vor dem ersten Spiel. Schiedsrichter 9 von 9, Kartenmarkt (Superbet über Quoten-API) für 8 von 9 Spielen. Das Modell erwartet im Schnitt 3.53 Karten pro Spiel. Keine Codeänderung seit Runde 15."
+    }
+   }
   }
  ]
 }
